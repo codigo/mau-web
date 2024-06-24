@@ -1,10 +1,6 @@
 
 <section class="section-capabilities b-border">
 
-  <div class="capabilities-title">
-    <h2>Capabilities</h2>
-  </div>
-
   <div class="capabilities">
     <div class="capability">
       <div class="capability-icon">
@@ -12,11 +8,11 @@
       </div>
       <div class="capability-text">
         <h3>Systems Architecture</h3>
-        <ul>
-          <li>Scalability</li>
-          <li>Performance</li>
-          <li>Reliability</li>
-          <li>Security</li>
+        <ul class="capability-list">
+          <li class="capability-item">Scalability</li>
+          <li class="capability-item">Performance</li>
+          <li class="capability-item">Reliability</li>
+          <li class="capability-item">Security</li>
         </ul>
       </div>
     </div>
@@ -26,11 +22,11 @@
       </div>
       <div class="capability-text">
         <h3>Development</h3>
-        <ul>
-          <li>Frontend</li>
-          <li>Backend</li>
-          <li>Automated Testing</li>
-          <li>Modbile Development</li>
+        <ul class="capability-list">
+          <li class="capability-item">Frontend</li>
+          <li class="capability-item">Backend</li>
+          <li class="capability-item">Automated Testing</li>
+          <li class="capability-item">Modbile Development</li>
         </ul>
       </div>
     </div>
@@ -39,12 +35,12 @@
         🤝
       </div>
       <div class="capability-text">
-        <h3>Collaboration</h3>
-        <ul>
-          <li>Agile Methodologies</li>
-          <li>Team Leadership</li>
-          <li>Code Quality</li>
-          <li>Client Communication</li>
+        <h3>Developer Experience</h3>
+        <ul class="capability-list">
+          <li class="capability-item">Optimized Feedback Loops</li>
+          <li class="capability-item">Reduced Cognitive Load</li>
+          <li class="capability-item">Enhanced Flow State</li>
+          <li class="capability-item">Improved Tooling and Processes</li>
         </ul>
       </div>
     </div>
@@ -56,31 +52,25 @@
 <style>
 
   .section-capabilities {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3.2rem 0 6.4rem 0;
-    margin-bottom: 4.8rem;
-
-    gap: 6.4rem;
+    padding: 1.6rem 0 4.8rem 0;
+    margin-bottom: 2.4rem;
   }
 
   .capabilities {
-
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 8rem;
+    justify-content: space-between;
+    padding: 4.4rem 0 4.4rem 0;
+    column-gap: 3.6rem;
   }
 
   .capability {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding: 3.6rem;
     gap: 3.2rem;
-    width: 30rem;
   }
 
   .capability-icon {
@@ -94,14 +84,15 @@
     gap: 1.6rem;
   }
 
-  ul {
+  .capability-list {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    list-style-position: inside;
+    padding-left: 2rem;
+    list-style-position: outside;
   }
 
-  ul > li::marker {
+  .capability-list > .capability-item::marker {
     /* Add a custom marker for list with space */
     content: "\2713  ";
   }
