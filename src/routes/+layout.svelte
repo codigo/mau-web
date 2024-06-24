@@ -1,33 +1,28 @@
 <script>
   import Header from '../components/Header.svelte';
-
-  let year = new Date().getFullYear();
+  import Footer from '../components/Footer.svelte';
+	import TechStack from '../components/TechStack.svelte';
 
 </script>
 
 <Header />
 
-<main>
+<main class="main">
 
   <slot />
 
+  <TechStack />
+
 </main>
 
-<footer>
-  <p>© {year}</p>
-  <p>Made with ❤️ by Mauricio</p>
-
-</footer>
+<Footer />
 
 <style>
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 1.6rem;
-    padding: 2.4rem 0 6.4rem 0;
-
+  .main {
+    max-width: 140rem;
+    margin: 0 auto;
   }
+
 </style>
+
+

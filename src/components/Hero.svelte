@@ -1,22 +1,58 @@
+<script>
+	import X from "./icons/social/X.svelte";
+  import { MailUnreadOutline, LogoLinkedin, LogoGithub } from 'svelte-ionicons'
+
+</script>
+
 <section class="section-hero b-border">
 
   <div class="hero">
 
     <div class="hero-text-box">
       <div class="hero-heading-name">
-        <p aria-label="Salut from Mauricio">Hi there, I'm Mauricio &nbsp;</p><div class="wave">👋</div>
+        <p>Hi there, I'm Mauricio &nbsp;</p><div class="wave">👋</div>
       </div>
-      <h1 aria-label="Who is Mauricio" class="hero-title">
+      <h1 class="hero-title">
         Full Stack Developer based in Canada.
       </h1>
-      <p aria-label="Short about Mauricio" class="hero-text">
-        I specialize in building exceptional web experiences and robust products.
+      <p class="hero-text">
+        I specialize in building exceptional web experiences and robust products.<br />
         With my expertise in systems architecture, frontend, backend and various
         database technologies, I can help you bring your ideas to life.
       </p>
-      <a aria-label="More about Mauricio" class="hero-link" href="/about-me">More about me</a>
+
+      <div class="hero-social-icons">
+        <ul class="social-icons">
+          <li class="social-icon">
+            <a href="https://www.linkedin.com/in/mauromercado/" target="_blank" rel="external">
+              <LogoLinkedin />
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="https://github.com/maumercado" target="_blank" rel="external">
+              <LogoGithub />
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="https://x.com/maumercado" target="_blank" rel="external">
+              <X />
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="mailto:mau@codigo.sh" target="_blank" rel="external">
+              <MailUnreadOutline />
+            </a>
+          </li>
+
+            <!-- MailUnreadOutline -->
+        </ul>
+      </div> <!--  end.hero-social-icons -->
+
     </div><!--  end.hero-text-box -->
 
+    <div class="hero-img-box">
+      <!-- Placeholder for hero image of me -->
+    </div> <!--  end.hero-img-box -->
 
   </div> <!--  end.hero -->
 
@@ -24,26 +60,24 @@
 
 <style>
   .section-hero {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    padding: 3.2rem 0 6.4rem 0;
-    margin-bottom: 4.8rem;
-    margin-top: 9.6rem;
-
-    background-image: linear-gradient(180deg, var(--theme-background-default),var(--theme-background-secondary) 50%);
-    box-shadow: 1.2rem 2.4rem 50px var(--theme-background-secondary);
+    margin-bottom: 2.4rem;
+    margin-top: 12.8rem;
+    padding: 3.2rem 0 4.8rem 0;
   }
 
   .hero {
-    max-width: 110rem;
-    padding: 2.4rem;
+    display: flex;
+    align-items: start;
+    padding: 4.4rem;
+    column-gap: 3.6rem;
   }
 
   .hero-text-box {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 2.4rem;
+    padding: 3.6rem 0 3.6rem 0;
   }
 
   .hero-heading-name,
@@ -56,10 +90,54 @@
   }
 
   .wave {
-
     animation: wave-hand 1.5s linear 0.75s 1 normal;
     transform-origin: 50% 50%;
-}
+  }
+
+  .hero-title {
+    opacity: 0;
+    animation: bottomFadeIn 1s linear 1s normal forwards;
+  }
+
+  .hero-text {
+    opacity: 0;
+    animation: bottomFadeIn 1s linear 3s normal forwards;
+  }
+
+  .hero-social-icons {
+    padding: 2rem 0 0 0;
+    opacity: 0;
+    animation: bottomFadeIn 1s linear 5s normal forwards;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 3.6rem;
+    align-items: center;
+  }
+
+  .social-icon {
+    transition: 0.25s ease;
+    cursor: pointer;
+    & svg {
+      width: 3rem;
+      height: 3rem;
+    }
+    &:hover {
+      transform: scale(1.25);
+    }
+    & > a:hover {
+      box-shadow: none;
+    }
+  }
+
+  .hero-img-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.6rem;
+  }
 
   @keyframes wave-hand {
     0% { transform: rotate( 0.0deg) }
@@ -71,29 +149,6 @@
     60% { transform: rotate( 0.0deg) }
     100% { transform: rotate( 0.0deg) }
   }
-
-
-  .hero-title {
-
-    opacity: 0;
-    animation: bottomFadeIn 1s linear 1s normal forwards;
-
-  }
-
-  .hero-text {
-    opacity: 0;
-    animation: bottomFadeIn 1s linear 3s normal forwards;
-  }
-
-  .hero-link {
-    align-self: baseline;
-
-    transition: 0.25s ease;
-
-    opacity: 0;
-    animation: bottomFadeIn 1s linear 3s normal forwards;
-  }
-
 
   @keyframes bottomFadeIn {
     0% {

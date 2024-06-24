@@ -1,13 +1,13 @@
 <header class="header">
 
-  <nav class="main-nav">
+  <section class="main-nav">
     <ul class="main-nav-list">
       <li><a class="main-nav-link" href="/">Home</a></li>
       <li><a class="main-nav-link" href="/about-me">About me</a></li>
       <li><a class="main-nav-link" href="/journal">Journal</a></li>
       <li><a class="main-nav-link" href="/#contact-me">Contact me</a></li>
     </ul>
-  </nav>
+  </section>
 
 </header>
 
@@ -18,20 +18,16 @@
     left: 0;
     width: 100%;
     display: flex;
-    height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
     justify-content: center;
-    z-index: 999;
-
-    /* padding: 2.4rem 0 3.2rem 0; */
-    /* background-color: rgba(55, 42, 62, 0.147); */
-    backdrop-filter: saturate(180%) blur(1.6rem);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .04), 0 -1px 0 0 rgba(0, 0, 0, .08);
+    z-index: 100;;
+    backdrop-filter: blur(1.2rem);
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .04), 0 -1px 0 0 rgba(0, 0, 0, .08); */
   }
 
   .main-nav {
-    padding: 2rem 3.6rem;
+    padding: 4.4rem 0;
   }
 
   .main-nav-list {
