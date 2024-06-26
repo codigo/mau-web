@@ -281,10 +281,6 @@
     return chunks;
   }
 
-  // Create a function that takes the array of array of objects, and returns the same array of array of objects
-  // but with objects duplicated in each array of objects with the duplicates having a new property called duplicate
-// and set that to true
-
   function duplicateObjectsInArray<T>(arr: T[][]): T[][] {
 
     arr.forEach((arrayInner) => {
@@ -296,18 +292,23 @@
     return arr
   }
 
-  $: techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, 3))
+  let techStackChunks = [[] as TechStack[]]
 
   let dataAnimatedScroller: boolean;
   onMount(() => {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dataAnimatedScroller = true
+      techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, 3))
+    } else {
+      techStackChunks = splitArrayIntoChunks(techStack, 3)
     }
   })
 
 </script>
 
 <section class="section-tech-stack b-border">
+
+  <h2 class="section-title">Tools I've used</h2>
 
   <div class="tech-stack-box" data-animated={dataAnimatedScroller}>
 
@@ -326,7 +327,6 @@
 
   </div> <!--  end.tech-stack-box -->
 
-
 </section>
 
 <style lang="postcss">
@@ -336,14 +336,21 @@
     margin-bottom: 2.4rem;
   }
 
+  .section-title {
+    padding: 3.2rem 0 4.8rem 0;
+    text-align: center;
+  }
+
   .tech-stack-box {
     margin: 0 auto;
     max-width: 135rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .tech-stack-box-inner {
     display: flex;
-    padding: 1rem;
+    padding: 1.2rem;
     gap: 1.2rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -351,6 +358,7 @@
   }
 
   .tech-stack-box[data-animated='true'] {
+    display: unset;
     overflow: hidden;
     -webkit-mask: linear-gradient(90deg, transparent, white 30%, white 80%, transparent);
     mask: linear-gradient(90deg, transparent, white 30%, white 80%, transparent);
@@ -386,6 +394,7 @@
 
     & > svg {
       max-width: 6.2rem;
+      min-width: 6.2rem;
       height: 6.2rem;
     }
   }
