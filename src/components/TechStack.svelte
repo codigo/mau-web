@@ -229,11 +229,6 @@
     },
     {
       category: 'Libraries',
-      icon: ReactNative,
-      name: 'React Native',
-    },
-    {
-      category: 'Libraries',
       icon: Electron,
       name: 'Electron',
     },
@@ -261,7 +256,12 @@
       category: 'Software',
       icon: Sentry,
       name: 'Sentry',
-    }
+    },
+    {
+      category: 'Libraries',
+      icon: ReactNative,
+      name: 'React Native',
+    },
   ]
 
   function splitArrayIntoChunks<T>(arr: T[], numChunks: number) {
@@ -293,9 +293,11 @@
   }
 
   let techStackChunks = [[] as TechStack[]]
+  let loading = true
 
   let dataAnimatedScroller: boolean;
   onMount(() => {
+    loading = false
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dataAnimatedScroller = true
       techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, 3))
@@ -308,37 +310,37 @@
 
 <section class="section-tech-stack b-border">
 
-  <h2 class="section-title">Tools I've used</h2>
+  {#if loading}
+  <div class="loading" aria-busy="{loading}">
+    <span class="loader" />
+  </div>
+  {:else}
+    <div class="tech-stack-box" data-animated={dataAnimatedScroller}>
+      {#each techStackChunks as techStackChunk, idx}
+        <!-- techStackChunk is an array of objects -->
+        <ul class="tech-stack-box-inner" data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
+          {#each techStackChunk as tech}
+            <li title="{tech.name}" class="tech-stack-item" aria-hidden="{!!tech.duplicate}">
+              <svelte:component
+                this={tech.icon}
+              />
+            </li>
+          {/each}
+        </ul>
+      {/each}
 
-  <div class="tech-stack-box" data-animated={dataAnimatedScroller}>
+    </div> <!--  end.tech-stack-box -->
+  {/if}
 
-    {#each techStackChunks as techStackChunk, idx}
-      <!-- techStackChunk is an array of objects -->
-      <ul class="tech-stack-box-inner" data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
-        {#each techStackChunk as tech}
-          <li title="{tech.name}" class="tech-stack-item" aria-hidden="{!!tech.duplicate}">
-            <svelte:component
-              this={tech.icon}
-            />
-          </li>
-        {/each}
-      </ul>
-    {/each}
-
-  </div> <!--  end.tech-stack-box -->
 
 </section>
 
 <style lang="postcss">
 
   .section-tech-stack {
-    padding: 1.6rem 0 4.8rem 0;
+    padding: 12rem 0 12rem 0;
     margin-bottom: 2.4rem;
-  }
-
-  .section-title {
-    padding: 3.2rem 0 4.8rem 0;
-    text-align: center;
+    overflow: hidden;
   }
 
   .tech-stack-box {
@@ -360,8 +362,8 @@
   .tech-stack-box[data-animated='true'] {
     display: unset;
     overflow: hidden;
-    -webkit-mask: linear-gradient(90deg, transparent, white 30%, white 80%, transparent);
-    mask: linear-gradient(90deg, transparent, white 30%, white 80%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   }
 
   .tech-stack-box-inner[data-direction='left'] {
