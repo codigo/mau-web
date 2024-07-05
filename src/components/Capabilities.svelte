@@ -26,7 +26,7 @@
           <li class="capability-item">Frontend</li>
           <li class="capability-item">Backend</li>
           <li class="capability-item">Automated Testing</li>
-          <li class="capability-item">Modbile Development</li>
+          <li class="capability-item">Mobile Development</li>
         </ul>
       </div>
     </div>
@@ -52,7 +52,7 @@
 <style>
 
   .section-capabilities {
-    padding: 1.6rem 0 4.8rem 0;
+    padding: 0 0 4.8rem 0;
     margin-bottom: 2.4rem;
   }
 

@@ -1,12 +1,11 @@
 <script>
 	import X from "./icons/social/X.svelte";
   import { MailUnreadOutline, LogoLinkedin, LogoGithub } from 'svelte-ionicons'
-
 </script>
 
-<section class="section-hero b-border">
+<section class="section-hero">
 
-  <div class="hero">
+  <div class="hero-intro">
 
     <div class="hero-text-box">
       <div class="hero-heading-name">
@@ -43,8 +42,6 @@
               <MailUnreadOutline />
             </a>
           </li>
-
-            <!-- MailUnreadOutline -->
         </ul>
       </div> <!--  end.hero-social-icons -->
 
@@ -59,16 +56,15 @@
 </section>
 
 <style>
+
   .section-hero {
-    margin-bottom: 2.4rem;
-    margin-top: 12.8rem;
-    padding: 3.2rem 0 4.8rem 0;
+    padding: 1.2rem 0;
   }
 
-  .hero {
+  .hero-intro {
     display: flex;
     align-items: start;
-    padding: 4.4rem;
+    padding: 0 4.4rem;
     column-gap: 3.6rem;
   }
 
@@ -77,7 +73,6 @@
     flex: 1;
     flex-direction: column;
     gap: 2.4rem;
-    padding: 3.6rem 0 3.6rem 0;
   }
 
   .hero-heading-name,
@@ -90,24 +85,24 @@
   }
 
   .wave {
-    animation: wave-hand 1.5s linear 0.75s 1 normal;
+    animation: wave-hand 1.5s linear 0.5s 1 normal;
     transform-origin: 50% 50%;
   }
 
   .hero-title {
     opacity: 0;
-    animation: bottomFadeIn 1s linear 1s normal forwards;
+    animation: bottomFadeIn 1s linear 0.75s normal forwards;
   }
 
   .hero-text {
     opacity: 0;
-    animation: bottomFadeIn 1s linear 3s normal forwards;
+    animation: bottomFadeIn 1s linear 1.25s normal forwards;
   }
 
   .hero-social-icons {
     padding: 2rem 0 0 0;
     opacity: 0;
-    animation: bottomFadeIn 1s linear 5s normal forwards;
+    animation: bottomFadeIn 1s linear 1.25s normal forwards;
   }
 
   .social-icons {
@@ -148,23 +143,6 @@
     50% { transform: rotate(12.0deg) }
     60% { transform: rotate( 0.0deg) }
     100% { transform: rotate( 0.0deg) }
-  }
-
-  @keyframes bottomFadeIn {
-    0% {
-      transform: translateY(2rem);
-      bottom: 2rem;
-      opacity: 0;
-    }
-
-    75% {
-      bottom: 25%;
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 100;
-    }
   }
 
 </style>
