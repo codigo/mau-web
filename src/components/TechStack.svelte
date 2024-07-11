@@ -11,7 +11,6 @@
   import AWS from './icons/tech/AWS.svelte';
   import Docker from './icons/tech/Docker.svelte';
   import Git from './icons/tech/Git.svelte';
-  import Zod from './icons/tech/Zod.svelte';
   import HuggingFace from './icons/tech/HuggingFace.svelte';
   import Ollama from './icons/tech/Ollama.svelte';
   import OpenAI from './icons/tech/OpenAI.svelte';
@@ -37,7 +36,6 @@
   import Redis from './icons/tech/Redis.svelte';
   import MongoDB from './icons/tech/MongoDB.svelte';
   import Cloudflare from './icons/tech/Cloudflare.svelte';
-  import CloudflareWorkers from './icons/tech/CloudflareWorkers.svelte';
   import Netlify from './icons/tech/Netlify.svelte';
   import Python from './icons/tech/Python.svelte';
   import Rust from './icons/tech/Rust.svelte';
@@ -177,15 +175,15 @@
       icon: Cloudflare,
       name: 'Cloudflare',
     },
-        {
-      category: 'IaaS',
-      icon: CloudflareWorkers,
-      name: 'Cloudflare Workers',
-    },
     {
       category: 'IaaS',
       icon: Netlify,
       name: 'Netlify',
+    },
+    {
+      category: 'Libraries',
+      icon: NodeJS,
+      name: 'NodeJS',
     },
     {
       category: 'Languages',
@@ -224,11 +222,6 @@
     },
     {
       category: 'Libraries',
-      icon: NodeJS,
-      name: 'NodeJS',
-    },
-    {
-      category: 'Libraries',
       icon: Electron,
       name: 'Electron',
     },
@@ -236,11 +229,6 @@
       category: 'Libraries',
       icon: ReactRouter,
       name: 'ReactRouter',
-    },
-    {
-      category: 'Libraries',
-      icon: Zod,
-      name: 'Zod',
     },
     {
       category: 'Software',
