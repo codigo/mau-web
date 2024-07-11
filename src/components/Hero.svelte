@@ -62,17 +62,16 @@
   }
 
   .hero-intro {
-    display: flex;
-    align-items: start;
-    padding: 0 4.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
     column-gap: 3.6rem;
   }
 
   .hero-text-box {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 2.4rem;
+    display: grid;
+    row-gap: 3.2rem;
+
   }
 
   .hero-heading-name,
@@ -100,7 +99,6 @@
   }
 
   .hero-social-icons {
-    padding: 2rem 0 0 0;
     opacity: 0;
     animation: bottomFadeIn 1s linear 1.25s normal forwards;
   }
@@ -108,7 +106,6 @@
   .social-icons {
     display: flex;
     gap: 3.6rem;
-    align-items: center;
   }
 
   .social-icon {
@@ -127,10 +124,6 @@
   }
 
   .hero-img-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 3.6rem;
   }
 
