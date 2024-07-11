@@ -23,9 +23,9 @@
 </script>
 
 <div class="carousel-container">
-  <div class="carousel" style="transform: translateX({$x}%)">
+  <div class="carousel" style="transform: translateX({$x}%); --itemsToShow: {itemsToShow}">
     {#each testimonials as testimonial}
-      <figure class="testimonial" style="flex: 0 0 calc(100% / {itemsToShow})">
+      <figure class="testimonial">
       <enhanced:img class="testimonial-img" src={testimonial.image} alt={testimonial.author} />
       <blockquote><p class="testimonial-text">{testimonial.text}</p></blockquote>
       <cite class="testimonial-author">&mdash; {testimonial.author}</cite>
@@ -45,14 +45,15 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
   }
 
   .carousel {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(calc(100% / var(--itemsToShow)),1fr));
+
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(calc(100% / var(--itemsToShow)),1fr);
+
     transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
@@ -74,7 +75,6 @@
     padding-top: 1.2rem;
     font-size: 1.6rem;
     line-height: 1.5;
-    height: 14rem;
   }
 
   .testimonial-author {

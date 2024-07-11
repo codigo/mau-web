@@ -11,7 +11,6 @@
   import AWS from './icons/tech/AWS.svelte';
   import Docker from './icons/tech/Docker.svelte';
   import Git from './icons/tech/Git.svelte';
-  import Zod from './icons/tech/Zod.svelte';
   import HuggingFace from './icons/tech/HuggingFace.svelte';
   import Ollama from './icons/tech/Ollama.svelte';
   import OpenAI from './icons/tech/OpenAI.svelte';
@@ -37,7 +36,6 @@
   import Redis from './icons/tech/Redis.svelte';
   import MongoDB from './icons/tech/MongoDB.svelte';
   import Cloudflare from './icons/tech/Cloudflare.svelte';
-  import CloudflareWorkers from './icons/tech/CloudflareWorkers.svelte';
   import Netlify from './icons/tech/Netlify.svelte';
   import Python from './icons/tech/Python.svelte';
   import Rust from './icons/tech/Rust.svelte';
@@ -177,15 +175,15 @@
       icon: Cloudflare,
       name: 'Cloudflare',
     },
-        {
-      category: 'IaaS',
-      icon: CloudflareWorkers,
-      name: 'Cloudflare Workers',
-    },
     {
       category: 'IaaS',
       icon: Netlify,
       name: 'Netlify',
+    },
+    {
+      category: 'Libraries',
+      icon: NodeJS,
+      name: 'NodeJS',
     },
     {
       category: 'Languages',
@@ -224,11 +222,6 @@
     },
     {
       category: 'Libraries',
-      icon: NodeJS,
-      name: 'NodeJS',
-    },
-    {
-      category: 'Libraries',
       icon: Electron,
       name: 'Electron',
     },
@@ -236,11 +229,6 @@
       category: 'Libraries',
       icon: ReactRouter,
       name: 'ReactRouter',
-    },
-    {
-      category: 'Libraries',
-      icon: Zod,
-      name: 'Zod',
     },
     {
       category: 'Software',
@@ -296,13 +284,15 @@
   let loading = true
 
   let dataAnimatedScroller: boolean;
+  let CHUNKS = 3;
   onMount(() => {
     loading = false
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dataAnimatedScroller = true
-      techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, 3))
+      techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, CHUNKS))
     } else {
-      techStackChunks = splitArrayIntoChunks(techStack, 3)
+      CHUNKS = 4
+      techStackChunks = splitArrayIntoChunks(techStack, CHUNKS)
     }
   })
 
@@ -318,7 +308,7 @@
     <div class="tech-stack-box" data-animated={dataAnimatedScroller}>
       {#each techStackChunks as techStackChunk, idx}
         <!-- techStackChunk is an array of objects -->
-        <ul class="tech-stack-box-inner" data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
+        <ul class="tech-stack-box-inner" data-animated={dataAnimatedScroller} data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
           {#each techStackChunk as tech}
             <li title="{tech.name}" class="tech-stack-item" aria-hidden="{!!tech.duplicate}">
               <svelte:component
@@ -345,17 +335,16 @@
 
   .tech-stack-box {
     margin: 0 auto;
-    max-width: 135rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: rows;
+    gap: 1rem;
   }
 
   .tech-stack-box-inner {
-    display: flex;
-    padding: 1.2rem;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    justify-items: center;
     align-items: center;
   }
 
@@ -364,6 +353,15 @@
     overflow: hidden;
     -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
     mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  }
+
+  .tech-stack-box-inner[data-animated='true'] {
+    display: flex;
+    padding: 1.2rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .tech-stack-box-inner[data-direction='left'] {

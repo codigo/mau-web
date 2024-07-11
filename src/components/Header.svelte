@@ -13,23 +13,19 @@
 </div>
 
 <style lang="postcss">
+  .content-wrapper {
+    content: "";
+    margin-bottom: 4cqmin;
+  }
   .header {
+    backdrop-filter: blur(1.2rem);
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    padding-top: 0;
-    padding-bottom: 0;
-    justify-content: center;
-    z-index: 100;;
-    backdrop-filter: blur(1.2rem);
-    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .04), 0 -1px 0 0 rgba(0, 0, 0, .08); */
-  }
-
-  .content-wrapper {
-    content: "";
-    margin-bottom: 4cqmin;
+    z-index: 100;
   }
 
   .main-nav {
@@ -37,9 +33,10 @@
   }
 
   .main-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 4.8rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 4.8rem;
+    justify-items: center;
   }
 
   .main-nav-link {

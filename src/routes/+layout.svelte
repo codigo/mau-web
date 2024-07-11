@@ -16,9 +16,9 @@
 
 <style>
   .main {
-    max-width: 140rem;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 8rem 0 4.8rem 0;
+    padding-top: 8rem;
   }
 
 </style>
