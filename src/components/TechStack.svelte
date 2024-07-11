@@ -284,13 +284,15 @@
   let loading = true
 
   let dataAnimatedScroller: boolean;
+  let CHUNKS = 3;
   onMount(() => {
     loading = false
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dataAnimatedScroller = true
-      techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, 3))
+      techStackChunks = duplicateObjectsInArray(splitArrayIntoChunks(techStack, CHUNKS))
     } else {
-      techStackChunks = splitArrayIntoChunks(techStack, 3)
+      CHUNKS = 4
+      techStackChunks = splitArrayIntoChunks(techStack, CHUNKS)
     }
   })
 
@@ -306,7 +308,7 @@
     <div class="tech-stack-box" data-animated={dataAnimatedScroller}>
       {#each techStackChunks as techStackChunk, idx}
         <!-- techStackChunk is an array of objects -->
-        <ul class="tech-stack-box-inner" data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
+        <ul class="tech-stack-box-inner" data-animated={dataAnimatedScroller} data-direction="{idx % 2 === 0 ? 'left' : 'right'}">
           {#each techStackChunk as tech}
             <li title="{tech.name}" class="tech-stack-item" aria-hidden="{!!tech.duplicate}">
               <svelte:component
@@ -333,17 +335,16 @@
 
   .tech-stack-box {
     margin: 0 auto;
-    max-width: 135rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: rows;
+    gap: 1rem;
   }
 
   .tech-stack-box-inner {
-    display: flex;
-    padding: 1.2rem;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    justify-items: center;
     align-items: center;
   }
 
@@ -352,6 +353,15 @@
     overflow: hidden;
     -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
     mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  }
+
+  .tech-stack-box-inner[data-animated='true'] {
+    display: flex;
+    padding: 1.2rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .tech-stack-box-inner[data-direction='left'] {
