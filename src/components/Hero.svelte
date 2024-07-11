@@ -58,7 +58,7 @@
 <style>
 
   .section-hero {
-    padding: 1.2rem 0;
+    padding: 1.2rem 1.6rem;
   }
 
   .hero-intro {
