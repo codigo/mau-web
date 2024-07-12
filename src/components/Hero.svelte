@@ -15,7 +15,7 @@
         Full Stack Developer based in Canada.
       </h1>
       <p class="hero-text">
-        I specialize in building exceptional web experiences and robust products.<br />
+        I specialize in building exceptional user experiences and robust products.<br />
         With my expertise in systems architecture, frontend, backend and various
         database technologies, I can help you bring your ideas to life.
       </p>
