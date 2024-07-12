@@ -1,12 +1,54 @@
+<script lang="ts">
+  import { page } from '$app/stores';
+  let links = {
+    home: {path: '/', name: 'Home'},
+    about: {path: '/about-me', name: 'About me'},
+    journal: {path: '/journal', name: 'Journal'},
+    contact: {path: '/contact-me', name: 'Contact me'}
+  }
+
+  let path: string;
+
+  function getPath(currentPath: string) {
+    path = currentPath;
+  }
+
+  $: getPath($page.url.pathname);
+
+</script>
 
 <div class="content-wrapper">
   <header class="header">
     <section class="main-nav">
       <ul class="main-nav-list">
-        <li><a class="main-nav-link" href="/">Home</a></li>
-        <li><a class="main-nav-link" href="/about-me">About me</a></li>
-        <li><a class="main-nav-link" href="/journal">Journal</a></li>
-        <li><a class="main-nav-link" href="/#contact-me">Contact me</a></li>
+        <li>
+          <a
+            class="main-nav-link {path === links.home.path ? 'active' : ''}"
+            href="{links.home.path}">
+            {links.home.name}
+          </a>
+        </li>
+        <li>
+          <a
+            class="main-nav-link {path === links.about.path ? 'active' : ''}"
+            href="{links.about.path}">
+            {links.about.name}
+          </a>
+        </li>
+        <li>
+          <a
+            class="main-nav-link {path === links.journal.path ? 'active' : ''}"
+            href="{links.journal.path}">
+            {links.journal.name}
+          </a>
+        </li>
+        <li>
+          <a
+            class="main-nav-link {path === links.contact.path ? 'active' : ''}"
+            href="{links.contact.path}">
+            {links.contact.name}
+          </a>
+        </li>
       </ul>
     </section>
   </header>
@@ -47,5 +89,8 @@
     color: var(--theme-font-secondary);
   }
 
+  .active {
+    box-shadow: 0 2px 0 0 var(--theme-font-active-link);
+  }
 
 </style>
