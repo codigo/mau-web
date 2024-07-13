@@ -1,20 +1,27 @@
 <script>
   import Header from '../components/Header.svelte';
   import Footer from '../components/Footer.svelte';
-
 </script>
 
-<Header />
+<div class="main-layout">
+  <Header />
 
-<main class="main">
+  <main class="main">
+    <slot />
+  </main>
 
-  <slot />
+  <Footer />
+</div>
 
-</main>
-
-<Footer />
 
 <style>
+
+  .main-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
   .main {
     max-width: var(--max-width);
     margin: 0 auto;

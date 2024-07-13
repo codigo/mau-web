@@ -57,7 +57,7 @@
 <style lang="postcss">
   .content-wrapper {
     content: "";
-    margin-bottom: 4cqmin;
+    margin-bottom: 8cqmin;
   }
   .header {
     backdrop-filter: blur(1.2rem);

@@ -123,7 +123,7 @@ button {
   /* Component Colors */
   /* Background */
   --theme-background-default: #0e1217;
-  --theme-background-secondary: rgb(123,124,127);
+  --theme-background-secondary: #7b7c7f;
 
   --theme-card-background-default: #3333338a;
 
@@ -147,8 +147,9 @@ button {
 
   --theme-font-size-medium: 2.4rem;
   --theme-font-weight-medium: 400;
-  --theme-font-line-height-medium: 1.2;
+  --theme-font-line-height-medium: 1.8;
 
+  --theme-font-size-small: 2rem;
 
   /* Border Radius */
   --theme-border-radius-default: 0.5rem;
@@ -168,6 +169,12 @@ button {
 
   h3 {
     font-size: var(--theme-font-size-medium);
+    font-weight: var(--theme-font-weight-medium);
+    line-height: var(--theme-font-line-height-medium);
+  }
+
+  h4 {
+    font-size: var(--theme-font-size-small);
     font-weight: var(--theme-font-weight-medium);
     line-height: var(--theme-font-line-height-medium);
   }
