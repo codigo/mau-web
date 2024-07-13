@@ -211,17 +211,15 @@
 
   .timeline {
     position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
   .timeline:before {
     content: "";
     position: absolute;
     top: -3rem;
     left: 2rem;
-    width: 0.25rem;
-    height: calc(100% + 6em);
+    right: 17rem;
+    width: 0.2rem;
+    height: calc(100% + 3.6rem);
     background: linear-gradient(to bottom, #0f1218 0%, #333333 3%, #3b3b3b 80%,#0f1218 100%);
   }
 
@@ -247,7 +245,7 @@
     top: 1rem;
     padding: 0.4rem 1.2rem;
     background: #333333;
-    /* margin-left: 1.6rem; */
+    margin-left: 0.2rem;
     /* transform: translateX(-50%); */
   }
 
@@ -262,7 +260,7 @@
     position: relative;
     margin-left: 22rem;
 
-    padding: 1.2rem;
+    padding: 1rem;
     background: #333333;
   }
 
