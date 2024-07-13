@@ -260,7 +260,7 @@
 
   .timeline-content {
     position: relative;
-    margin-left: 25.6rem;
+    margin-left: 22rem;
 
     padding: 1.2rem;
     background: #333333;
@@ -268,6 +268,7 @@
 
   @media screen and (min-width: 65em) {
     .timeline-content {
+      padding: 2.4rem;
       margin-left: 0;
       width: calc(50% - 12.8rem);
     }
