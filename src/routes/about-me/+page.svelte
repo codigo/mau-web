@@ -200,7 +200,7 @@
     align-items: center;
     place-items: center;
     gap: 6.4rem;
-    padding-bottom: 6.4rem
+    padding-bottom: 6.4rem;
   }
 
   .about-me-experience-title {
