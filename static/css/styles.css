@@ -1,16 +1,16 @@
 @keyframes bottomFadeIn {
-  0% {
-    transform: translateY(2rem);
-    bottom: 2rem;
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(2rem);
+		bottom: 2rem;
+		opacity: 0;
+	}
 
-  75% {
-    bottom: 25%;
-    opacity: 1;
-  }
+	75% {
+		bottom: 25%;
+		opacity: 1;
+	}
 
-  100% {
-    opacity: 100;
-  }
+	100% {
+		opacity: 100;
+	}
 }
