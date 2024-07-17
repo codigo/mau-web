@@ -1,0 +1,4 @@
+.markdown-wrapper {
+	display: grid;
+	row-gap: 2rem;
+}
