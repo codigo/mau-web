@@ -19,7 +19,12 @@ Default: 1
 
 --- 03 Shadows ---
 
+  box-shadow: inset 8px 16px 25px -10px rgba(255,255,255,0.1),7px 14px 25px -20px rgba(255,255,255,0.1);
+
+
 --- 04 Border Radius ---
+
+-- Default 0.5 rem
 
 --- 05 Whitespace ---
 
@@ -35,73 +40,77 @@ By Default 1rem = 16px Better to do font-size: 62.5% on html to make 1rem = 10px
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 /* Prevent font size inflation */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 html,
 body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  line-height: 1;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	line-height: 1;
 
-  background-color: var(--theme-background-default);
-  color: var(--theme-font-default);
+	background-color: var(--theme-background-default);
+	color: var(--theme-font-default);
 }
 
 body {
-  margin: unset;
+	margin: unset;
 }
 
 /* Remove default margin */
 * {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 button,
 input,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 /* Remove default button style */
 button {
-  background: none;
-  border: none;
-  cursor: pointer;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+strong {
+	font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /*
@@ -117,158 +126,156 @@ button {
 */
 
 :root {
+	--max-width: 140rem;
 
-  --max-width: 140rem;
+	/* Component Colors */
+	/* Background */
+	--theme-background-default: #0e1217;
+	--theme-background-secondary: #7b7c7f;
 
-  /* Component Colors */
-  /* Background */
-  --theme-background-default: #0e1217;
-  --theme-background-secondary: #7b7c7f;
+	--theme-card-background-default: #3333338a;
 
-  --theme-card-background-default: #3333338a;
+	/* Font Colors */
+	--theme-font-default: #f2f2f2;
+	--theme-font-secondary: #9e9e9e;
+	--theme-font-active-link: #fff;
 
-  /* Font Colors */
-  --theme-font-default: #f2f2f2;
-  --theme-font-secondary: #9e9e9e;
-  --theme-font-active-link: #fff;
+	--theme-font-size-default: 1.8rem;
+	--theme-font-weight-default: 200;
+	--theme-font-leter-spacing-default: 1.25px;
+	--theme-font-line-height-default: 1.6;
 
-  --theme-font-size-default: 1.8rem;
-  --theme-font-weight-default: 200;
-  --theme-font-leter-spacing-default: 1.25px;
-  --theme-font-line-height-default: 1.6;
+	--theme-font-size-xlarge: 4.4rem;
+	--theme-font-weight-xlarge: 600;
+	--theme-font-line-height-xlarge: 1.2;
 
-  --theme-font-size-xlarge: 4.4rem;
-  --theme-font-weight-xlarge: 600;
-  --theme-font-line-height-xlarge: 1.2;
+	--theme-font-size-large: 3.6rem;
+	--theme-font-weight-large: 400;
+	--theme-font-line-height-large: 1.2;
 
-  --theme-font-size-large: 3.6rem;
-  --theme-font-weight-large: 400;
-  --theme-font-line-height-large: 1.2;
+	--theme-font-size-medium: 2.4rem;
+	--theme-font-weight-medium: 400;
+	--theme-font-line-height-medium: 1.8;
 
-  --theme-font-size-medium: 2.4rem;
-  --theme-font-weight-medium: 400;
-  --theme-font-line-height-medium: 1.8;
+	--theme-font-size-small: 2rem;
 
-  --theme-font-size-small: 2rem;
+	/* Border Radius */
+	--theme-border-radius-default: 0.5rem;
 
-  /* Border Radius */
-  --theme-border-radius-default: 0.5rem;
+	h1 {
+		font-size: var(--theme-font-size-xlarge);
+		font-weight: var(--theme-font-weight-xlarge);
+		line-height: var(--theme-font-line-height-xlarge);
+	}
 
+	h2 {
+		font-size: var(--theme-font-size-large);
+		font-weight: var(--theme-font-weight-large);
+		line-height: var(--theme-font-line-height-large);
+	}
 
-  h1 {
-    font-size: var(--theme-font-size-xlarge);
-    font-weight: var(--theme-font-weight-xlarge);
-    line-height: var(--theme-font-line-height-xlarge);
-  }
+	h3 {
+		font-size: var(--theme-font-size-medium);
+		font-weight: var(--theme-font-weight-medium);
+		line-height: var(--theme-font-line-height-medium);
+	}
 
-  h2 {
-    font-size: var(--theme-font-size-large);
-    font-weight: var(--theme-font-weight-large);
-    line-height: var(--theme-font-line-height-large);
-  }
+	h4 {
+		font-size: var(--theme-font-size-small);
+		font-weight: var(--theme-font-weight-medium);
+		line-height: var(--theme-font-line-height-medium);
+	}
 
-  h3 {
-    font-size: var(--theme-font-size-medium);
-    font-weight: var(--theme-font-weight-medium);
-    line-height: var(--theme-font-line-height-medium);
-  }
+	li,
+	p,
+	a {
+		font-size: var(--theme-font-size-default);
+		font-weight: var(--theme-font-weight-default);
+		letter-spacing: var(--theme-font-leter-spacing-default);
+		line-height: var(--theme-font-line-height-default);
+	}
 
-  h4 {
-    font-size: var(--theme-font-size-small);
-    font-weight: var(--theme-font-weight-medium);
-    line-height: var(--theme-font-line-height-medium);
-  }
+	blockquote {
+		font-style: italic;
+	}
 
-  li,
-  p,
-  a {
-    font-size: var(--theme-font-size-default);
-    font-weight: var(--theme-font-weight-default);
-    letter-spacing: var(--theme-font-leter-spacing-default);
-    line-height: var(--theme-font-line-height-default);
-  }
+	blockquote {
+		padding: 1rem 2.4rem 1rem 4.4rem;
+		position: relative;
+	}
 
-  blockquote {
-    font-style: italic;
-  }
+	blockquote::before {
+		font-family: Arial;
+		content: '\201C';
+		font-size: 8rem;
+		position: absolute;
+		left: 10px;
+		top: -10px;
+	}
 
-  blockquote {
-    padding: 1rem 2.4rem 1rem 4.4rem;
-    position: relative;
-  }
+	blockquote::after {
+		content: '';
+	}
 
-  blockquote::before{
-    font-family:Arial;
-    content: "\201C";
-    font-size: 8rem;
-    position: absolute;
-    left: 10px;
-    top:-10px;
-  }
+	a:hover,
+	a:active {
+		color: var(--theme-font-active-link);
+		box-shadow: 0 2px 0 0 var(--theme-font-active-link);
+	}
 
-  blockquote::after{
-    content: '';
-  }
-
-  a:hover,
-  a:active {
-    color: var(--theme-font-active-link);
-    box-shadow: 0 2px 0 0 var(--theme-font-active-link);
-  }
-
-  .b-border {
-    border-bottom: 0.1rem solid rgba(74, 68, 99, 0.288);
-  }
+	.b-border {
+		border-bottom: 0.1rem solid rgba(74, 68, 99, 0.288);
+	}
 }
 
 .loading {
-    display: flex;
-    justify-content: center;
-  }
+	display: flex;
+	justify-content: center;
+}
 
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 3px dotted #FFF;
-  border-style: solid solid dotted dotted;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  box-sizing: border-box;
-  animation: rotation 2s linear infinite;
+	width: 48px;
+	height: 48px;
+	border: 3px dotted #fff;
+	border-style: solid solid dotted dotted;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	animation: rotation 2s linear infinite;
 }
 .loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  border: 3px dotted #FF3D00;
-  border-style: solid solid dotted;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  animation: rotationBack 1s linear infinite;
-  transform-origin: center center;
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border: 3px dotted #ff3d00;
+	border-style: solid solid dotted;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	animation: rotationBack 1s linear infinite;
+	transform-origin: center center;
 }
 
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes rotationBack {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
 }
