@@ -93,6 +93,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		border: unset;
+		background-color: unset;
 	}
 
 	.arrow.left {
