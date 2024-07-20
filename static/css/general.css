@@ -84,15 +84,15 @@ ul {
 	list-style: none;
 }
 
-button,
-input,
-textarea,
+.pico button,
+.pico input,
+.pico textarea,
 select {
 	font: inherit;
 }
 
 /* Remove default button style */
-button {
+.pico button {
 	cursor: pointer;
 }
 
@@ -195,14 +195,36 @@ h4 {
 li,
 label,
 p,
-input,
-textarea,
-button,
+.pico input,
+.pico textarea,
+.pico button,
 a {
 	font-size: var(--theme-font-size-default);
 	font-weight: var(--theme-font-weight-default);
 	letter-spacing: var(--theme-font-leter-spacing-default);
 	line-height: var(--theme-font-line-height-default);
+}
+
+.pico input,
+.pico textarea {
+	-moz-border-radius: var(--theme-border-radius-default);
+	-webkit-border-radius: var(--theme-border-radius-default);
+	border-radius: var(--theme-border-radius-default);
+	padding: 1.6rem;
+}
+
+.pico input:not([type=checkbox],[type=radio],[type=range],[type=file]) {
+	padding: 1.6rem;
+	height: unset;
+}
+
+.pico [type=submit],
+.pico button {
+	font-size: var(--theme-font-size-default);
+	padding: 1.6rem;
+	-moz-border-radius: var(--theme-border-radius-default);
+	-webkit-border-radius: var(--theme-border-radius-default);
+	border-radius: var(--theme-border-radius-default);
 }
 
 blockquote {
@@ -269,58 +291,6 @@ a:active {
 	border-radius: 50%;
 	animation: rotationBack 1s linear infinite;
 	transform-origin: center center;
-}
-
-input,
-textarea {
-	padding: 0.8rem;
-	border-radius: var(--theme-border-radius-default);
-	border: 0.4rem solid var(--theme-background-default);
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	margin: 1px;
-}
-
-input:hover,
-textarea:hover {
-	outline-color: var(--color-primary);
-	border: 0.4rem solid var(--color-primary);
-}
-
-input:focus,
-textarea:focus {
-	outline-color: var(--color-primary);
-	border: 0.4rem solid var(--color-primary);
-}
-
-button {
-	padding: 0.8rem;
-	-moz-border-radius: var(--theme-border-radius-default);
-	-webkit-border-radius: var(--theme-border-radius-default);
-	border-radius: var(--theme-border-radius-default);
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
-button:disabled {
-    background-color: light-dark(rgba(239, 239, 239, 0.164), rgba(19, 1, 1, 0.567));
-    color: light-dark(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.695));
-    border-color: light-dark(rgba(118, 118, 118, 0.74),rgba(195, 195, 195, 0.711));
-    cursor: not-allowed;
-  }
-
-.btn-primary {
-	background-color: var(--color-primary);
-	color: #fff;
-	border: none;
-}
-
-.btn-primary:hover {
-	background-color: var(--color-primary-hover);
 }
 
 @keyframes rotation {

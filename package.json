@@ -41,6 +41,7 @@
 		"marked": "^13.0.2",
 		"pocketbase": "^0.21.3",
 		"svelte-ionicons": "^1.1.2",
+		"sveltekit-superforms": "^2.16.1",
 		"zod": "^3.23.8"
 	}
 }

@@ -1,33 +1,27 @@
-import { z } from 'zod';
+import type { Actions, PageServerLoad } from './$types.js';
 import { type RequestEvent, type ActionResult, type ActionFailure, fail } from '@sveltejs/kit';
+import { superValidate, message } from 'sveltekit-superforms';
+import { zod } from 'sveltekit-superforms/adapters';
 import { sendMessage } from '$lib/services/pb';
+import { ContactSchema } from '$routes/contact/schema';
 
-const ContactSchema = z.object({
-	name: z.string().trim().min(2, 'Name must be at least 2 characters'),
-	email: z.string().trim().email().min(5, 'Email must be at least 5 characters'),
-	message: z.string().trim().min(10, 'Message must be at least 10 characters')
-});
+export const load: PageServerLoad = async () => {
+	return { form: await superValidate(zod(ContactSchema)) };
+}
 
-export const actions = {
-	email: async (event: RequestEvent) => {
-		const data = await event.request.formData();
-		const name = data.get('name') as string;
-		const email = data.get('email') as string;
-		const message = data.get('message') as string;
+export const actions: Actions = {
+	email: async ({ request }: RequestEvent) => {
 
-		const result = ContactSchema.safeParse({ name, email, message });
-		if (!result.success) {
-			const errors = result.error.flatten().fieldErrors;
-			return fail(400, { data: Object.fromEntries(data), errors });
+		const form = await superValidate(request, zod(ContactSchema));
+
+		if (!form.valid) {
+			return fail(400, { form });
 		}
 
 		try {
-			await sendMessage(name, email, message);
-			return {
-				type: 'success',
-				status: 200,
-				data: { done: 'Message Sent!' }
-			};
+			const { name, email, content } = form.data;
+			await sendMessage(name, email, content);
+			return message(form, 'Message sent successfully');
 		} catch (e) {
 			let message: string = '';
 			if (e instanceof Error) {
@@ -35,9 +29,7 @@ export const actions = {
 			} else {
 				message = 'An error occurred while sending the message';
 			}
-			return fail(500, {
-				errors: { message }
-			});
+			return fail(500, { form, message });
 		}
 	}
 };
