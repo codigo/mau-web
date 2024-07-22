@@ -213,12 +213,12 @@ a {
 	padding: 1.6rem;
 }
 
-.pico input:not([type=checkbox],[type=radio],[type=range],[type=file]) {
+.pico input:not([type='checkbox'], [type='radio'], [type='range'], [type='file']) {
 	padding: 1.6rem;
 	height: unset;
 }
 
-.pico [type=submit],
+.pico [type='submit'],
 .pico button {
 	font-size: var(--theme-font-size-default);
 	padding: 1.6rem;

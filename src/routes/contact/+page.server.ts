@@ -1,21 +1,30 @@
-import type { Actions, PageServerLoad } from './$types.js';
-import { type RequestEvent, type ActionResult, type ActionFailure, fail } from '@sveltejs/kit';
+import { type RequestEvent, fail } from '@sveltejs/kit';
+import { SECRET_CF_TURNSTILE_KEY } from '$env/static/private';
 import { superValidate, message } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { sendMessage } from '$lib/services/pb';
 import { ContactSchema } from '$routes/contact/schema';
 
+import type { Actions, PageServerLoad } from './$types.js';
+
 export const load: PageServerLoad = async () => {
 	return { form: await superValidate(zod(ContactSchema)) };
-}
+};
 
 export const actions: Actions = {
 	email: async ({ request }: RequestEvent) => {
-
 		const form = await superValidate(request, zod(ContactSchema));
 
 		if (!form.valid) {
 			return fail(400, { form });
+		}
+
+		const token = form.data['cf-turnstile-response'];
+
+		const { success, error } = await validateToken(token, SECRET_CF_TURNSTILE_KEY);
+
+		if (!success) {
+			return fail(400, { form, message: error });
 		}
 
 		try {
@@ -33,3 +42,33 @@ export const actions: Actions = {
 		}
 	}
 };
+interface TokenValidateResponse {
+	'error-codes': string[];
+	success: boolean;
+	action: string;
+	cdata: string;
+}
+
+async function validateToken(token: string, secret: string) {
+	console.log(token);
+	const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json'
+		},
+		body: JSON.stringify({
+			response: token,
+			secret: secret
+		})
+	});
+
+	const data: TokenValidateResponse = await response.json();
+
+	return {
+		// Return the status
+		success: data.success,
+
+		// Return the first error if it exists
+		error: data['error-codes']?.length ? data['error-codes'][0] : null
+	};
+}
