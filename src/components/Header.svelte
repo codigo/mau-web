@@ -4,7 +4,7 @@
 		home: { path: '/', name: 'Home' },
 		about: { path: '/about-me', name: 'About me' },
 		journal: { path: '/journal', name: 'Journal' },
-		contact: { path: '/contact-me', name: 'Contact me' }
+		contact: { path: '/contact', name: 'Contact me' }
 	};
 
 	let path: string;
