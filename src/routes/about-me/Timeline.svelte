@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { preloadData, pushState, goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	interface TimelineEntry {
 		id: string;
