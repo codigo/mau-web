@@ -30,7 +30,6 @@
 		</span>
 		<p class="go-back">Go back <a href="/">Home</a></p>
 	</div>
-
 {:else}
 	<form class="pico contact-form" method="POST" action="?/email" use:enhance>
 		<div class="form-group">
