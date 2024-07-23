@@ -17,7 +17,19 @@
 </script>
 
 {#if $message}
-	<h3>{$message}</h3>
+	<div class="success-message">
+		<span class="success-message-internal">
+			<h2>{$message}</h2>
+			<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
+				><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path
+					class="checkmark__check"
+					fill="none"
+					d="M14.1 27.2l7.1 7.2 16.7-16.8"
+				/></svg
+			>
+		</span>
+		<p class="go-back">Go back <a href="/">Home</a></p>
+	</div>
 {:else}
 	<form class="pico contact-form" method="POST" action="?/email" use:enhance>
 		<div class="form-group">
@@ -89,6 +101,77 @@
 {/if}
 
 <style>
+	.success-message {
+		display: grid;
+		gap: 1.6rem;
+		place-items: center;
+		place-content: center;
+		height: 100%;
+	}
+
+	.success-message-internal {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 1rem;
+		place-items: center;
+	}
+
+	.checkmark {
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		display: block;
+		stroke-width: 2;
+		stroke: #fff;
+		stroke-miterlimit: 10;
+		box-shadow: inset 0px 0px 0px #7ac142;
+		animation:
+			fill 0.4s ease-in-out 0.4s forwards,
+			scale 0.3s ease-in-out 0.9s both;
+	}
+
+	.checkmark__circle {
+		stroke-dasharray: 166;
+		stroke-dashoffset: 166;
+		stroke-width: 2;
+		stroke-miterlimit: 10;
+		stroke: #7ac142;
+		fill: none;
+		animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+	}
+
+	.checkmark__check {
+		transform-origin: 50% 50%;
+		stroke-dasharray: 48;
+		stroke-dashoffset: 48;
+		animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+	}
+
+	@keyframes stroke {
+		100% {
+			stroke-dashoffset: 0;
+		}
+	}
+	@keyframes scale {
+		0%,
+		100% {
+			transform: none;
+		}
+		50% {
+			transform: scale3d(1.1, 1.1, 1);
+		}
+	}
+	@keyframes fill {
+		100% {
+			box-shadow: inset 0px 0px 0px 30px #7ac142;
+		}
+	}
+
+	.go-back {
+		justify-self: center;
+		align-self: start;
+	}
+
 	.contact-form {
 		display: grid;
 		grid-template-columns: 1fr;
