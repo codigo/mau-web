@@ -5,6 +5,8 @@ interface ResultData {
 	title: string;
 	content: string;
 	slug: string;
+	next?: string;
+	previous?: string;
 }
 
 export async function load({ params }: { params: { slug: string } }): Promise<ResultData> {
@@ -15,6 +17,8 @@ export async function load({ params }: { params: { slug: string } }): Promise<Re
 	return {
 		title: experiences[slug].title,
 		content: experiences[slug].content,
-		slug
+		slug,
+		next: experiences[slug].next,
+		previous: experiences[slug].previous
 	};
 }
