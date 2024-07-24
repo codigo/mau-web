@@ -80,10 +80,10 @@ export const getExperiences = async (slug: string): Promise<ExperienceData> => {
 			title: experiences[slug].title,
 			content: await parseMd(experiences[slug].content),
 			next: next ? next : undefined,
-			previous: previous ? previous : undefined,
+			previous: previous ? previous : undefined
 		}
 	};
-}
+};
 
 const parseMd = async (filepath: string): Promise<string> => {
 	const resolvedFpath = resolve(join(dirname(fileURLToPath(import.meta.url)), filepath));

@@ -2,7 +2,25 @@
 
 **Mar 2019 - Present**
 
-**Technologies Used:** Node.js, AWS, RDS, WebSocket, P2P (HolePunch), React.js, Svelte, Redis, Kafka, Elasticsearch, Machine Learning, LLM, APIs, GraphQL, CI/CD, EC2, React Native, SQL
+**Technologies Used:**
+
+- Node.js
+- AWS
+- RDS
+- WebSocket
+- P2P (HolePunch)
+- React.js
+- Svelte
+- Redis
+- Kafka
+- Elasticsearch
+- LLM
+- Restful APIs
+- GraphQL
+- CI/CD
+- EC2
+- React Native
+- SQL
 
 As the owner of Codigo Consulting, I have spearheaded numerous projects, providing software architecture and platform architecture solutions to various clients. I have utilized many technologies, including Node.js, Typescript, AWS services, WebSocket, and React.js, to deliver high-quality solutions. My work often involves designing and implementing systems using AWS services, building continuous integration and delivery pipelines, and developing scalable and maintainable software architectures.
 
