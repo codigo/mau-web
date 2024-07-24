@@ -14,7 +14,11 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest"
 	},
+	"pre-commit": [
+		"format"
+	],
 	"devDependencies": {
+		"@fastify/pre-commit": "^2.1.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/enhanced-img": "^0.3.0",
