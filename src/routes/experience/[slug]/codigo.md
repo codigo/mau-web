@@ -1,6 +1,6 @@
 **Company Owner**
 
-**Mar 2019 - Present**
+**March 2019 - Present**
 
 **Technologies Used:**
 
@@ -11,6 +11,7 @@
 - P2P (HolePunch)
 - React.js
 - Svelte
+- CSS
 - Redis
 - Kafka
 - Elasticsearch

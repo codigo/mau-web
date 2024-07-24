@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronBack, ChevronForward } from 'svelte-ionicons'
+	import { ChevronBack, ChevronForward } from 'svelte-ionicons';
 	import { marked } from 'marked';
 	import { goto } from '$app/navigation';
 
