@@ -12,25 +12,49 @@
 
 		goto(slug);
 	};
-
 </script>
 
 <div class="markdown-wrapper">
 	<h1>{title}</h1>
 	{@html marked(content)}
 	<div class="navigation-links pico">
-		<button on:click={() => handleClick(previous)} disabled={!Boolean(previous)} class="goto outline contrast" role="link">
+		<button
+			on:click={() => handleClick(previous)}
+			disabled={!Boolean(previous)}
+			class="goto outline contrast"
+			role="link"
+		>
 			<ChevronBack />
 		</button>
-		<button on:click={() => handleClick(next)} disabled={!Boolean(next)} class="goto next outline contrast" role="link">
+		<button
+			on:click={() => handleClick(next)}
+			disabled={!Boolean(next)}
+			class="goto next outline contrast"
+			role="link"
+		>
 			<ChevronForward />
 		</button>
 	</div>
 </div>
 
 <style>
-	@import '$lib/assets/css/md-styles.css';
+	.markdown-wrapper {
+		display: grid;
+		row-gap: 2rem;
+	}
 
+	:global(.markdown-wrapper ul) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		justify-content: flex-start;
+	}
+
+	:global(.markdown-wrapper ul li) {
+		padding: 1rem;
+		background-color: var(--theme-card-background-default);
+		border-radius: var(--theme-border-radius-default);
+	}
 	.navigation-links {
 		padding-top: 3.2rem;
 		display: grid;
@@ -48,5 +72,4 @@
 	.next {
 		grid-column: -1;
 	}
-
 </style>
