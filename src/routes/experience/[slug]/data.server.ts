@@ -19,10 +19,6 @@ const experiences: ExperienceData = {
 		title: 'Codigo',
 		content: './codigo.md'
 	},
-	freelance: {
-		title: 'Codigo',
-		content: './freelance.md'
-	},
 	coursedog: {
 		title: 'Coursedog',
 		content: './coursedog.md'
