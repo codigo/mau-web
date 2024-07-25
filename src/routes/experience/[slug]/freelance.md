@@ -1,4 +1,16 @@
-**Technologies Used:** AWS, Redis, Amazon S3, Google charts, Heroku, Google Maps.
+**Technologies Used:**
+
+- AWS
+- Redis
+- Amazon S3
+- Google charts
+- Heroku
+- Google Maps
+- Chef
+- Docker
+- Caddy
+- Nginx
+- CI/CD (GitHub Actions)
 
 As a freelance software engineer, I worked on a variety of projects that allowed me to apply my skills in development, problem-solving, and project management. One of the key projects was Squadrapp, where I created an application to facilitate soccer game setups which involved using Amazon S3 for profile image uploads, setting up Redis for background email tasks, and deploying the application to Heroku. I also utilized CoffeeScript and AJAX for dynamic page updates.
 

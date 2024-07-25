@@ -2,7 +2,15 @@
 
 **May 2021 - Oct 2021**
 
-**Technologies Used:** Webpack, Microservices, AWS, JavaScript, DevOps, Node.js, React.js, Amazon S3, SQL
+**Technologies Used:**
+
+- Webpack
+- Microservices
+- AWS
+- JavaScript
+- CI/CD
+- Node.js
+- React.js
 
 As a Software Consultant at Mobilelive, I guided a client in adopting a micro front-end architecture to address organizational challenges and improve the developer experience. We developed a specialized library called 'bolsterJS' (https://github.com/mobilelive-inc/bolsterjs), which removed boilerplate code for setting up micro-frontends, enhancing development efficiency.
 

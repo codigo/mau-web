@@ -2,7 +2,23 @@
 
 **May 2013 - Jul 2015**
 
-**Technologies Used:** Webpack, Microservices, RabbitMQ, Amazon S3, Elasticsearch, SQL
+**Technologies Used:**
+
+- Microservices
+- Amazon S3
+- Elasticsearch
+- SQL
+- MongoDB
+- Restify
+- Node.js
+- Redis
+- Apple Notification Service
+- Twilio
+- ZeroMQ
+- Capistrano
+- Nginx
+- Sockets
+- Amazon SES
 
 I led the design, planning, execution, and deployment of various microservices. I integrated Twilio API for two-factor authentication, using MongoDB for data storage and Redis for caching user timelines. We used ZeroMQ and REST for inter-service communication, ensuring efficient scalability.
 
