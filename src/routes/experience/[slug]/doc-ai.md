@@ -2,7 +2,18 @@
 
 **Apr 2022 - Mar 2023**
 
-**Technologies Used:** TypeScript, React.js, Material-UI, Storybook, Jest, react-query, React Context
+**Technologies Used:**
+
+- TypeScript
+- React.js
+- Material-UI
+- Storybook
+- Jest
+- React-Query
+- React Context API
+- GitHub Apps
+- CI/CD (GitHub Actions)
+- Docker
 
 At doc.ai, which later became part of Sharecare, my primary focus was on developing a distributed health study application. This application was built using React, Material-UI as a design system, Storybook for component testing, and Jest for functionality testing, ensuring the software's robustness and reliability.
 

@@ -2,7 +2,15 @@
 
 **Oct 2021 - Mar 2022**
 
-**Technologies Used:** JavaScript, Node.js, DevOps, Amazon S3, SQL
+**Technologies Used:**
+
+- JavaScript
+- Node.js,
+- TerraForm
+- Amazon S3
+- SQL
+- CloudFormation
+- CI/CD (GitHub Actions)
 
 At Diligent, my primary responsibilities were maintaining and enhancing existing JavaScript code. Tasked with optimizing the performance and reliability of several applications, I leveraged my deep understanding of JavaScript and Node.js to identify and fix bugs, improve code quality, and implement new features where required.
 

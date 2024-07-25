@@ -2,7 +2,18 @@
 
 **Oct 2020 - Apr 2021**
 
-**Technologies Used:** Webpack, Microservices, TypeScript, JavaScript, Kubernetes, DevOps, Docker, React.js, Amazon S3, SQL
+**Technologies Used:**
+
+- Webpack
+- Microservices
+- TypeScript
+- JavaScript
+- Kubernetes
+- CI/CD (GitHub Actions)
+- Docker
+- React.js
+- Amazon S3
+- SQL
 
 At CTO.ai, I focused on fostering a collaborative environment for developers by designing, maintaining, and creating APIs. We leveraged GitHub API to provide developers with DevOps Research and Assessment (DORA) metrics, streamlining the development process and improving productivity.
 

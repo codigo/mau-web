@@ -19,10 +19,6 @@ const experiences: ExperienceData = {
 		title: 'Codigo',
 		content: './codigo.md'
 	},
-	freelance: {
-		title: 'Codigo',
-		content: './freelance.md'
-	},
 	coursedog: {
 		title: 'Coursedog',
 		content: './coursedog.md'
@@ -59,6 +55,10 @@ const experiences: ExperienceData = {
 	selfie: {
 		title: 'Selfie INC',
 		content: './selfie.md'
+	},
+	freelance: {
+		title: 'Codigo',
+		content: './freelance.md'
 	}
 };
 

@@ -2,7 +2,18 @@
 
 **Jul 2015 - Jun 2018**
 
-**Technologies Used:** Webpack, Microservices, RabbitMQ, AWS RDS, Amazon S3, Elasticsearch, SQL
+**Technologies Used:**
+
+- Microservices
+- RabbitMQ
+- AWS RDS
+- Amazon S3
+- Elasticsearch
+- SQL
+- MongoDB
+- Redis
+- React.js
+- CI/CD (GitHub Actions)
 
 I was part of a team that designed and deployed microservices to retrieve and synchronize user data from various platforms and devices. Integrated Elasticsearch as the primary search engine and implemented metrics instrumentation throughout the stack.
 

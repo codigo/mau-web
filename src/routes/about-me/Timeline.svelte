@@ -42,8 +42,7 @@
 			id: '2021',
 			company: 'Mobilelive INC',
 			description: `As a Consultant Senior Engineer, I developed an abstraction layer with JavaScript
-          called <a href="https://github.com/mobilelive-inc/bolsterjs">bolsterjs</a> for
-          micro frontend experiences and led the adoption of micro frontends.`,
+          called bolsterjs for micro frontend experiences and led the adoption of micro frontends.`,
 			link: '/experience/mobilelive'
 		},
 		{
@@ -183,7 +182,7 @@
 		right: 17rem;
 		width: 0.2rem;
 		height: calc(100% + 3.6rem);
-		background: linear-gradient(to bottom, #0f1218 0%, #333333 3%, #3b3b3b 80%, #0f1218 100%);
+		background: linear-gradient(to bottom, #0f1218 0%, #2727278a 3%, #272727d0 80%, #0f1218 100%);
 	}
 
 	@media screen and (min-width: 65em) {
@@ -207,22 +206,17 @@
 		position: absolute;
 		top: 1rem;
 		padding: 0.4rem 1.2rem;
-		background: #333333;
+		background: #3333338a;
 		margin-left: 0.2rem;
 		border-radius: 0.5rem;
-		box-shadow:
-			inset 8px 16px 25px -10px rgba(255, 255, 255, 0.1),
-			7px 14px 25px -20px rgba(255, 255, 255, 0.1);
-		/* transform: translateX(-50%); */
+		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 	}
 
 	@media screen and (min-width: 65em) {
 		.timeline-id {
 			left: 50%;
 			transform: translateX(-50%);
-			box-shadow:
-				inset 8px 16px 25px -10px rgba(255, 255, 255, 0.1),
-				7px 14px 25px -20px rgba(255, 255, 255, 0.1);
+			box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 		}
 	}
 
@@ -231,11 +225,9 @@
 		margin-left: 22rem;
 
 		padding: 1rem;
-		background: #333333;
+		background: #3333336a;
 		border-radius: 0.5rem;
-		box-shadow:
-			inset 8px 16px 25px -10px rgba(255, 255, 255, 0.1),
-			7px 14px 25px -20px rgba(255, 255, 255, 0.1);
+		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 
 		transition: all 0.4s ease-out;
 	}
@@ -245,9 +237,8 @@
 			padding: 2.4rem;
 			margin-left: 0;
 			width: calc(50% - 12.8rem);
-			box-shadow:
-				inset 8px 16px 25px -10px rgba(255, 255, 255, 0.1),
-				7px 14px 25px -20px rgba(255, 255, 255, 0.1);
+			border-radius: 0.5rem;
+			box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 			cursor: pointer;
 		}
 	}
@@ -259,9 +250,7 @@
 	@media screen and (min-width: 65em) {
 		.timeline-content--flipped {
 			float: right;
-			box-shadow:
-				inset 8px 16px 25px -10px rgba(255, 255, 255, 0.1),
-				7px 14px 25px -20px rgba(255, 255, 255, 0.1);
+			box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 		}
 	}
 
