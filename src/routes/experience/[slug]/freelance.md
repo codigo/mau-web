@@ -1,3 +1,7 @@
+**Senior Software Engineer**
+
+**\* - May 2013**
+
 **Technologies Used:**
 
 - AWS
@@ -11,6 +15,7 @@
 - Caddy
 - Nginx
 - CI/CD (GitHub Actions)
+- Linux
 
 As a freelance software engineer, I worked on a variety of projects that allowed me to apply my skills in development, problem-solving, and project management. One of the key projects was Squadrapp, where I created an application to facilitate soccer game setups which involved using Amazon S3 for profile image uploads, setting up Redis for background email tasks, and deploying the application to Heroku. I also utilized CoffeeScript and AJAX for dynamic page updates.
 
@@ -23,3 +28,5 @@ One of my notable freelance projects was for the Coca-Cola Documentation Project
 Lastly, at Joyeria Caribe, I customized Satchmo product and discount classes, implemented multilanguage capabilities, and integrated Django Filebrowser with TinyMCE for rich text editing. I also automated SQL migrations with South, used sorl-thumbnail for image handling, and imported an extensive product database using Python scripts and SQLite.
 
 My freelance work has allowed me to develop a diverse skill set and gain experience in various technologies, enhancing my ability to deliver high-quality software solutions.
+
+Besides what's already listed my previous experience includes systems and network administration, security testing of applications and even computer maintenance, troubleshooting and repairing.
