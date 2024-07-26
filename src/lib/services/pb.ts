@@ -1,5 +1,6 @@
 import { POCKETBASE_URL } from '$env/static/private';
-import PocketBase from 'pocketbase';
+import PocketBase, { type ListResult } from 'pocketbase';
+import { type Post } from '$lib/types';
 
 class PocketBaseSingleton {
 	private static instance: PocketBase;
@@ -24,4 +25,20 @@ export const sendMessage = async (name: string, email: string, message: string) 
 		email,
 		message
 	});
+};
+
+export const getAllPosts = (): Promise<ListResult<Post>> => {
+	return pb.collection('posts').getList(1, 50, { sort: '-created' });
+};
+
+export const getPostBySlug = async (slug: string) => {
+	const resultList = await pb.collection('posts').getList(1, 10, {
+		filter: `slug = ${slug}`
+	});
+
+	if (resultList.totalItems === 0) {
+		return null;
+	}
+
+	return await pb.collection('posts').getOne<Post>(resultList.items[0].id);
 };
