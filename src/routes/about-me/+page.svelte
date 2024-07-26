@@ -31,11 +31,12 @@
 		<h3>I've honed a diverse skill set over the years ...</h3>
 		<ul class="skills-competences-list">
 			<li>
-				<strong>Systems Design:</strong> Specialist in designing scalable, maintainable systems.
+				<strong>Frontend and Backend Development:</strong> Proficient in ReactJS, SvelteKit, NodeJS,
+				Fastify, micro frontends and modular composition. And I'm always eager to learn new tools and
+				technologies, like Rust.
 			</li>
 			<li>
-				<strong>Frontend and Backend Development:</strong> Proficient in ReactJS, SvelteKit, NodeJS,
-				Fastify, micro frontends and modular composition.
+				<strong>Systems Design:</strong> Specialist in designing scalable, maintainable systems.
 			</li>
 			<li>
 				<strong>Databases:</strong> Experience with NoSQL (e.g. Redis, MongoDB, Elasticsearch) and SQL
@@ -53,10 +54,6 @@
 				<strong>AI Systems:</strong> Knowledgeable in using OpenAI API, Ollama, and other AI systems
 				to create personal projects, enhancing my capability to integrate advanced AI functionalities
 				into applications.
-			</li>
-			<li>
-				<strong>Rust:</strong> Actively learning Rust to expand my expertise in systems programming and
-				improve my ability to write high-performance, safe code.
 			</li>
 			<li>
 				<strong>Architectural Versatility:</strong> Versed in microservices and modular monoliths, allowing
@@ -128,7 +125,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3.2rem;
-		justify-content: space-evenly;
+		align-items: center;
 	}
 
 	.skills-competences-outro {

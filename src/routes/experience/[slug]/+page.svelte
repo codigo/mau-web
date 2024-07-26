@@ -40,7 +40,8 @@
 <style>
 	.markdown-wrapper {
 		display: grid;
-		row-gap: 2rem;
+		row-gap: 3.2rem;
+		align-items: center;
 	}
 
 	:global(.markdown-wrapper ul) {

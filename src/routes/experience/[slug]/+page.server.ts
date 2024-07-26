@@ -1,5 +1,4 @@
-import { type ExperienceData, getExperiences } from './data.server';
-import { type ErrorStatus } from '$lib/types';
+import { getExperiences } from './data.server';
 
 interface ResultData {
 	title: string;
