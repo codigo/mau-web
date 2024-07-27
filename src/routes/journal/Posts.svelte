@@ -12,7 +12,7 @@
 	<ul class="posts-list">
 		{#each posts as post, idx}
 			<li class="post-item">
-				<article>
+				<article class="article">
 					<button
 						class="article-wrapper"
 						role="link"
@@ -42,30 +42,35 @@
 
 	.posts-list {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-auto-flow: column;
 		column-gap: 2rem;
-		grid-auto-rows: 1fr;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.post-item {
-		align-self: stretch;
-	}
-
-	.article-wrapper {
-		display: flex;
-		flex-flow: column wrap;
-		row-gap: 1.6rem;
-		padding: 2.4rem;
-
 		background: var(--theme-card-background-default);
 		border-radius: var(--theme-border-radius-default);
 		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
-		border: unset;
-		text-align: start;
 		transition: all 0.4s ease-out;
 	}
 
-	.article-wrapper:hover {
+	.article {
+		height: 100%;
+	}
+
+	.article-wrapper {
+		display: grid;
+		padding: 2.4rem;
+		row-gap: 1.6rem;
+		height: 100%;
+
+		border: unset;
+		text-align: start;
+		background-color: unset;
+		align-content: space-between;
+	}
+
+	.post-item:hover {
 		transform: scale(1.02);
 		transition: 0.3s;
 	}
