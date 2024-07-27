@@ -1,15 +1,22 @@
 import { fail } from '@sveltejs/kit';
-import { getAllPosts } from '$lib/services/pb';
+import { getPostBySlug } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 
-export async function load({ setHeaders }) {
+export async function load({ params, setHeaders }) {
 	setHeaders({
 		'Cache-Control': 'max-age=3600, s-max-age=1'
 	});
 
+	const { slug } = params;
+
 	try {
-		const results = await getAllPosts();
-		return results;
+		const post = await getPostBySlug(slug);
+
+		if (!post) {
+			return fail(404, { message: `Post with slug ${slug} not found` });
+		}
+
+		return post;
 	} catch (e) {
 		let message: string = '';
 		let status = 500;

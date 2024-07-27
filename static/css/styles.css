@@ -14,3 +14,15 @@
 		opacity: 100;
 	}
 }
+
+.post-list {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	list-style: outside;
+	padding-left: 1.6rem;
+}
+
+.post-list-item {
+	padding-left: 1.2rem;
+}

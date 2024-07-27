@@ -32,13 +32,11 @@ export const getAllPosts = (): Promise<ListResult<Post>> => {
 };
 
 export const getPostBySlug = async (slug: string) => {
-	const resultList = await pb.collection('posts').getList(1, 10, {
-		filter: `slug = ${slug}`
-	});
+	const result = await pb.collection('posts').getFirstListItem(`slug="${slug}"`);
 
-	if (resultList.totalItems === 0) {
+	if (!result) {
 		return null;
 	}
 
-	return await pb.collection('posts').getOne<Post>(resultList.items[0].id);
+	return await pb.collection('posts').getOne<Post>(result.id);
 };

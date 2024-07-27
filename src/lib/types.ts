@@ -20,4 +20,5 @@ export interface Post {
 	tags: string;
 	summary: string;
 	img_url: string;
+	img_url_alt: string;
 }
