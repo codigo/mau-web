@@ -15,7 +15,8 @@
 	}
 }
 
-.post-list {
+article.post-wrapper > ul,
+article.post-wrapper > ol {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -23,6 +24,14 @@
 	padding-left: 1.6rem;
 }
 
-.post-list-item {
+article.post-wrapper > ul > li {
+	padding-left: 1.2rem;
+}
+
+article.post-wrapper > ol {
+	list-style: decimal;
+}
+
+article.post-wrapper > ol > li {
 	padding-left: 1.2rem;
 }

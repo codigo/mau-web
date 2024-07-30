@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { type Post } from '$lib/types';
+	import Prism from 'prismjs';
+	import { onMount } from 'svelte';
 	export let data: Post;
+
+	onMount(() => {
+		Prism.highlightAll();
+	});
 </script>
 
 <article class="post-wrapper">
 	<h1 class="post-title">{data.title}</h1>
-	<img class="post-image" alt={data.img_url_alt} src={`${data.img_url}&w=800`} />
+	<img class="post-image" alt={data.img_url_alt} src={`${data.img_url}&w=1200`} />
 	{@html data.content}
 </article>
 

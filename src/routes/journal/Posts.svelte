@@ -19,7 +19,7 @@
 						tabindex={idx}
 						on:click={() => onClick(`/journal/${post.slug}`)}
 					>
-						<img class="post-image" alt={post.img_url_alt} src={`${post.img_url}&w=800`} />
+						<img class="post-image" alt={post.img_url_alt} src={`${post.img_url}&w=400`} />
 						<h3>{post.title}</h3>
 						<ul class="post-tags">
 							{#each post.tags.split(',') as tag}
