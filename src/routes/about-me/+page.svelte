@@ -67,10 +67,11 @@
 			<p>
 				Outside my work life, I firmly believe in the ethos of lifelong learning. My GitHub
 				portfolio <a href="https://github.com/maumercado">https://github.com/maumercado</a> provides
-				a glimpse of my wide-ranging skills and interests, featuring projects like a React Native -
-				Redux app with Expo, my blog
-				<a href="https://codigos.notion.site">https://codigos.notion.site</a>, and a Fastify plugin
-				for the Jaeger distributed tracing system​.
+				a glimpse of my wide-ranging skills and interests, featuring projects like a React Native
+				app with Expo, my blog
+				<a href="https://codigos.notion.site">https://codigos.notion.site</a>, and two Fastify
+				plugins, one for the Jaeger distributed tracing system​, and the second a plugin to inject
+				secrets store in hashicorp vault into the service's environment at boot.
 			</p>
 			<p>
 				I'm also a certified kitesurf instructor and love paddle boarding and surfing—the ocean is
