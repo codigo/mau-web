@@ -110,7 +110,7 @@
 				<li class="timeline-entry">
 					<p class="timeline-id">{entry.id}</p>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<div
+					<button
 						class="timeline-content"
 						role="link"
 						tabindex={index}
@@ -123,7 +123,7 @@
 							{entry.description}
 						</p>
 						<!--  end.timeline-text -->
-					</div>
+					</button>
 					<!--  end.timeline-content -->
 				</li>
 				<!--  end.timeline-entry -->
@@ -131,7 +131,7 @@
 				<li class="timeline-entry">
 					<p class="timeline-id">{entry.id}</p>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<div
+					<button
 						class="timeline-content timeline-content--flipped"
 						role="link"
 						tabindex={index}
@@ -144,7 +144,7 @@
 							{entry.description}
 						</p>
 						<!--  end.timeline-text -->
-					</div>
+					</button>
 					<!--  end.timeline-content flipped -->
 				</li>
 				<!--  end.timeline-entry -->
@@ -228,18 +228,21 @@
 		background: #3333336a;
 		border-radius: 0.5rem;
 		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
-
+		border: unset;
+		text-align: start;
 		transition: all 0.4s ease-out;
 	}
 
 	@media screen and (min-width: 65em) {
 		.timeline-content {
+			border: unset;
 			padding: 2.4rem;
 			margin-left: 0;
 			width: calc(50% - 12.8rem);
 			border-radius: 0.5rem;
 			box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 			cursor: pointer;
+			text-align: start;
 		}
 	}
 	.timeline-content:hover {
