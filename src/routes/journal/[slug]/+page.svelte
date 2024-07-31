@@ -11,7 +11,7 @@
 
 <article class="post-wrapper">
 	<h1 class="post-title">{data.title}</h1>
-	<img class="post-image" alt={data.img_url_alt} src={`${data.img_url}&w=1200`} />
+	<img class="post-image" alt={data.img_url_alt} src={`${data.img_url}&w=1200`} loading="lazy" />
 	{@html data.content}
 </article>
 
@@ -21,9 +21,11 @@
 	}
 
 	.post-wrapper {
+		margin: 0 auto;
+		width: 85%;
 		display: flex;
 		flex-direction: column;
-		gap: 3.2rem;
+		gap: 3.6rem;
 		padding: 2.4rem;
 	}
 
@@ -32,7 +34,6 @@
 	}
 
 	.post-image {
-		width: 100%;
 		height: 45rem;
 		border-radius: var(--theme-border-radius-default);
 		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
