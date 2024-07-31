@@ -28,11 +28,11 @@ export const sendMessage = async (name: string, email: string, message: string) 
 };
 
 export const getAllPosts = (): Promise<ListResult<Post>> => {
-	return pb.collection('posts').getList(1, 50, { sort: '-created' });
+	return pb.collection('posts').getList(1, 50, { sort: '-created', filter: 'publish=true' });
 };
 
 export const getPostBySlug = async (slug: string) => {
-	const result = await pb.collection('posts').getFirstListItem(`slug="${slug}"`);
+	const result = await pb.collection('posts').getFirstListItem(`slug="${slug}" && publish=True`);
 
 	if (!result) {
 		return null;
