@@ -58,7 +58,6 @@ pre[class*='language-'] {
 }
 
 .fade-in-image {
-	border-radius: 0.5rem;
 	opacity: 1;
 	animation: fadeIn 2s ease-in-out;
 	object-fit: cover;
