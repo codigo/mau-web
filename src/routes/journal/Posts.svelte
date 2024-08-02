@@ -8,31 +8,40 @@
 	const onClick = (link: string) => {
 		goto(link);
 	};
+
+	const postImageCss = `
+		border-radius: var(--theme-border-radius-default);
+		object-fit: cover;
+		`;
 </script>
 
 <div class="posts-wrapper">
 	<ul class="posts-list">
-		{#each posts as post, idx}
+		{#each posts as { title, slug, tags, photo_metadata }, idx}
 			<li class="post-item">
 				<article class="article">
 					<button
 						class="article-wrapper"
 						role="link"
 						tabindex={idx}
-						on:click={() => onClick(`/journal/${post.slug}`)}
+						on:click={() => onClick(`/journal/${slug}`)}
 					>
-						<img
+						<Image
+							layout="fullWidth"
 							class="post-image"
-							alt={post.img_url_alt}
-							src={`${post.img_url}&w=400`}
+							src={photo_metadata.urls.small}
+							alt={photo_metadata.alt_description}
+							background={blurhashToCssGradientString(photo_metadata.blur_hash)}
 							loading="lazy"
+							height={180}
+							style={postImageCss}
 						/>
 						<ul class="post-tags">
-							{#each post.tags.split(',') as tag}
+							{#each tags.split(',') as tag}
 								<li class="post-tag-item">#{tag.trim()}</li>
 							{/each}
 						</ul>
-						<h3>{post.title}</h3>
+						<h3>{title}</h3>
 					</button>
 				</article>
 			</li>
@@ -92,12 +101,5 @@
 		/* box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3); */
 		font-size: 1.2rem;
 		color: var(--theme-background-secondary);
-	}
-
-	.post-image {
-		border-radius: var(--theme-border-radius-default);
-		object-fit: cover;
-		width: 100%;
-		height: 18rem;
 	}
 </style>
