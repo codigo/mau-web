@@ -43,3 +43,32 @@ article.post-wrapper > table > thead > tr > th {
 article.post-wrapper > table > tbody > tr > td:first-child {
 	font-weight: 600;
 }
+
+code[class*='language-'],
+pre[class*='language-'] {
+	font-size: 1.4rem;
+}
+
+/* Article Post Image */
+.post-image {
+	border-radius: 0.5rem;
+	box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
+	object-fit: cover;
+	opacity: 0;
+}
+
+.fade-in-image {
+	opacity: 1;
+	animation: fadeIn 2s ease-in-out;
+	object-fit: cover;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

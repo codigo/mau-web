@@ -19,6 +19,21 @@ export interface Post {
 	title: string;
 	tags: string;
 	summary: string;
-	img_url: string;
-	img_url_alt: string;
+	photo_metadata: PhotoMetadata;
+}
+
+interface PhotoMetadata {
+	blur_hash: string;
+	urls: {
+		raw: string;
+		full: string;
+		regular: string;
+		small: string;
+		thumb: string;
+		small_s3: string;
+	};
+	color: string;
+	id: string;
+	description: string;
+	alt_description: string;
 }

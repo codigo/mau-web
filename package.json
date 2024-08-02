@@ -44,6 +44,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@unpic/placeholder": "^0.1.2",
+		"@unpic/svelte": "^0.0.53",
 		"marked": "^13.0.2",
 		"pocketbase": "^0.21.3",
 		"prismjs": "^1.29.0",

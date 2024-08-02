@@ -14,7 +14,8 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: './src/components',
-			$routes: './src/routes'
+			$routes: './src/routes',
+			'@unpic/svelte': 'node_modules/@unpic/svelte/dist/'
 		}
 	}
 };

@@ -1,25 +1,41 @@
 <script lang="ts">
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
+	import { Image } from '@unpic/svelte';
 	import { type Post } from '$lib/types';
 	import Prism from 'prismjs';
 	import { onMount } from 'svelte';
 	export let data: Post;
 
+	$: ({ title, photo_metadata, content } = data);
+
+	const placeholder = blurhashToCssGradientString(data.photo_metadata.blur_hash);
+
 	onMount(() => {
 		Prism.highlightAll();
 	});
+
+	const onLoadImage = () => {
+		document.querySelector('.post-image')?.classList.add('fade-in-image');
+	};
 </script>
 
 <article class="post-wrapper">
-	<h1 class="post-title">{data.title}</h1>
-	<img class="post-image" alt={data.img_url_alt} src={`${data.img_url}&w=1200`} loading="lazy" />
-	{@html data.content}
+	<h1 class="post-title">{title}</h1>
+	<div class="background-blur" style={`background-image: ${placeholder}`}>
+		<Image
+			class="post-image"
+			layout="fullWidth"
+			src={photo_metadata.urls.full}
+			alt={photo_metadata.alt_description}
+			loading="lazy"
+			height={450}
+			on:load={onLoadImage}
+		/>
+	</div>
+	{@html content}
 </article>
 
 <style>
-	:global(code[class*='language-'], pre[class*='language-']) {
-		font-size: 1.4rem;
-	}
-
 	.post-wrapper {
 		margin: 0 auto;
 		width: 85%;
@@ -33,10 +49,11 @@
 		align-self: center;
 	}
 
-	.post-image {
-		height: 45rem;
+	.background-blur {
+		width: 100%;
+		height: 450px;
+		opacity: 1;
 		border-radius: var(--theme-border-radius-default);
-		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 		object-fit: cover;
 	}
 </style>
