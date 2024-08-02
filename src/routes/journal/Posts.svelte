@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
+	import { Image } from '@unpic/svelte';
 	import { goto } from '$app/navigation';
 	import type { Post } from '$lib/types';
 	export let posts: Post[];

@@ -3,9 +3,9 @@ import { getPostBySlug } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 
 export async function load({ params, setHeaders }) {
-	setHeaders({
-		'Cache-Control': 'max-age=3600, s-max-age=1'
-	});
+	// setHeaders({
+	// 	'Cache-Control': 'max-age=3600, s-max-age=1'
+	// });
 
 	const { slug } = params;
 
