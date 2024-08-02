@@ -5,14 +5,18 @@
 	import type { Post } from '$lib/types';
 	export let posts: Post[];
 
+	interface CustomEvent extends Event {
+		target: EventTarget | null;
+	}
+
 	const onClick = (link: string) => {
 		goto(link);
 	};
 
-	const postImageCss = `
-		border-radius: var(--theme-border-radius-default);
-		object-fit: cover;
-		`;
+	const onLoadImage = (event: CustomEvent) => {
+		const target = event.target as HTMLImageElement | null;
+		target?.classList.add('fade-in-image');
+	};
 </script>
 
 <div class="posts-wrapper">
@@ -26,16 +30,20 @@
 						tabindex={idx}
 						on:click={() => onClick(`/journal/${slug}`)}
 					>
-						<Image
-							layout="fullWidth"
-							class="post-image"
-							src={photo_metadata.urls.small}
-							alt={photo_metadata.alt_description}
-							background={blurhashToCssGradientString(photo_metadata.blur_hash)}
-							loading="lazy"
-							height={180}
-							style={postImageCss}
-						/>
+						<div
+							class="background-blur background-blur-radius"
+							style={`background-image: ${blurhashToCssGradientString(photo_metadata.blur_hash)}`}
+						>
+							<Image
+								layout="fullWidth"
+								class="post-image"
+								src={photo_metadata.urls.small}
+								alt={photo_metadata.alt_description}
+								loading="lazy"
+								height={180}
+								on:load={(ev) => onLoadImage(ev)}
+							/>
+						</div>
 						<ul class="post-tags">
 							{#each tags.split(',') as tag}
 								<li class="post-tag-item">#{tag.trim()}</li>
@@ -81,6 +89,10 @@
 		text-align: start;
 		background-color: unset;
 		align-content: space-between;
+	}
+
+	.background-blur-radius {
+		border-radius: 0.5rem;
 	}
 
 	.post-item:hover {
