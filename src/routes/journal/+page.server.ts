@@ -3,9 +3,9 @@ import { getAllPosts } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 
 export async function load({ setHeaders }) {
-	// setHeaders({
-	// 	'Cache-Control': 'max-age=3600, s-max-age=1'
-	// });
+	setHeaders({
+		'Cache-Control': 'max-age=3600, s-max-age=1'
+	});
 
 	try {
 		const results = await getAllPosts();
