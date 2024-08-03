@@ -25,7 +25,7 @@
 		<Image
 			class="post-image"
 			layout="fullWidth"
-			src={photo_metadata.urls.full}
+			src={photo_metadata.urls.regular}
 			alt={photo_metadata.alt_description}
 			loading="lazy"
 			height={450}
