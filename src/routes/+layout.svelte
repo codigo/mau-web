@@ -3,8 +3,13 @@
 
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
+	import { onMount } from 'svelte';
 
 	export let data;
+	let mounted = false;
+	onMount(() => {
+		mounted = true;
+	});
 </script>
 
 <div class="main-layout">
@@ -12,7 +17,7 @@
 
 	<main class="main">
 		{#key data.url}
-			{#if $navigating}
+			{#if $navigating || !mounted}
 				<div class="loading nav-transition" aria-busy={Boolean($navigating)}>
 					<h3>Hold on! Good things are coming your way.</h3>
 					<h3>Thanks for sticking with me!</h3>

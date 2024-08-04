@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getAllPosts } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
+import { blurhashToCssGradientString } from '@unpic/placeholder';
 
 export async function load({ setHeaders }) {
 	setHeaders({
@@ -9,6 +10,9 @@ export async function load({ setHeaders }) {
 
 	try {
 		const results = await getAllPosts();
+		results.items.map((post) => {
+			post.photo_metadata.blur_hash_style = `background-image: ${blurhashToCssGradientString(post.photo_metadata.blur_hash)}`;
+		});
 		return results;
 	} catch (e) {
 		let message: string = '';
