@@ -24,6 +24,7 @@ export interface Post {
 
 interface PhotoMetadata {
 	blur_hash: string;
+	blur_hash_style: string;
 	urls: {
 		raw: string;
 		full: string;

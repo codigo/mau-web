@@ -1,4 +1,4 @@
-import { POCKETBASE_URL } from '$env/static/private';
+import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
 import PocketBase, { type ListResult } from 'pocketbase';
 import { type Post } from '$lib/types';
 
@@ -9,13 +9,14 @@ class PocketBaseSingleton {
 
 	public static getInstance(): PocketBase {
 		if (!PocketBaseSingleton.instance) {
-			PocketBaseSingleton.instance = new PocketBase(POCKETBASE_URL);
+			PocketBaseSingleton.instance = new PocketBase(PUBLIC_POCKETBASE_URL);
 		}
 		return PocketBaseSingleton.instance;
 	}
 }
 
 const pb = PocketBaseSingleton.getInstance();
+pb.autoCancellation(true);
 
 export default pb;
 
