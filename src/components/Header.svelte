@@ -24,7 +24,6 @@
 					<a
 						class="main-nav-link {path === links.home.path ? 'active' : ''}"
 						href={links.home.path}
-						data-name={links.home.name}
 					>
 						{links.home.name}
 					</a>
@@ -33,7 +32,6 @@
 					<a
 						class="main-nav-link {path === links.about.path ? 'active' : ''}"
 						href={links.about.path}
-						data-name={links.about.name}
 					>
 						{links.about.name}
 					</a>
@@ -42,7 +40,6 @@
 					<a
 						class="main-nav-link {path === links.journal.path ? 'active' : ''}"
 						href={links.journal.path}
-						data-name={links.journal.name}
 					>
 						{links.journal.name}
 					</a>
@@ -51,7 +48,6 @@
 					<a
 						class="main-nav-link {path === links.contact.path ? 'active' : ''}"
 						href={links.contact.path}
-						data-name={links.contact.name}
 					>
 						{links.contact.name}
 					</a>
