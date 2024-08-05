@@ -49,6 +49,16 @@ pre[class*='language-'] {
 	font-size: 1.4rem;
 }
 
+/* Techstack tooltip */
+.pico [data-tooltip]:focus::after,
+.pico [data-tooltip]:focus::before,
+.pico [data-tooltip]:hover::after,
+.pico [data-tooltip]:hover::before {
+	font-size: 1.2rem;
+	font-family: inherit;
+	font-weight: 400;
+}
+
 /* Article Post Image */
 .post-image {
 	border-radius: 0.5rem;

@@ -48,6 +48,8 @@
 	import Sentry from './icons/tech/Sentry.svelte';
 	import Electron from './icons/tech/Electron.svelte';
 	import ReactRouter from './icons/tech/ReactRouter.svelte';
+	import Pulumi from './icons/tech/Pulumi.svelte';
+	import Cloudinary from './icons/tech/Cloudinary.svelte';
 
 	let techStack: TechStack[] = [
 		{
@@ -156,6 +158,11 @@
 			name: 'Playwright'
 		},
 		{
+			category: 'SaaS',
+			icon: Cloudinary,
+			name: 'Cloudinary'
+		},
+		{
 			category: 'Framework',
 			icon: Tailwind,
 			name: 'Tailwind CSS'
@@ -174,6 +181,11 @@
 			category: 'IaaS',
 			icon: Cloudflare,
 			name: 'Cloudflare'
+		},
+		{
+			category: 'Infrastructure as Code',
+			icon: Pulumi,
+			name: 'Pulumi'
 		},
 		{
 			category: 'IaaS',
@@ -246,7 +258,7 @@
 			name: 'Sentry'
 		},
 		{
-			category: 'Libraries',
+			category: 'Franework',
 			icon: ReactNative,
 			name: 'React Native'
 		}
@@ -302,16 +314,21 @@
 			<span class="loader" />
 		</div>
 	{:else}
-		<div class="tech-stack-box" data-animated={dataAnimatedScroller}>
+		<div class="pico tech-stack-box" data-animated={dataAnimatedScroller}>
 			{#each techStackChunks as techStackChunk, idx}
 				<!-- techStackChunk is an array of objects -->
 				<ul
-					class="tech-stack-box-inner"
+					class="pico tech-stack-box-inner"
 					data-animated={dataAnimatedScroller}
 					data-direction={idx % 2 === 0 ? 'left' : 'right'}
 				>
 					{#each techStackChunk as tech}
-						<li title={tech.name} class="tech-stack-item" aria-hidden={!!tech.duplicate}>
+						<li
+							title={tech.name}
+							data-tooltip={tech.name}
+							class="tech-stack-item"
+							aria-hidden={!!tech.duplicate}
+						>
 							<svelte:component this={tech.icon} />
 						</li>
 					{/each}
@@ -324,7 +341,7 @@
 
 <style lang="postcss">
 	.section-tech-stack {
-		padding: 12rem 0 12rem 0;
+		padding: 8rem 0 12rem 0;
 		margin-bottom: 2.4rem;
 		overflow: hidden;
 	}
@@ -353,11 +370,15 @@
 
 	.tech-stack-box-inner[data-animated='true'] {
 		display: flex;
-		padding: 1.2rem;
+		padding: 0.8rem;
 		gap: 1.2rem;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.tech-stack-box .tech-stack-box-inner:first-child {
+		padding-top: 4rem;
 	}
 
 	.tech-stack-box-inner[data-direction='left'] {
@@ -390,6 +411,10 @@
 			min-width: 6.2rem;
 			height: 6.2rem;
 		}
+	}
+
+	.pico [data-tooltip] {
+		border-bottom: none;
 	}
 
 	@keyframes scroll {
