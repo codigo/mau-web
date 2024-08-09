@@ -1,0 +1,33 @@
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Build output
+dist
+build
+
+# Docker files
+Dockerfile
+docker-compose.yml
+
+# Git files
+.git
+.gitignore
+
+# IDE files
+.vscode
+.idea
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test result files
+test-results

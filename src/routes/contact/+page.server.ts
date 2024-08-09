@@ -1,5 +1,5 @@
 import { type RequestEvent, fail } from '@sveltejs/kit';
-import { SECRET_CF_TURNSTILE_KEY } from '$env/static/private';
+import { SECRET_CF_TURNSTILE_SECRET } from '$env/static/private';
 import { superValidate, message } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { sendMessage } from '$lib/services/pb';
@@ -21,7 +21,7 @@ export const actions: Actions = {
 
 		const token = form.data['cf-turnstile-response'];
 
-		const { success, error } = await validateToken(token, SECRET_CF_TURNSTILE_KEY);
+		const { success, error } = await validateToken(token, SECRET_CF_TURNSTILE_SECRET);
 
 		if (!success) {
 			return fail(400, { form, message: error });
