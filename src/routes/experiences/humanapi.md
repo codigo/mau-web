@@ -1,3 +1,12 @@
+---
+order: 03
+timeframe: 2015 - 2018
+company: HumanAPI
+description: Designed and deployed micro-services to retrieve,synchronize, and visualize user data, integrated metrics instrumentation, and used Elasticsearch and RabbitMQ.
+previous: navarik
+next: selfie
+---
+
 **Senior Software Engineer**
 
 **Jul 2015 - Jun 2018**

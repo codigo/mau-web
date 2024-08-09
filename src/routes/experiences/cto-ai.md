@@ -1,3 +1,12 @@
+---
+order: 06
+timeframe: 2020 - 2021
+company: CTO.ai
+description: I guided developers in adopting an open-source collaboration model, built a GitHub application for data integration, and implemented automated quality control across projects.
+previous: mobilelive
+next: telus
+---
+
 **Senior Lead Engineer**
 
 **Oct 2020 - Apr 2021**

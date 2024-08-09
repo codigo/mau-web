@@ -1,3 +1,12 @@
+---
+order: 10
+timeframe: '2023 - Present'
+company: Coursedog
+description: Specialized in establishing real-time, bi-directional integrations with educational systems, ensuring seamless integration and compliance, and streamlining class, event, curriculum, and catalogue planning.
+previous: codigo
+next: doc-ai
+---
+
 **Senior Software Engineer**
 
 **April 2023 - Present**

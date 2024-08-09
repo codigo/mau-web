@@ -1,3 +1,12 @@
+---
+order: '05'
+timeframe: '2019 - 2020'
+company: Telus
+description: I provided best practices and guidance to the developer community, led a team in creating a NodeJS-based framework, and managed infrastructure automation using Terraform and GCP APIs.
+previous: cto-ai
+next: navarik
+---
+
 **Sr Technology Architect**
 
 **Apr 2019 - Sep 2020**

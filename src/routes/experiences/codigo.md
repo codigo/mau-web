@@ -1,3 +1,12 @@
+---
+order: 11
+timeframe: '*'
+company: Codigo, Inc. Consulting
+description: A freelance software engineer specializing in custom software solutions, delivering efficient, scalable, and user-friendly systems tailored to client needs.
+next: coursedog
+previous: freelance
+---
+
 **Company Owner**
 
 **March 2019 - Present**

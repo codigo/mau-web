@@ -9,6 +9,16 @@ export interface ErrorStatus {
 	error: Error;
 }
 
+export interface Experience {
+	order: number;
+	timeframe: string;
+	company: string;
+	description: string;
+	slug: string;
+	next?: string;
+	previous?: string;
+}
+
 export interface Post {
 	id: string;
 	created: string;

@@ -1,6 +1,13 @@
 <script lang="ts">
+	import type { Experience } from '$lib/types';
 	import Timeline from './Timeline.svelte';
+
+	export let data: Object & { experiences: Experience[] };
 </script>
+
+<svelte:head>
+	<title>About me</title>
+</svelte:head>
 
 <div class="about-layout">
 	<section class="section-about-me b-border">
@@ -25,7 +32,7 @@
 		<!--  end.about-me-text -->
 	</section>
 
-	<Timeline />
+	<Timeline experiences={data.experiences} />
 
 	<section class="skills-competences b-border">
 		<h3>I've honed a diverse skill set over the years ...</h3>
@@ -36,7 +43,9 @@
 				technologies, like Rust.
 			</li>
 			<li>
-				<strong>Systems Design:</strong> Specialist in designing scalable, maintainable systems.
+				<strong>Systems Design & Architecture:</strong> Specialist in designing scalable, maintainable
+				systems. Versed in microservices and modular monoliths, allowing for flexible and scalable system
+				design.
 			</li>
 			<li>
 				<strong>Databases:</strong> Experience with NoSQL (e.g. Redis, MongoDB, Elasticsearch) and SQL
@@ -54,10 +63,6 @@
 				<strong>AI Systems:</strong> Knowledgeable in using OpenAI API, Ollama, and other AI systems
 				to create personal projects, enhancing my capability to integrate advanced AI functionalities
 				into applications.
-			</li>
-			<li>
-				<strong>Architectural Versatility:</strong> Versed in microservices and modular monoliths, allowing
-				for flexible and scalable system design.
 			</li>
 		</ul>
 	</section>
@@ -126,7 +131,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3.2rem;
-		align-items: center;
+		align-items: start;
 	}
 
 	.skills-competences-outro {

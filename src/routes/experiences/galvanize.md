@@ -1,3 +1,12 @@
+---
+order: 08
+timeframe: 2021 - 2022
+company: Galvanize / Diligent
+description: Led a team adopting Fastify (NodeJS) and AWS Lambdas mentored developers, and modernized a monolithic codebase through strangler patterns.
+previous: doc-ai
+next: mobilelive
+---
+
 **Senior Software Developer**
 
 **Oct 2021 - Mar 2022**
