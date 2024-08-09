@@ -16,6 +16,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Contact me</title>
+</svelte:head>
+
 {#if $message}
 	<div class="success-message">
 		<span class="success-message-internal">

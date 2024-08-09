@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { ChevronBack, ChevronForward } from 'svelte-ionicons';
 	import type { Experience } from '$lib/types';
-	import { marked } from 'marked';
 	import { goto } from '$app/navigation';
 
 	export let data: Object & { meta: Experience; content: string };
