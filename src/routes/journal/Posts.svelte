@@ -3,6 +3,7 @@
 	import { Image } from '@unpic/svelte';
 	import { goto } from '$app/navigation';
 	import type { Post } from '$lib/types';
+	import { formatDate } from '$lib/utils';
 	export let posts: Post[];
 
 	interface CustomEvent extends Event {
@@ -21,7 +22,7 @@
 
 <div class="posts-wrapper">
 	<ul class="posts-list">
-		{#each posts as { title, slug, tags, photo_metadata }, idx}
+		{#each posts as { title, slug, tags, photo_metadata, created, summary }, idx}
 			<li class="post-item">
 				<article class="article">
 					<button
@@ -50,6 +51,10 @@
 							{/each}
 						</ul>
 						<h3>{title}</h3>
+						<p>{summary}</p>
+						<p class="post-date">
+							{formatDate(created)}
+						</p>
 					</button>
 				</article>
 			</li>
@@ -64,7 +69,7 @@
 
 	.posts-list {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
 
@@ -82,13 +87,14 @@
 	.article-wrapper {
 		display: grid;
 		padding: 2.4rem;
-		row-gap: 1.6rem;
+		row-gap: 1.4rem;
 		height: 100%;
 
 		border: unset;
 		text-align: start;
 		background-color: unset;
 		align-content: space-between;
+		justify-content: stretch;
 	}
 
 	.background-blur-radius {
@@ -113,5 +119,11 @@
 		/* box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3); */
 		font-size: 1.2rem;
 		color: var(--theme-background-secondary);
+	}
+
+	.post-date {
+		font-size: 1.4rem;
+		font-weight: 200;
+		color: var(--theme-text-secondary);
 	}
 </style>
