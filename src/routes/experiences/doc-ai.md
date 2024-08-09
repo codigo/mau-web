@@ -1,3 +1,12 @@
+---
+order: 09
+timeframe: 2022 - 2023
+company: Doc.Ai / Sharecare
+description: Maintained and added features to SmartOmix, a decentralized research platform and built npm modules for component use and API client communication.
+next: galvanize
+previous: coursedog
+---
+
 **Senior Software Engineer**
 
 **Apr 2022 - Mar 2023**

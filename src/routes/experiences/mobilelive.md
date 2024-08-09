@@ -1,3 +1,12 @@
+---
+order: 07
+timeframe: 2021
+company: Mobilelive INC
+description: As a Consultant Senior Engineer, I developed an abstraction layer with JavaScript called bolsterjs for micro frontend experiences and led the adoption of micro frontends.
+previous: galvanize
+next: cto-ai
+---
+
 **Software Engineering Consultant**
 
 **May 2021 - Oct 2021**

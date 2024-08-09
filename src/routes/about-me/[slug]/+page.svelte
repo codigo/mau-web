@@ -1,34 +1,43 @@
 <script lang="ts">
 	import { ChevronBack, ChevronForward } from 'svelte-ionicons';
+	import type { Experience } from '$lib/types';
 	import { marked } from 'marked';
 	import { goto } from '$app/navigation';
 
-	export let data;
+	export let data: Object & { meta: Experience; content: string };
 
-	$: ({ content = '', title, next, previous } = data);
+	$: ({ content = '', meta } = data);
+
+	const LINK_PREFIX = '/about-me/';
 
 	const handleClick = (slug: string | undefined) => {
 		if (!slug) return;
 
-		goto(slug);
+		goto(LINK_PREFIX + slug);
 	};
 </script>
 
+<svelte:head>
+	<title>My experience at {meta.company}</title>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={`My experience at ${meta.company}`} />
+</svelte:head>
+
 <div class="markdown-wrapper">
-	<h1>{title}</h1>
-	{@html marked(content)}
+	<h1>{meta.company}</h1>
+	<svelte:component this={content} />
 	<div class="navigation-links pico">
 		<button
-			on:click={() => handleClick(previous)}
-			disabled={!Boolean(previous)}
+			on:click={() => handleClick(meta.previous)}
+			disabled={!Boolean(meta.previous)}
 			class="goto outline contrast"
 			role="link"
 		>
 			<ChevronBack />
 		</button>
 		<button
-			on:click={() => handleClick(next)}
-			disabled={!Boolean(next)}
+			on:click={() => handleClick(meta.next)}
+			disabled={!Boolean(meta.next)}
 			class="goto next outline contrast"
 			role="link"
 		>

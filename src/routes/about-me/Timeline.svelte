@@ -1,102 +1,13 @@
 <script lang="ts">
+	import type { Experience } from '$lib/types';
 	import { goto } from '$app/navigation';
 
-	interface TimelineEntry {
-		id: string;
-		company: string;
-		description: string;
-		link: string;
-	}
-
-	const timeline: TimelineEntry[] = [
-		{
-			id: '*',
-			company: 'Codigo, Inc. Consulting',
-			description: `A freelance software engineer specializing in custom software solutions,
-			delivering efficient, scalable, and user-friendly systems tailored to client needs.`,
-			link: '/experience/codigo'
-		},
-		{
-			id: '2023 - Present',
-			company: 'Coursedog',
-			description: `Specialized in establishing real-time, bi-directional integrations with educational
-      systems, ensuring seamless integration and compliance, and streamlining class, event,
-      curriculum, and catalogue planning.`,
-			link: '/experience/coursedog'
-		},
-		{
-			id: '2022 - 2023',
-			company: 'Doc.Ai / Sharecare',
-			description: `Maintained and added features to SmartOmix, a decentralized research platform and built
-      npm modules for component use and API client communication.`,
-			link: '/experience/doc-ai'
-		},
-		{
-			id: '2021 - 2022',
-			company: 'Galvanize / Diligent',
-			description: `Led a team adopting Fastify (NodeJS) and AWS Lambdas, mentored developers, and
-      modernized a monolithic codebase through strangler patterns.`,
-			link: '/experience/galvanize'
-		},
-		{
-			id: '2021',
-			company: 'Mobilelive INC',
-			description: `As a Consultant Senior Engineer, I developed an abstraction layer with JavaScript
-          called bolsterjs for micro frontend experiences and led the adoption of micro frontends.`,
-			link: '/experience/mobilelive'
-		},
-		{
-			id: '2020 - 2021',
-			company: 'CTO.ai',
-			description: `I guided developers in adopting an open-source collaboration model, built a GitHub
-          application for data integration, and implemented automated quality control across
-          projects.`,
-			link: '/experience/cto-ai'
-		},
-		{
-			id: '2019 - 2020',
-			company: 'Telus',
-			description: `I provided best practices and guidance to the developer community, led a team in
-          creating a NodeJS-based framework, and managed infrastructure automation using Terraform
-          and GCP APIs.`,
-			link: '/experience/telus'
-		},
-		{
-			id: '2019',
-			company: 'Navarik',
-			description: `Provided training, code standards, and best practices with NodeJS and React for the
-          entire team of developers.`,
-			link: '/experience/navarik'
-		},
-		{
-			id: '2015 - 2018',
-			company: 'HumanAPI',
-			description: `Designed and deployed micro-services to retrieve, synchronize, and visualize user data,
-          integrated metrics instrumentation, and used Elasticsearch and RabbitMQ.`,
-			link: '/experience/humanapi'
-		},
-		{
-			id: '2013 - 2015',
-			company: 'Selfie INC.',
-			description: `Led a team through the design, planning, execution, and deployment of all micro-services
-          that composed the social application. I integrated Twilio API for 2FA and used MongoDB
-          and Redis for data management.`,
-			link: '/experience/selfie'
-		},
-		{
-			id: '* - 2013',
-			company: 'Consulting',
-			description: `Developed applications for Coca Cola Colombia, Joyeria Caribe, and other clients,
-			improving project management, communication, and e-commerce functionalities through custom
-			software solutions. Enhanced user experience with innovative tools and streamlined internal
-			processes.`,
-			link: '/experience/freelance'
-		}
-	];
+	export let experiences: Experience[] = [];
 
 	const onClick = (link: string) => {
-		goto(link);
+		goto(LINK_PREFIX + link);
 	};
+	const LINK_PREFIX = '/about-me/';
 </script>
 
 <section class="section-about-me-experience b-border">
@@ -105,16 +16,16 @@
 	</h3>
 
 	<ol class="timeline">
-		{#each timeline as entry, index}
+		{#each experiences as entry, index}
 			{#if index % 2 === 0}
 				<li class="timeline-entry">
-					<p class="timeline-id">{entry.id}</p>
+					<p class="timeline-id">{entry.timeframe}</p>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<button
 						class="timeline-content"
 						role="link"
 						tabindex={index}
-						on:click={() => onClick(entry.link)}
+						on:click={() => onClick(entry.slug)}
 					>
 						<h4 class="timeline-heading">
 							{entry.company}
@@ -129,13 +40,13 @@
 				<!--  end.timeline-entry -->
 			{:else}
 				<li class="timeline-entry">
-					<p class="timeline-id">{entry.id}</p>
+					<p class="timeline-id">{entry.timeframe}</p>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<button
 						class="timeline-content timeline-content--flipped"
 						role="link"
 						tabindex={index}
-						on:click={() => onClick(entry.link)}
+						on:click={() => onClick(entry.slug)}
 					>
 						<h4 class="timeline-heading">
 							{entry.company}

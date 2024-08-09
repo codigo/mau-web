@@ -1,3 +1,12 @@
+---
+order: 02
+timeframe: 2013 - 2015
+company: Selfie INC
+description: Led a team through the design, planning, execution, and deployment of all micro-services that composed the social application. I integrated Twilio API for 2FA and used MongoDB and Redis for data management.
+next: freelance
+previous: humanapi
+---
+
 **Principal Software Engineer**
 
 **May 2013 - Jul 2015**
