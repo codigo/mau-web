@@ -107,7 +107,7 @@
 <style>
 	.success-message {
 		display: grid;
-		gap: 1.6rem;
+		gap: 2.4rem;
 		place-items: center;
 		place-content: center;
 		height: 100%;
@@ -116,7 +116,7 @@
 	.success-message-internal {
 		display: grid;
 		grid-auto-flow: column;
-		gap: 1rem;
+		gap: 2.4rem;
 		place-items: center;
 	}
 
@@ -128,7 +128,7 @@
 		stroke-width: 2;
 		stroke: #fff;
 		stroke-miterlimit: 10;
-		box-shadow: inset 0px 0px 0px #7ac142;
+		box-shadow: inset 0px 0px 0px hsl(137.52, 90.96%, 34.71%);
 		animation:
 			fill 0.4s ease-in-out 0.4s forwards,
 			scale 0.3s ease-in-out 0.9s both;
@@ -139,7 +139,7 @@
 		stroke-dashoffset: 166;
 		stroke-width: 2;
 		stroke-miterlimit: 10;
-		stroke: #7ac142;
+		stroke: hsl(137.52, 90.96%, 34.71%);
 		fill: none;
 		animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 	}
@@ -167,7 +167,7 @@
 	}
 	@keyframes fill {
 		100% {
-			box-shadow: inset 0px 0px 0px 30px #7ac142;
+			box-shadow: inset 0px 0px 0px 30px hsl(137.52, 90.96%, 34.71%);
 		}
 	}
 
