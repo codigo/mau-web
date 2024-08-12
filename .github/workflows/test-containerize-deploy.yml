@@ -28,6 +28,7 @@ jobs:
           HOME: /root
 
   build:
+    name: 'Build and Push Docker Image'
     runs-on: ubuntu-latest
     needs: test
     steps:
