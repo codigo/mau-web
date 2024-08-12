@@ -17,14 +17,15 @@ jobs:
           echo "TAG=$(jq -r '.version' package.json)" >> $GITHUB_ENV
 
       - name: Build the Docker image
+        env:
+          PUBLIC_CF_TURNSTILE_KEY: ${{ secrets.PUBLIC_CF_TURNSTILE_KEY }}
+          SECRET_CF_TURNSTILE_SECRET: ${{ secrets.SECRET_CF_TURNSTILE_SECRET }}
+          PUBLIC_POCKETBASE_URL: ${{ secrets.PUBLIC_POCKETBASE_URL }}
         run: |
           docker build --secret id=public_cf_turnstile_key,env=PUBLIC_CF_TURNSTILE_KEY \
               --secret id=public_pocketbase_url,env=PUBLIC_POCKETBASE_URL \
               --secret id=secret_cf_turnstile_secret,env=SECRET_CF_TURNSTILE_SECRET \
               -t codigo/mau-app:${{ env.TAG }} -t codigo/mau-app:latest .
-        env: PUBLIC_CF_TURNSTILE_KEY=${{ secrets.PUBLIC_CF_TURNSTILE_KEY }}
-          SECRET_CF_TURNSTILE_SECRET=${{ secrets.SECRET_CF_TURNSTILE_SECRET }}
-          PUBLIC_POCKETBASE_URL=${{ secrets.PUBLIC_POCKETBASE_URL }}
 
       - name: Push the Docker image
         run: docker push {{ env.CONTAINER_REGISTRY_URL }}/codigo/mau-app:${{ env.TAG }} && docker push sjc.vultrcr.com/codigo/mau-app:latest
