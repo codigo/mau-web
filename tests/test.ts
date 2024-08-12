@@ -7,7 +7,7 @@ test('home page has expected h1', async ({ page }) => {
 
 test('home page has expected title', async ({ page }) => {
 	await page.goto('/');
-	expect(await page.title()).toBe('Mauricio Mercado');
+	expect(await page.title()).toBe("Mauricio's Introduction");
 });
 
 test('home page has expected meta description', async ({ page }) => {
