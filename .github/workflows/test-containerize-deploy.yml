@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.46.0-jammy
+      env:
+        NODE_ENV: development
+        PUBLIC_CF_TURNSTILE_KEY: ${{ secrets.PUBLIC_CF_TURNSTILE_KEY }}
+        SECRET_CF_TURNSTILE_SECRET: ${{ secrets.SECRET_CF_TURNSTILE_SECRET }}
+        PUBLIC_POCKETBASE_URL: ${{ secrets.PUBLIC_POCKETBASE_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
