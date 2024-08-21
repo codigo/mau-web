@@ -1,4 +1,4 @@
-name: Test, Build and Push Docker Image
+name: Test, Build, Push Docker Image, Trigger Deployment
 
 on:
   push:
@@ -69,6 +69,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PAT_TOKEN_MM_CODIGO }}
-          repository: codigo/your-infrastructure-repo
+          repository: codigo/basic-infra-setup
           event-type: deploy-application
           client-payload: '{"version": "${{ env.TAG }}", "name": "${{ env.NAME }}"}'
