@@ -11,7 +11,7 @@
 
 <div class="about-layout">
 	<section class="section-about-me b-border">
-		<div class="about-me-img"></div>
+		<!-- <div class="about-me-img"></div> -->
 		<!--  end.about-me-img -->
 
 		<div class="about-me-text">
@@ -91,9 +91,9 @@
 				create something remarkable together!
 			</p>
 		</div>
-		<div class="skills-competences-outro-img">
+		<!-- <div class="skills-competences-outro-img">
 			<h2>Placeholder for images??</h2>
-		</div>
+		</div> -->
 	</section>
 </div>
 
@@ -109,7 +109,7 @@
 	.section-about-me {
 		padding: 1.2rem 1.6rem 6.4rem 1.6rem;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 
 		column-gap: 3.6rem;
 	}
@@ -136,7 +136,7 @@
 
 	.skills-competences-outro {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		gap: 6.4rem;
 		padding: 1.2rem 1.6rem 8rem 1.6rem;
 	}
