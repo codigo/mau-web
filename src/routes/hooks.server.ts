@@ -2,24 +2,30 @@ import type { Handle } from '@sveltejs/kit';
 import pino from 'pino';
 import { v4 as uuidv4 } from 'uuid';
 
-// Create a Pino logger instance
-const logger = pino({
-	level: process.env.LOG_LEVEL || 'info',
-	timestamp: pino.stdTimeFunctions.isoTime
-});
+// Create a Pino logger instance that writes to stdout
+const logger = pino(
+	{
+		level: process.env.LOG_LEVEL || 'info',
+		timestamp: pino.stdTimeFunctions.isoTime
+	},
+	pino.destination(1)
+); // 1 is the file descriptor for stdout
 
-// Separate logging function
 function logRequest(
 	event: Parameters<Handle>[0]['event'],
 	duration?: number,
 	status?: number,
 	error?: Error
 ) {
+	const headers = event.request.headers;
 	const logData = {
 		requestId: event.locals.requestId,
 		method: event.request.method,
 		url: event.url.pathname,
-		headers: Object.fromEntries(event.request.headers)
+		clientIp: headers.get('CF-Connecting-IP') || headers.get('X-Forwarded-For'),
+		protocol: headers.get('X-Forwarded-Proto'),
+		cfRay: headers.get('CF-Ray'),
+		userAgent: headers.get('User-Agent')
 	};
 
 	if (error) {
@@ -44,7 +50,7 @@ function logRequest(
 	}
 }
 
-// Set up global handlers for unhandled promise rejections and uncaught exceptions
+// Ensure unhandled rejections and exceptions are logged
 process.on('unhandledRejection', (reason, promise) => {
 	logger.error({
 		msg: 'Unhandled Promise Rejection',
@@ -64,25 +70,20 @@ process.on('uncaughtException', (error) => {
 export const handle: Handle = async function ({ event, resolve }) {
 	const start_time = Date.now();
 
-	event.locals.requestId = uuidv4();
-	// Log incoming request
+	event.locals.requestId = event.request.headers.get('CF-Ray') || uuidv4();
+
 	logRequest(event);
 
 	try {
-		// Wait on response, run other hooks and load
 		const response = await resolve(event);
-
 		const duration = Date.now() - start_time;
-
-		// Log completed request
 		logRequest(event, duration, response.status);
-
 		return response;
 	} catch (error) {
-		// Log any errors that occur during request processing
 		logRequest(event, Date.now() - start_time, 500, error as Error);
-
-		// Re-throw the error to be handled by SvelteKit's error handling
 		throw error;
 	}
 };
+
+// Log when the server starts
+logger.info('Server started');
