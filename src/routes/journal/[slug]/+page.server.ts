@@ -2,7 +2,11 @@ import { error } from '@sveltejs/kit';
 import { getPostBySlug } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 
-export async function load({ params, setHeaders }) {
+export async function load({ params, setHeaders, locals }) {
+	const log = locals.log.child('journal');
+
+	log.info('Fetching post', 'load', { slug: params.slug });
+
 	setHeaders({
 		'Cache-Control': 'max-age=3600, s-max-age=1'
 	});
@@ -10,7 +14,7 @@ export async function load({ params, setHeaders }) {
 	const { slug } = params;
 
 	try {
-		const post = await getPostBySlug(slug);
+		const post = await getPostBySlug(slug, log.child('pb'));
 
 		if (!post) {
 			throw error(404, { message: `Post with slug ${slug} not found` });
@@ -18,6 +22,7 @@ export async function load({ params, setHeaders }) {
 
 		return post;
 	} catch (e) {
+		log.error('Error fetching post', 'load', { error: e, slug: params.slug });
 		let message: string = '';
 		let status = 500;
 		if (e instanceof ClientResponseError) {
