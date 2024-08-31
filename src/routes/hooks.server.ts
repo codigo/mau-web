@@ -11,6 +11,26 @@ const logger = pino(
 	pino.destination(1)
 ); // 1 is the file descriptor for stdout
 
+function createLogger(requestId: string, parentModule?: string) {
+	const childLogger = logger.child({ requestId });
+
+	const logWithModule =
+		(level: 'info' | 'error' | 'warn' | 'debug') =>
+		(msg: string, module: string, data?: object) => {
+			const fullModule = parentModule ? `${parentModule}.${module}` : module;
+			childLogger[level]({ ...data, module: fullModule }, msg);
+		};
+
+	return {
+		info: logWithModule('info'),
+		error: logWithModule('error'),
+		warn: logWithModule('warn'),
+		debug: logWithModule('debug'),
+		child: (module: string) =>
+			createLogger(requestId, parentModule ? `${parentModule}.${module}` : module)
+	};
+}
+
 function logRequest(
 	event: Parameters<Handle>[0]['event'],
 	duration?: number,
@@ -71,6 +91,7 @@ export const handle: Handle = async function ({ event, resolve }) {
 	const start_time = Date.now();
 
 	event.locals.requestId = event.request.headers.get('CF-Ray') || uuidv4();
+	event.locals.log = createLogger(event.locals.requestId);
 
 	logRequest(event);
 
