@@ -15,13 +15,15 @@ COPY . .
 ENV PROTOCOL_HEADER=x-forwarded-proto
 ENV HOST_HEADER=x-forwarded-host
 
-# Mount the secrets and set them as environment variables
-RUN --mount=type=secret,id=PUBLIC_CF_TURNSTILE_KEY \
-    echo "PUBLIC_CF_TURNSTILE_KEY=$(cat /run/secrets/PUBLIC_CF_TURNSTILE_KEY)" >> .env.production
-RUN  --mount=type=secret,id=PUBLIC_POCKETBASE_URL \
-    echo "PUBLIC_POCKETBASE_URL=$(cat /run/secrets/PUBLIC_POCKETBASE_URL)" >> .env.production
-RUN --mount=type=secret,id=SECRET_CF_TURNSTILE_SECRET \
-  echo "SECRET_CF_TURNSTILE_SECRET=$(cat /run/secrets/SECRET_CF_TURNSTILE_SECRET)" >> .env.production
+# Use ARG for build-time variables
+ARG PUBLIC_CF_TURNSTILE_KEY
+ARG PUBLIC_POCKETBASE_URL
+ARG SECRET_CF_TURNSTILE_SECRET
+
+# Set environment variables using ARG values
+ENV PUBLIC_CF_TURNSTILE_KEY=$PUBLIC_CF_TURNSTILE_KEY
+ENV PUBLIC_POCKETBASE_URL=$PUBLIC_POCKETBASE_URL
+ENV SECRET_CF_TURNSTILE_SECRET=$SECRET_CF_TURNSTILE_SECRET
 
 # Build the app
 RUN npm run build

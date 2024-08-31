@@ -55,10 +55,10 @@ jobs:
           tags: |
             ${{ vars.CONTAINER_REGISTRY_URL }}/codigo/${{ env.NAME }}:${{ env.TAG }}
             ${{ vars.CONTAINER_REGISTRY_URL }}/codigo/${{ env.NAME }}:latest
-          secrets: |
-            PUBLIC_CF_TURNSTILE_KEY="{{ secrets.PUBLIC_CF_TURNSTILE_KEY }}"
-            SECRET_CF_TURNSTILE_SECRET="{{ secrets.SECRET_CF_TURNSTILE_SECRET }}"
-            PUBLIC_POCKETBASE_URL="{{ secrets.PUBLIC_POCKETBASE_URL }}"
+          build-args: |
+            PUBLIC_CF_TURNSTILE_KEY=${{ secrets.PUBLIC_CF_TURNSTILE_KEY }}
+            SECRET_CF_TURNSTILE_SECRET=${{ secrets.SECRET_CF_TURNSTILE_SECRET }}
+            PUBLIC_POCKETBASE_URL=${{ secrets.PUBLIC_POCKETBASE_URL }}
 
   trigger-deployment:
     name: 'Trigger Deployment Workflow'
