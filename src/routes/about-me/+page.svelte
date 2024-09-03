@@ -81,7 +81,7 @@
 			<p>
 				I'm also a certified kitesurf instructor and love paddle boarding and surfing—the ocean is
 				where I feel most at home. I enjoy hiking and, of course, the occasional drink with friends.
-				Additionally, I believe in the power of mentorship, teaching others, and learning from thos
+				Additionally, I believe in the power of mentorship, teaching others, and learning from those
 				around me.
 			</p>
 			<p>
