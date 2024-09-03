@@ -4,7 +4,6 @@ import { ClientResponseError } from 'pocketbase';
 
 export async function load({ params, setHeaders, locals }) {
 	const log = locals.logger;
-
 	log.info({ slug: params.slug }, 'Fetching post');
 
 	setHeaders({
