@@ -2,6 +2,7 @@ import { error } from '@sveltejs/kit';
 import { getAllPosts } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 import { blurhashToCssGradientString } from '@unpic/placeholder';
+import { formatDate } from '$lib/utils';
 
 export async function load({ setHeaders, locals }) {
 	const log = locals.logger;
@@ -12,8 +13,10 @@ export async function load({ setHeaders, locals }) {
 
 	try {
 		const results = await getAllPosts(log.child({ module: 'getAllPosts' }));
+		log.info({ results: results.items.length }, 'Posts fetched successfully');
 		results.items.map((post) => {
 			post.photo_metadata.blur_hash_style = `background-image: ${blurhashToCssGradientString(post.photo_metadata.blur_hash)}`;
+			post.created = formatDate(post.created);
 		});
 		return results;
 	} catch (e) {

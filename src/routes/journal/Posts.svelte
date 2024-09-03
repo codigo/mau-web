@@ -3,7 +3,6 @@
 	import { Image } from '@unpic/svelte';
 	import { goto } from '$app/navigation';
 	import type { Post } from '$lib/types';
-	import { formatDate } from '$lib/utils';
 	export let posts: Post[];
 
 	interface CustomEvent extends Event {
@@ -53,7 +52,7 @@
 						<h3>{title}</h3>
 						<p>{summary}</p>
 						<p class="post-date">
-							{formatDate(created)}
+							{created}
 						</p>
 					</button>
 				</article>
