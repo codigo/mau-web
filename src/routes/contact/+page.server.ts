@@ -12,7 +12,7 @@ export const load: PageServerLoad = async () => {
 };
 
 export const actions: Actions = {
-	email: async ({ request }: RequestEvent) => {
+	email: async ({ request, locals }: RequestEvent) => {
 		const form = await superValidate(request, zod(ContactSchema));
 
 		if (!form.valid) {
@@ -29,7 +29,7 @@ export const actions: Actions = {
 
 		try {
 			const { name, email, content } = form.data;
-			await sendMessage(name, email, content);
+			await sendMessage(name, email, content, locals.logger);
 			return message(form, 'Message sent successfully');
 		} catch (e) {
 			let message: string = '';
