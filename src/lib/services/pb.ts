@@ -41,8 +41,14 @@ export const sendMessage = async (name: string, email: string, message: string, 
 	}
 };
 
-export const getAllPosts = (): Promise<ListResult<Post>> => {
-	return pb.collection('posts').getList(1, 50, { sort: '-created', filter: 'publish=true' });
+export const getAllPosts = (log?: Logger): Promise<ListResult<Post>> => {
+	log?.info({ log }, 'Fetching all posts');
+	try {
+		return pb.collection('posts').getList(1, 50, { sort: '-created', filter: 'publish=true' });
+	} catch (error) {
+		log?.error({ error }, 'Error fetching all posts');
+		throw error;
+	}
 };
 
 export const getPostBySlug = async (slug: string, log?: Logger) => {

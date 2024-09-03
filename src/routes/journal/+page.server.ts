@@ -3,13 +3,15 @@ import { getAllPosts } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 import { blurhashToCssGradientString } from '@unpic/placeholder';
 
-export async function load({ setHeaders }) {
+export async function load({ setHeaders, locals }) {
+	const log = locals.logger;
+
 	setHeaders({
 		'Cache-Control': 'max-age=3600, s-max-age=1'
 	});
 
 	try {
-		const results = await getAllPosts();
+		const results = await getAllPosts(log.child({ module: 'getAllPosts' }));
 		results.items.map((post) => {
 			post.photo_metadata.blur_hash_style = `background-image: ${blurhashToCssGradientString(post.photo_metadata.blur_hash)}`;
 		});
