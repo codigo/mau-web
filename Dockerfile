@@ -14,6 +14,8 @@ COPY . .
 # Set environment variables
 ENV PROTOCOL_HEADER=x-forwarded-proto
 ENV HOST_HEADER=x-forwarded-host
+ENV PUBLIC_LOG_LEVEL=info
+ENV PUBLIC_APP_ENV=production
 
 # Use ARG for build-time variables
 ARG PUBLIC_CF_TURNSTILE_KEY
