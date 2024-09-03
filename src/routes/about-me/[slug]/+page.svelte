@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { ChevronBack, ChevronForward } from 'svelte-ionicons';
+	import type { ComponentType, SvelteComponent } from 'svelte';
 	import type { Experience } from '$lib/types';
 	import { goto } from '$app/navigation';
 
-	export let data: Object & { meta: Experience; content: string };
+	export let data: { meta: Experience; content: ComponentType<SvelteComponent> };
 
-	$: ({ content = '', meta } = data);
+	$: ({ content, meta } = data);
 
 	const LINK_PREFIX = '/about-me/';
 
