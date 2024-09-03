@@ -3,9 +3,9 @@ import { getPostBySlug } from '$lib/services/pb';
 import { ClientResponseError } from 'pocketbase';
 
 export async function load({ params, setHeaders, locals }) {
-	const log = locals.log.child('journal');
+	const log = locals.logger('journal');
 
-	log.info('Fetching post', 'load', { slug: params.slug });
+	log.info({ slug: params.slug }, 'Fetching post');
 
 	setHeaders({
 		'Cache-Control': 'max-age=3600, s-max-age=1'
@@ -14,7 +14,7 @@ export async function load({ params, setHeaders, locals }) {
 	const { slug } = params;
 
 	try {
-		const post = await getPostBySlug(slug, log.child('pb'));
+		const post = await getPostBySlug(slug, log.child({ module: 'getPostBySlug' }));
 
 		if (!post) {
 			throw error(404, { message: `Post with slug ${slug} not found` });
@@ -22,7 +22,7 @@ export async function load({ params, setHeaders, locals }) {
 
 		return post;
 	} catch (e) {
-		log.error('Error fetching post', 'load', { error: e, slug: params.slug });
+		log.error({ error: e, slug: params.slug }, 'Error fetching post');
 		let message: string = '';
 		let status = 500;
 		if (e instanceof ClientResponseError) {
