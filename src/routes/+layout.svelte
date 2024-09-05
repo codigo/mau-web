@@ -46,6 +46,37 @@
 		padding-top: 8rem;
 	}
 
+	@media (max-width: 1200px) {
+		:root {
+			--max-width: 100rem;
+		}
+	}
+	@media (max-width: 900px) {
+		:root {
+			--max-width: 80rem;
+		}
+	}
+	@media (max-width: 810px) {
+		:root {
+			--max-width: 70rem;
+		}
+	}
+	@media (max-width: 700px) {
+		:root {
+			--max-width: 60rem;
+		}
+	}
+	@media (max-width: 600px) {
+		:root {
+			--max-width: 50rem;
+		}
+	}
+	@media (max-width: 500px) {
+		:root {
+			--max-width: 30rem;
+		}
+	}
+
 	.nav-transition {
 		display: flex;
 		gap: 1.6rem;

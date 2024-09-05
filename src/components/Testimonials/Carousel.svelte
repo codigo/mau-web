@@ -49,7 +49,7 @@
 	.carousel {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(calc(100% / var(--itemsToShow)), 1fr));
-
+		grid-template-rows: 1fr;
 		grid-auto-flow: column;
 		grid-auto-columns: minmax(calc(100% / var(--itemsToShow)), 1fr);
 
@@ -112,5 +112,19 @@
 
 	.arrow:hover {
 		transform: scale(1.5);
+	}
+
+	@media (max-width: 900px) {
+		.testimonial {
+			padding: 1.2rem 2.4rem;
+		}
+
+		.arrow.left {
+			left: 1rem;
+		}
+
+		.arrow.right {
+			right: 1rem;
+		}
 	}
 </style>

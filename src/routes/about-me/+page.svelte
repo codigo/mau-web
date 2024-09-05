@@ -103,7 +103,7 @@
 	.about-layout {
 		display: grid;
 		row-gap: 6.4rem;
-		justify-items: center;
+		justify-items: stretch;
 	}
 
 	.section-about-me {
@@ -132,6 +132,12 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 3.2rem;
 		align-items: start;
+	}
+
+	@media (max-width: 970px) {
+		.skills-competences-list {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.skills-competences-outro {

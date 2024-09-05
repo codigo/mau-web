@@ -14,11 +14,9 @@
 	import HuggingFace from './icons/tech/HuggingFace.svelte';
 	import Ollama from './icons/tech/Ollama.svelte';
 	import OpenAI from './icons/tech/OpenAI.svelte';
-	import Mistral from './icons/tech/Mistral.svelte';
 	import Strapi from './icons/tech/Strapi.svelte';
 	import ESBuild from './icons/tech/ESBuild.svelte';
 	import ViteJS from './icons/tech/ViteJS.svelte';
-	import MySQL from './icons/tech/MySQL.svelte';
 	import PostgreSQL from './icons/tech/PostgreSQL.svelte';
 	import Supabase from './icons/tech/Supabase.svelte';
 	import PocketBase from './icons/tech/PocketBase.svelte';
@@ -36,7 +34,6 @@
 	import Redis from './icons/tech/Redis.svelte';
 	import MongoDB from './icons/tech/MongoDB.svelte';
 	import Cloudflare from './icons/tech/Cloudflare.svelte';
-	import Netlify from './icons/tech/Netlify.svelte';
 	import Python from './icons/tech/Python.svelte';
 	import Rust from './icons/tech/Rust.svelte';
 	import CSS from './icons/tech/CSS.svelte';
@@ -68,11 +65,6 @@
 			name: 'OpenAI'
 		},
 		{
-			category: 'AI',
-			icon: Mistral,
-			name: 'Mistral'
-		},
-		{
 			category: 'CMS',
 			icon: Strapi,
 			name: 'Strapi'
@@ -86,11 +78,6 @@
 			category: 'Compiler',
 			icon: ViteJS,
 			name: 'ViteJS'
-		},
-		{
-			category: 'Database',
-			icon: MySQL,
-			name: 'MySQL'
 		},
 		{
 			category: 'Database',
@@ -186,11 +173,6 @@
 			category: 'Infrastructure as Code',
 			icon: Pulumi,
 			name: 'Pulumi'
-		},
-		{
-			category: 'IaaS',
-			icon: Netlify,
-			name: 'Netlify'
 		},
 		{
 			category: 'Libraries',
@@ -344,6 +326,12 @@
 		padding: 8rem 0 12rem 0;
 		margin-bottom: 2.4rem;
 		overflow: hidden;
+	}
+
+	@media (max-width: 980px) {
+		.section-tech-stack {
+			padding: 4.8rem 0 4.8rem 0;
+		}
 	}
 
 	.tech-stack-box {

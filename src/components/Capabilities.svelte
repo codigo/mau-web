@@ -1,6 +1,6 @@
 <section class="section-capabilities b-border">
 	<div class="capabilities">
-		<div class="capability">
+		<div class="capability capability-systems-architecture">
 			<div class="capability-icon">📐</div>
 			<h3 class="capability-text">Systems Architecture</h3>
 			<ul class="capability-list">
@@ -10,7 +10,7 @@
 				<li class="capability-item">Security</li>
 			</ul>
 		</div>
-		<div class="capability">
+		<div class="capability capability-developer-experience">
 			<div class="capability-icon">🤝</div>
 			<h3 class="capability-text">Developer Experience</h3>
 			<ul class="capability-list">
@@ -20,7 +20,7 @@
 				<li class="capability-item">Improved Tooling and Processes</li>
 			</ul>
 		</div>
-		<div class="capability">
+		<div class="capability capability-development">
 			<div class="capability-icon">🧑‍💻️</div>
 			<h3 class="capability-text">Development</h3>
 			<ul class="capability-list">
@@ -40,10 +40,58 @@
 
 	.capabilities {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 3.2rem;
 		justify-items: center;
 		align-items: center;
-		column-gap: 3.2rem;
+	}
+
+	@media (max-width: 1205px) {
+		.section-capabilities {
+			padding: 3.2rem 0 3.2rem 0;
+		}
+
+		.capabilities {
+			grid-template-columns: 0.2rem auto auto auto 0.2rem;
+			row-gap: 6.4rem;
+			justify-content: center;
+		}
+
+		.capability-systems-architecture {
+			grid-column: 2 / 2;
+		}
+
+		.capability-developer-experience {
+			grid-column: 4 / 5;
+		}
+
+		.capability-development {
+			grid-column: 3 / 3;
+		}
+	}
+
+	@media (max-width: 970px) {
+		.section-capabilities {
+			padding: 1.6rem 0 1.6rem 0;
+		}
+
+		.capabilities {
+			grid-template-columns: repeat(1, auto);
+			gap: 3.6rem;
+			justify-content: center;
+		}
+
+		.capability-systems-architecture {
+			grid-column: 1 / 1;
+		}
+
+		.capability-developer-experience {
+			grid-column: 1 / 1;
+		}
+
+		.capability-development {
+			grid-column: 1 / 1;
+		}
 	}
 
 	.capability {

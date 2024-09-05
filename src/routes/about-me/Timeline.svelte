@@ -17,49 +17,24 @@
 
 	<ol class="timeline">
 		{#each experiences as entry, index}
-			{#if index % 2 === 0}
-				<li class="timeline-entry">
-					<p class="timeline-id">{entry.timeframe}</p>
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<button
-						class="timeline-content"
-						role="link"
-						tabindex={index}
-						on:click={() => onClick(entry.slug)}
-					>
-						<h4 class="timeline-heading">
-							{entry.company}
-						</h4>
-						<p class="timeline-text">
-							{entry.description}
-						</p>
-						<!--  end.timeline-text -->
-					</button>
-					<!--  end.timeline-content -->
-				</li>
-				<!--  end.timeline-entry -->
-			{:else}
-				<li class="timeline-entry">
-					<p class="timeline-id">{entry.timeframe}</p>
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<button
-						class="timeline-content timeline-content--flipped"
-						role="link"
-						tabindex={index}
-						on:click={() => onClick(entry.slug)}
-					>
-						<h4 class="timeline-heading">
-							{entry.company}
-						</h4>
-						<p class="timeline-text">
-							{entry.description}
-						</p>
-						<!--  end.timeline-text -->
-					</button>
-					<!--  end.timeline-content flipped -->
-				</li>
-				<!--  end.timeline-entry -->
-			{/if}
+			<li class="timeline-entry">
+				<p class="timeline-id">{entry.timeframe}</p>
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<button
+					class="timeline-content"
+					class:timeline-content--flipped={index % 2 !== 0}
+					role="link"
+					tabindex={index}
+					on:click={() => onClick(entry.slug)}
+				>
+					<h4 class="timeline-heading">
+						{entry.company}
+					</h4>
+					<p class="timeline-text">
+						{entry.description}
+					</p>
+				</button>
+			</li>
 		{/each}
 	</ol>
 	<!--  end.timeline -->

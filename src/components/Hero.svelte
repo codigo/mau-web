@@ -65,9 +65,21 @@
 		column-gap: 3.6rem;
 	}
 
+	@media (max-width: 980px) {
+		.hero-intro {
+			grid-template-columns: auto;
+		}
+	}
+
 	.hero-text-box {
 		display: grid;
 		row-gap: 3.2rem;
+	}
+
+	@media (max-width: 980px) {
+		.hero-text-box {
+			row-gap: 1.6rem;
+		}
 	}
 
 	.hero-heading-name,
