@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import Carousel from './Carousel.svelte';
 	import type { Testimonial } from '$lib/types';
 
@@ -112,15 +114,44 @@
 			image: luispallares
 		}
 	];
+
+	let screenWidth: number = 900;
+
+	onMount(() => {
+		screenWidth = window.innerWidth;
+		const handleResize = () => {
+			screenWidth = window.innerWidth;
+		};
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	});
+
+	$: itemsToShow = screenWidth < 1040 ? 1 : 2;
 </script>
 
 <section class="section-testimonials b-border">
-	<Carousel {testimonials} itemsToShow={2} />
+	<Carousel {testimonials} {itemsToShow} />
 </section>
 
 <style>
 	.section-testimonials {
 		padding: 4.8rem 0;
 		overflow: hidden;
+	}
+
+	@media (max-width: 1040px) {
+		.section-testimonials {
+			margin: 0 auto;
+			padding: 4.8rem 6.4rem;
+		}
+	}
+
+	@media (max-width: 950px) {
+		.section-testimonials {
+			margin: 0 auto;
+			padding: 4.8rem 4.8rem;
+		}
 	}
 </style>

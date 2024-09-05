@@ -42,6 +42,9 @@ By Default 1rem = 16px Better to do font-size: 62.5% on html to make 1rem = 10px
 *::after {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
 
 /* Prevent font size inflation */
@@ -67,11 +70,18 @@ body {
 	margin: unset;
 }
 
-/* Remove default margin */
-* {
-	margin: 0;
-	padding: 0;
-	font: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+p,
+figcaption {
+	text-wrap: pretty;
 }
 
 a {
@@ -124,7 +134,10 @@ strong {
 */
 
 :root {
-	--max-width: 140rem;
+	--screen-padding: 0.6rem;
+	--min-margin: 0.6rem;
+	--max-width: min(calc(100vw - (2 * var(--screen-padding) + 2 * var(--min-margin))), 140rem);
+	--padding: var(--screen-padding);
 
 	/* Component Colors */
 	--color-primary: #0277bb;
@@ -166,6 +179,26 @@ strong {
 
 	/* Border Radius */
 	--theme-border-radius-default: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+	:root {
+		--theme-font-size-default: 1.6rem;
+		--theme-font-size-xlarge: 4.2rem;
+		--theme-font-size-large: 3.4rem;
+		--theme-font-size-medium: 2.2rem;
+		--theme-font-size-small: 1.8rem;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	:root {
+		--theme-font-size-default: 1.2rem;
+		--theme-font-size-xlarge: 3.6rem;
+		--theme-font-size-large: 3rem;
+		--theme-font-size-medium: 1.8rem;
+		--theme-font-size-small: 1.4rem;
+	}
 }
 
 h1 {

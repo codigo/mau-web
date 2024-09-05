@@ -72,6 +72,18 @@
 		gap: 2rem;
 	}
 
+	@media screen and (max-width: 78rem) {
+		.posts-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 48rem) {
+		.posts-list {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
 	.post-item {
 		background: var(--theme-card-background-default);
 		border-radius: var(--theme-border-radius-default);
