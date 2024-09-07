@@ -144,14 +144,21 @@
 	@media (max-width: 1040px) {
 		.section-testimonials {
 			margin: 0 auto;
-			padding: 4.8rem 6.4rem;
+			padding: 4.8rem 4.8rem;
 		}
 	}
 
 	@media (max-width: 950px) {
 		.section-testimonials {
 			margin: 0 auto;
-			padding: 4.8rem 4.8rem;
+			padding: 4.8rem 3.2rem;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.section-testimonials {
+			margin: 0 auto;
+			padding: 4.8rem 0.8em;
 		}
 	}
 </style>
