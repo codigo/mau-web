@@ -73,7 +73,7 @@
 	}
 	@media (max-width: 500px) {
 		:root {
-			--max-width: 30rem;
+			--max-width: 38rem;
 		}
 	}
 

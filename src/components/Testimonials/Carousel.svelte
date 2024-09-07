@@ -32,10 +32,10 @@
 		{/each}
 	</div>
 	<button class="arrow left" on:click={showPrev}>
-		<ChevronBackOutline size={36} />
+		<ChevronBackOutline size={24} />
 	</button>
 	<button class="arrow right" on:click={showNext}>
-		<ChevronForwardOutline size={36} />
+		<ChevronForwardOutline size={24} />
 	</button>
 </div>
 
@@ -70,14 +70,25 @@
 		height: 8rem;
 	}
 
+	@media (max-width: 700px) {
+		.testimonial {
+			padding: 1.2rem 3.2rem;
+		}
+
+		.testimonial-img {
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+
 	.testimonial-text {
 		padding-top: 1.2rem;
-		font-size: 1.6rem;
+		font-size: var(--theme-font-size-small);
 		line-height: 1.5;
 	}
 
 	.testimonial-author {
-		font-size: 1.6rem;
+		font-size: var(--theme-font-size-small);
 		padding: 1.4rem 0;
 	}
 
