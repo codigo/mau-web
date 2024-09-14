@@ -197,9 +197,27 @@
 		color: var(--theme-font-danger);
 	}
 
+	@media (width <= 1200px) {
+		.contact-form {
+			width: calc(var(--max-width) / 1.8);
+		}
+	}
+
+	@media (width <= 1000px) {
+		.contact-form {
+			width: calc(var(--max-width) / 1.6);
+		}
+	}
+
+	@media (width <= 900px) {
+		.contact-form {
+			width: calc(var(--max-width) / 1.4);
+		}
+	}
+
 	@media (width <= 750px) {
 		.contact-form {
-			width: calc(var(--max-width) / 4);
+			width: calc(var(--max-width) / 1.2);
 		}
 	}
 </style>
