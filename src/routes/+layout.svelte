@@ -43,7 +43,7 @@
 	.main {
 		max-width: var(--max-width);
 		margin: 0 auto;
-		padding-top: 8rem;
+		padding-top: 4rem;
 	}
 
 	@media (max-width: 1200px) {
