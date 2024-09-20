@@ -79,3 +79,23 @@ jobs:
           repository: codigo/basic-infra-setup
           event-type: deploy-application
           client-payload: '{"version": "${{ env.TAG }}", "name": "${{ env.NAME }}"}'
+
+  launch-update:
+    name: Trigger Container Update
+    needs: trigger-deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Payload
+        uses: morzzz007/github-actions-jwt-generator@1.0.1
+        id: jwtGenerator
+        with:
+          secret: ${{ secrets.JWT_SECRET }}
+          payload: '{"appName":"${{ env.NAME }}"}'
+
+      - name: Trigger Update
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ vars.CONTAINER_UPDATER_URL }}/update
+          method: POST
+          customHeaders: '{ "Authorization": "Bearer ${{ steps.jwtGenerator.outputs.token }}", "Content-Type": "application/json"}'
+          data: '{"appName": "${{ env.NAME }}"}'
