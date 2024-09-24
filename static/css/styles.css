@@ -15,6 +15,13 @@
 	}
 }
 
+/* Article Post Wrapper and Timeline Content */
+/* This is to prevent the default styles from being applied to the article wrapper and timeline content */
+.article-wrapper,
+.timeline-content {
+	color: unset;
+}
+
 article.post-wrapper > ul,
 article.post-wrapper > ol {
 	display: flex;
