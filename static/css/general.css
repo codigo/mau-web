@@ -240,12 +240,18 @@ a {
 	line-height: var(--theme-font-line-height-default);
 }
 
+/* Pico CSS */
 .pico input,
 .pico textarea {
 	-moz-border-radius: var(--theme-border-radius-default);
 	-webkit-border-radius: var(--theme-border-radius-default);
 	border-radius: var(--theme-border-radius-default);
 	padding: 1.6rem;
+}
+
+.pico label {
+	color: inherit;
+	font-weight: inherit;
 }
 
 .pico input:not([type='checkbox'], [type='radio'], [type='range'], [type='file']) {
