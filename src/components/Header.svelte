@@ -9,6 +9,7 @@
 
 	let path: string;
 	let isMenuOpen = false;
+	let hoveredLink: string | null = null;
 
 	function getPath(currentPath: string) {
 		path = currentPath;
@@ -16,6 +17,14 @@
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+	}
+
+	function handleMouseEnter(key: string) {
+		hoveredLink = key;
+	}
+
+	function handleMouseLeave() {
+		hoveredLink = null;
 	}
 
 	$: getPath($page.url.pathname);
@@ -28,9 +37,13 @@
 				{#each Object.entries(links) as [key, link]}
 					<li>
 						<a
-							class="main-nav-link {path === link.path ? 'active' : ''}"
+							class="main-nav-link"
+							class:active={path === link.path}
+							class:hovered={hoveredLink === key}
 							href={link.path}
 							on:click={() => (isMenuOpen = false)}
+							on:mouseenter={() => handleMouseEnter(key)}
+							on:mouseleave={handleMouseLeave}
 						>
 							{link.name}
 						</a>
@@ -41,6 +54,7 @@
 				class="hamburger-menu"
 				on:click={toggleMenu}
 				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				class:hovered={hoveredLink === 'hamburger-menu'}
 			>
 				<span class="hamburger-icon" class:open={isMenuOpen}></span>
 			</button>
