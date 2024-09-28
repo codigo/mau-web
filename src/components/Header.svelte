@@ -9,6 +9,7 @@
 
 	let path: string;
 	let isMenuOpen = false;
+	let hoveredLink: string | null = null;
 
 	function getPath(currentPath: string) {
 		path = currentPath;
@@ -16,6 +17,14 @@
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+	}
+
+	function handleMouseEnter(key: string) {
+		hoveredLink = key;
+	}
+
+	function handleMouseLeave() {
+		hoveredLink = null;
 	}
 
 	$: getPath($page.url.pathname);
@@ -28,9 +37,13 @@
 				{#each Object.entries(links) as [key, link]}
 					<li>
 						<a
-							class="main-nav-link {path === link.path ? 'active' : ''}"
+							class="main-nav-link"
+							class:active={path === link.path}
+							class:hovered={hoveredLink === key}
 							href={link.path}
 							on:click={() => (isMenuOpen = false)}
+							on:mouseenter={() => handleMouseEnter(key)}
+							on:mouseleave={handleMouseLeave}
 						>
 							{link.name}
 						</a>
@@ -41,6 +54,7 @@
 				class="hamburger-menu"
 				on:click={toggleMenu}
 				aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				class:hovered={hoveredLink === 'hamburger-menu'}
 			>
 				<span class="hamburger-icon" class:open={isMenuOpen}></span>
 			</button>
@@ -82,16 +96,36 @@
 	}
 
 	.main-nav-link {
-		transition: 0.25s ease;
+		transition: color 0.25s ease;
 		padding: 0.5rem 1rem;
+		position: relative;
+		color: var(--theme-font-primary);
 	}
 
-	.main-nav-link:hover {
+	.main-nav-link:not(.active) {
+		transition: color 0.25s ease;
+	}
+
+	.main-nav-link.hovered:not(.active) {
 		color: var(--theme-font-secondary);
+		transition: color 0.25s ease;
 	}
 
-	.active {
-		box-shadow: 0 2px 0 0 var(--theme-font-active-link);
+	.active,
+	.active:hover {
+		color: var(--theme-font-active-link);
+		transition: color 0.25s ease;
+	}
+
+	.active::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--theme-font-active-link);
+		transition: background-color 0.25s ease;
 	}
 
 	.hamburger-menu {
