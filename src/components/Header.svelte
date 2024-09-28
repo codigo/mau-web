@@ -96,16 +96,36 @@
 	}
 
 	.main-nav-link {
-		transition: 0.25s ease;
+		transition: color 0.25s ease;
 		padding: 0.5rem 1rem;
+		position: relative;
+		color: var(--theme-font-primary);
 	}
 
-	.main-nav-link:hover {
+	.main-nav-link:not(.active) {
+		transition: color 0.25s ease;
+	}
+
+	.main-nav-link.hovered:not(.active) {
 		color: var(--theme-font-secondary);
+		transition: color 0.25s ease;
 	}
 
-	.active {
-		box-shadow: 0 2px 0 0 var(--theme-font-active-link);
+	.active,
+	.active:hover {
+		color: var(--theme-font-active-link);
+		transition: color 0.25s ease;
+	}
+
+	.active::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--theme-font-active-link);
+		transition: background-color 0.25s ease;
 	}
 
 	.hamburger-menu {
