@@ -49,21 +49,32 @@
 <style>
 	.markdown-wrapper {
 		display: grid;
-		row-gap: 3.2rem;
+		row-gap: 2.4rem;
 		align-items: center;
 	}
 
-	:global(.markdown-wrapper ul) {
+	:global(.markdown-wrapper ul:nth-child(5)) {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.8rem;
 		justify-content: flex-start;
 	}
 
-	:global(.markdown-wrapper ul li) {
-		padding: 1rem;
+	:global(.markdown-wrapper ul:nth-child(5) li) {
+		padding: 0.8rem;
 		background-color: var(--theme-card-background-default);
 		border-radius: var(--theme-border-radius-default);
+	}
+
+	:global(.markdown-wrapper ul:not(:nth-child(5))) {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	:global(.markdown-wrapper ul:not(:nth-child(5)) li) {
+		padding: 0.8rem;
+		list-style: square inside;
 	}
 	.navigation-links {
 		padding-top: 3.2rem;
