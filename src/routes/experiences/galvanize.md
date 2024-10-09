@@ -7,11 +7,12 @@ previous: doc-ai
 next: mobilelive
 ---
 
-**Senior Software Developer**
+<!-- markdownlint-disable MD041 -->
+## Senior Software Engineer
 
-**Oct 2021 - Mar 2022**
+Oct 2021 - Mar 2022
 
-**Technologies Used:**
+### Technologies Used
 
 - JavaScript
 - Node.js,
@@ -21,10 +22,12 @@ next: mobilelive
 - CloudFormation
 - CI/CD (GitHub Actions)
 
-At Diligent, my primary responsibilities were maintaining and enhancing existing JavaScript code. Tasked with optimizing the performance and reliability of several applications, I leveraged my deep understanding of JavaScript and Node.js to identify and fix bugs, improve code quality, and implement new features where required.
+Maintained and optimized critical JavaScript and Node.js applications, focusing on code quality, performance analysis, and architectural improvements. Served as a key knowledge resource, facilitating team learning and promoting Node.js best practices. Conducted thorough code reviews and maintained comprehensive documentation.
 
-A crucial part of my role was providing contextual insights into the Node.js applications to the rest of the team; this involved explaining complex technical concepts in an accessible manner, ensuring a clear understanding of the software architecture, and guiding developers in troubleshooting and problem-solving.
+- Identified performance bottlenecks in core applications serving 100,000+ daily active users, providing detailed optimization recommendations
+- Improved test execution efficiency by 60% through innovative compilation and parallel execution strategies
+- Utilized JavaScript, Node.js, and advanced performance profiling tools to analyze and enhance application performance
+- Proposed a transition plan from monolithic to microservices architecture, outlining improvements in deployment efficiency and scalability
+- Conducted workshops and created an internal knowledge base, significantly improving team-wide Node.js proficiency
 
-I maintained high code quality and readability standards through diligent code reviews and documentation. I also played an instrumental role in fostering knowledge sharing within the team, strengthening our collective expertise and efficiency in Node.js development.
-
-This experience further honed my skills in JavaScript and Node.js. It underscored the importance of clear communication, teamwork, and continuous learning in maintaining and enhancing complex software applications.
+This role deepened my expertise in JavaScript and Node.js, while honing skills in performance optimization, architectural design, and technical leadership. It reinforced the importance of clear communication, collaborative problem-solving, and continuous learning in maintaining complex software ecosystems.

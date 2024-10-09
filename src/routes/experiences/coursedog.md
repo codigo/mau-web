@@ -7,18 +7,24 @@ previous: codigo
 next: doc-ai
 ---
 
-**Senior Software Engineer**
+<!-- markdownlint-disable MD041 -->
+## Senior Software Engineer
 
-**April 2023 - Present**
+April 2023 - Present
 
-**Technologies Used:**
+### Technologies Used
 
 - TypeScript
 - Node.js
 - SQL
-- Docker
-- CI/CD (GitHub Actions)
+- Vue.js
 
-At Coursedog, my role involves analyzing university requirements to design and develop new integration solutions using Node.js. I write clean, efficient, and well-documented code for new integrations, adhering to best practices in software development. I thoroughly test newly developed integrations to ensure functionality, reliability, and compatibility with existing systems. I regularly review and update existing integrations with external universities' systems to ensure optimal performance and reliability.
+As a Software Engineer at Coursedog, I play a pivotal role in revolutionizing educational technology solutions for universities. My responsibilities go from requirement analysis to implementation and maintenance of critical integrations.
 
-In addition, I monitor integration systems for errors or issues, promptly troubleshooting and resolving any problems encountered. My problem-solving skills, combined with my expertise in TypeScript and SQL, enable me to develop robust integration solutions that meet the complex needs of educational institutions.
+- Development of robust integration solutions for multiple universities, ensuring seamless compatibility with diverse existing systems and significantly enhancing data interoperability.
+- Development of an intuitive search interface using Vue.js for historical CSV uploads, boosting data accessibility and reducing user query time by 40%.
+- Regular code reviews and optimization initiatives for existing integrations.
+- Implementation of a sophisticated monitoring system, enabling real-time identification and resolution of integration errors.
+- Contribution to the Coursedog platform by developing innovative features using Vue.js, focusing on streamlining data management tasks and elevating user experience.
+
+Through my tenure at Coursedog, I've cultivated deep expertise in educational technology integrations and significantly enhanced my proficiency in a range of technologies. My technical skills include robust backend development using Node.js and TypeScript, efficient database management with SQL, and creating dynamic front-end interfaces with Vue.js.

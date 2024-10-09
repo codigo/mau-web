@@ -7,11 +7,12 @@ next: coursedog
 previous: freelance
 ---
 
-**Company Owner**
+<!-- markdownlint-disable MD041 -->
+## Company Owner
 
-**March 2019 - Present**
+March 2019 - Present
 
-**Technologies Used:**
+### Technologies Used
 
 - Node.js
 - AWS
@@ -36,8 +37,27 @@ previous: freelance
 - Firebase
 - Supabase
 
-As the owner of Codigo Consulting, I have spearheaded numerous projects, providing software architecture and platform architecture solutions to various clients. I have utilized many technologies, including Node.js, Typescript, AWS services, WebSocket, and React.js, to deliver high-quality solutions. My work often involves designing and implementing systems using AWS services, building continuous integration and delivery pipelines, and developing scalable and maintainable software architectures.
+## Driving Innovation Through Expert Software Architecture
 
-I have successfully led projects from inception to completion, ensuring they meet client requirements and are delivered on time and within budget. My expertise in agile methodologies and project development has enabled me to manage teams effectively and ensure seamless project execution. I have also integrated machine learning and large language models into various applications, enhancing their capabilities and performance.
+As the founder and principal consultant at Codigo Consulting, I offer unparalleled expertise in software and platform architecture, delivering transformative solutions to businesses across various sectors. My comprehensive skillset spans cutting-edge technologies including Node.js, TypeScript, AWS services, WebSocket, Svelte, and React.js, enabling me to craft bespoke, high-performance solutions that drive your business forward.
 
-My role also involves collaborating with clients to understand their needs and provide tailored solutions for their challenges.
+## What I Bring to Your Project
+
+- **Cloud Mastery**: Whether you're looking to leverage AWS services or optimize your self-hosted environment, I design and implement robust systems that scale with your business needs.
+- **Full-Stack Excellence**: From responsive front-end interfaces to powerful back-end architectures, I ensure seamless integration and optimal performance across your entire technology stack.
+- **DevOps Optimization**: My expertise in building advanced CI/CD pipelines streamlines your development process, enhancing efficiency and reliability from code commit to production deployment.
+- **AI Integration**: Stay ahead of the curve with custom integrations of machine learning and large language models, unlocking new capabilities and insights for your applications.
+- **End-to-End Project Leadership**: I guide projects from conception to completion, ensuring alignment with your objectives, timely delivery, and budget adherence.
+
+## Why Choose Codigo Consulting?
+
+- **Proven Track Record**: Successfully delivered numerous projects, consistently meeting client requirements and deadlines.
+- **Scalable Solutions**: Architectures designed for long-term viability, adapting to your growing business needs.
+- **Cutting-Edge Technology**: Leverage the latest in cloud services, AI, and development practices to give your business a competitive edge.
+- **Client-Centric Approach**: I collaborate closely with you to understand your unique challenges and craft tailored solutions that deliver tangible results.
+
+## Invest in Expertise
+
+By engaging Codigo Consulting, you're not just hiring a developer – you're partnering with a seasoned architect and strategist. My continuous growth in cloud architectures, AI integration, and agile methodologies ensures that your project benefits from the latest innovations in tech.
+
+Let's transform your ideas into robust, scalable realities. With Codigo Consulting, elevate your software architecture and drive your business towards unprecedented success.

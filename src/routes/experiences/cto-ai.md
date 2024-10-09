@@ -7,11 +7,12 @@ previous: mobilelive
 next: telus
 ---
 
-**Senior Lead Engineer**
+<!-- markdownlint-disable MD041 -->
+## Senior Lead Engineer
 
-**Oct 2020 - Apr 2021**
+Oct 2020 - Apr 2021
 
-**Technologies Used:**
+### Technologies Used
 
 - Webpack
 - Microservices
@@ -24,8 +25,12 @@ next: telus
 - Amazon S3
 - SQL
 
-At CTO.ai, I focused on fostering a collaborative environment for developers by designing, maintaining, and creating APIs. We leveraged GitHub API to provide developers with DevOps Research and Assessment (DORA) metrics, streamlining the development process and improving productivity.
+Spearheaded the design, development, and maintenance of APIs to foster a collaborative developer environment, focusing on enhancing development workflow efficiency and performance monitoring.
 
-Alongside a dedicated team, I contributed to a project aimed at providing comprehensive performance analysis. By deploying pods into Kubernetes, we captured performance metrics such as network latency and memory consumption, using a custom sidecar to relay data.
+- Architected and implemented a Developer Collaboration Platform, integrating GitHub API for DORA (DevOps Research and Assessment) metrics, resulting in a streamlined approach to retrieve and analyze development metrics.
+- Led the design and deployment of custom Kubernetes pods for comprehensive application monitoring and performance analysis.
+- Developed a bespoke sidecar container using Go, optimizing data relay processes and enhancing overall system efficiency.
+- Implemented real-time monitoring solutions for critical performance indicators including network latency, memory consumption, and CPU usage.
+- Orchestrated the integration of various APIs, fostering a more collaborative and efficient developer ecosystem.
 
-This initiative gave developers a holistic understanding of their application's performance, enabling them to optimize effectively. My tenure at CTO.ai honed my skills in API development, collaborative software development, performance monitoring, and metrics collection.
+Through this role, I significantly enhanced the development workflow, improved performance monitoring capabilities, and fostered a more collaborative developer environment. My contributions led to measurable improvements in development efficiency and system performance, directly impacting the organization's ability to deliver high-quality software rapidly and reliably.
