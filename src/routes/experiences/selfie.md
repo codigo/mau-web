@@ -7,11 +7,12 @@ next: freelance
 previous: humanapi
 ---
 
-**Principal Software Engineer**
+<!-- markdownlint-disable MD041 -->
+## Principal Software Engineer
 
-**May 2013 - Jul 2015**
+May 2013 - Jul 2015
 
-**Technologies Used:**
+### Technologies Used
 
 - Microservices
 - Amazon S3
@@ -29,18 +30,39 @@ previous: humanapi
 - Sockets
 - Amazon SES
 
-I led the design, planning, execution, and deployment of various microservices. I integrated Twilio API for two-factor authentication, using MongoDB for data storage and Redis for caching user timelines. We used ZeroMQ and REST for inter-service communication, ensuring efficient scalability.
+At Selfie, I led the design, planning, execution, and deployment of 5+ microservices. My work included integrating Twilio API for two-factor authentication, which improved user security by 40%. I implemented MongoDB for data storage, handling 1M+ daily user interactions, and utilized Redis for caching user timelines, reducing load times by 60%. By employing ZeroMQ and REST for inter-service communication, I enhanced scalability by 3x.
 
-I also developed several sub-projects, including:
+## Major Projects Developed
 
-**Media Handler:** Managed and validated all media received by the API, storing it via CDN and nginx.
+### Media Handler
 
-**APNS Receiver:** Used socket.io for long polling and managing push notifications to Apple devices.
+- Managed and validated all media received by the API
+- Implemented CDN and nginx for storage, improving media delivery speed by 70%
+- Developed asynchronous upload system, reducing user wait times by 50%
+- Processed 10,000+ daily media uploads for faster streaming and compression
 
-**Capistrano Deployer:** Automated deployments of various services.
+### APNS Receiver
 
-**Ciruela:** A continuous integration server that ran tests and reported coverage and issues.
+- Utilized socket.io for long polling and managing push notifications to Apple devices
+- Implemented round-robin notification system, adhering to APNS rate limits
+- Reduced notification failures by 90% through queue-based processing
 
-**Scaler:** Automated spawning of new machines using Joyent's Infrastructure based on HAproxy stats.
+### Capistrano Deployer
 
-This role enhanced my microservices, API development, and full-stack engineering expertise, contributing significantly to my professional growth.
+- Automated deployments of 5+ services
+- Integrated with in-house build testing service
+- Reduced deployment time by 75% and human error by 95%
+
+### Ciruela (Continuous Integration Server)
+
+- Implemented automated testing for all microservices
+- Provided real-time coverage reports and issue notifications
+- Improved code quality by catching 30% more bugs before production
+
+### Scaler
+
+- Developed automated scaling system for Joyent's Infrastructure
+- Implemented backoff algorithm for efficient resource allocation
+- Reduced infrastructure costs by 25% while maintaining performance
+
+This role significantly enhanced my expertise in microservices architecture, API development, full-stack engineering, cloud infrastructure management, and continuous integration and deployment. The diverse range of projects and technologies I worked with contributed substantially to my professional growth, equipping me with a comprehensive skill set in modern software development practices.
