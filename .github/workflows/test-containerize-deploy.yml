@@ -65,6 +65,10 @@ jobs:
             PUBLIC_POCKETBASE_URL=${{ secrets.PUBLIC_POCKETBASE_URL }}
 
   semantic-release:
+    needs: test
+    permissions:
+      contents: write
+      pull-requests: write
     name: 'Semantic Release'
     runs-on: ubuntu-latest
     steps:
