@@ -6,7 +6,9 @@ description: Developed applications for Coca Cola Colombia, Joyeria Caribe, and 
 previous: selfie
 next: codigo
 ---
+
 <!-- markdownlint-disable MD041 -->
+
 ## Freelance Software Engineer
 
 \* - May 2013

@@ -8,6 +8,7 @@ next: cto-ai
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Software Engineering Consultant
 
 May 2021 - Oct 2021

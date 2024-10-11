@@ -8,6 +8,7 @@ previous: coursedog
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Software Engineer
 
 Apr 2022 - Mar 2023

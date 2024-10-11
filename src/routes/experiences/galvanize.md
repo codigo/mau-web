@@ -8,6 +8,7 @@ next: mobilelive
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Senior Software Engineer
 
 Oct 2021 - Mar 2022
