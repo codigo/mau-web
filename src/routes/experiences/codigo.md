@@ -8,6 +8,7 @@ previous: freelance
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Company Owner
 
 March 2019 - Present

@@ -8,6 +8,7 @@ previous: humanapi
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Principal Software Engineer
 
 May 2013 - Jul 2015

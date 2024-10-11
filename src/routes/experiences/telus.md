@@ -8,6 +8,7 @@ next: navarik
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Sr Technology Architect
 
 Apr 2019 - Sep 2020

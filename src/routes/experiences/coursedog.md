@@ -8,6 +8,7 @@ next: doc-ai
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Senior Software Engineer
 
 April 2023 - Present

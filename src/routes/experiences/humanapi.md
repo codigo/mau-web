@@ -8,6 +8,7 @@ next: selfie
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Senior Software Engineer
 
 Jul 2015 - Jun 2018

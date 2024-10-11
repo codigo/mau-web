@@ -8,6 +8,7 @@ next: telus
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Senior Lead Engineer
 
 Oct 2020 - Apr 2021

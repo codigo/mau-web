@@ -8,6 +8,7 @@ next: humanapi
 ---
 
 <!-- markdownlint-disable MD041 -->
+
 ## Senior Lead Software Engineer
 
 Jan 2019 - Apr 2019
