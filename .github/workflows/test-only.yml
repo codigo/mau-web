@@ -36,6 +36,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write
     name: 'Semantic Release'
     runs-on: ubuntu-latest
     steps:
@@ -49,5 +50,6 @@ jobs:
             @semantic-release/commit-analyzer
             @semantic-release/release-notes-generator
             @semantic-release/changelog
+            @semantic-release/npm
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
