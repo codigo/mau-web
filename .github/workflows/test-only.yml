@@ -32,6 +32,7 @@ jobs:
           HOME: /root
 
   semantic-release:
+    needs: test
     permissions:
       contents: write
       pull-requests: write
