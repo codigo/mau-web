@@ -31,10 +31,33 @@ jobs:
         env:
           HOME: /root
 
+  semantic-release:
+    needs: test
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    name: 'Semantic Release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          semantic_version: 24.1.2
+          extra_plugins: |
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            @semantic-release/changelog
+            @semantic-release/npm
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
+
   build:
     name: 'Build and Push Docker Image'
     runs-on: ubuntu-latest
-    needs: test
+    needs: semantic-release
     steps:
       - uses: actions/checkout@v4
       - name: Extract version and name and set it to TAG env and NAME env var
@@ -64,32 +87,9 @@ jobs:
             SECRET_CF_TURNSTILE_SECRET=${{ secrets.SECRET_CF_TURNSTILE_SECRET }}
             PUBLIC_POCKETBASE_URL=${{ secrets.PUBLIC_POCKETBASE_URL }}
 
-  semantic-release:
-    needs: test
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-    name: 'Semantic Release'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          semantic_version: 24.1.2
-          extra_plugins: |
-            @semantic-release/commit-analyzer
-            @semantic-release/release-notes-generator
-            @semantic-release/changelog
-            @semantic-release/npm
-            @semantic-release/git
-        env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
-
   trigger-deployment:
     name: 'Trigger Deployment Workflow'
-    needs: semantic-release
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
