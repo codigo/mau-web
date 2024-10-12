@@ -89,7 +89,7 @@ jobs:
 
   trigger-deployment:
     name: 'Trigger Deployment Workflow'
-    needs: build
+    needs: semantic-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
