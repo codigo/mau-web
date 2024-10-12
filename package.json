@@ -57,6 +57,12 @@
 				}
 			],
 			[
+				"@semantic-release/npm",
+				{
+					"publish": false
+				}
+			],
+			[
 				"@semantic-release/git",
 				{
 					"publish": false,
