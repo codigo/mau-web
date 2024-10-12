@@ -83,6 +83,7 @@ jobs:
             @semantic-release/release-notes-generator
             @semantic-release/changelog
             @semantic-release/npm
+            @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
 
