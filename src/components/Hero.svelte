@@ -124,10 +124,7 @@
 	.social-icon {
 		transition: 0.25s ease;
 		cursor: pointer;
-		& svg {
-			width: 3rem;
-			height: 3rem;
-		}
+
 		&:hover {
 			transform: scale(1.25);
 		}
@@ -155,22 +152,13 @@
 		left: -2.4rem;
 		right: -2.4rem;
 		bottom: -2.4rem;
-		background: conic-gradient(
-			from 150deg,
-			#fff,
-			#fff 46%,
-			transparent 46%
-		);
+		background: conic-gradient(from 150deg, #fff, #fff 46%, transparent 46%);
 		-webkit-mask: radial-gradient(
 			farthest-side,
 			transparent calc(100% - 3px),
 			#fff calc(100% - 3px + 1px)
 		);
-		mask: radial-gradient(
-			farthest-side,
-			transparent calc(100% - 3px),
-			#fff calc(100% - 3px + 1px)
-		);
+		mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #fff calc(100% - 3px + 1px));
 		border-radius: 50%;
 		z-index: -1;
 		opacity: 0.8;
