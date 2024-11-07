@@ -39,7 +39,7 @@
 							class="tech-stack-item"
 							aria-hidden={!!tech.duplicate}
 						>
-							<svelte:component this={tech.icon} />
+							<tech.icon size="48" />
 						</li>
 					{/each}
 				</ul>
@@ -121,12 +121,6 @@
 		padding: 1.8rem;
 		background-color: var(--theme-card-background-default);
 		border-radius: 5px;
-
-		& > svg {
-			max-width: 6.2rem;
-			min-width: 6.2rem;
-			height: 6.2rem;
-		}
 	}
 
 	.pico [data-tooltip] {

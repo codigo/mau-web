@@ -1,10 +1,13 @@
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<script>
+	export let size = '24';
+</script>
+
 <svg
-	width="800px"
-	height="800px"
-	viewBox="-13 0 282 282"
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	preserveAspectRatio="xMinYMin meet"
+	viewBox="-13 0 282 282"
 >
 	<g fill="#8CC84B">
 		<path

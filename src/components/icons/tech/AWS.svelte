@@ -1,3 +1,7 @@
+<script>
+	export let size = '24';
+</script>
+
 <svg
 	version="1.1"
 	id="Layer_1"
@@ -7,6 +11,8 @@
 	viewBox="0 0 304 182"
 	style="enable-background:new 0 0 304 182"
 	xml:space="preserve"
+	width={size}
+	height={size}
 >
 	<style>
 		.st1 {

@@ -1,6 +1,11 @@
+<script>
+	export let size = '24';
+</script>
+
 <svg
-	width="95px"
-	height="88px"
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
 	viewBox="0 0 95 88"
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"

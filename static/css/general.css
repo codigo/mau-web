@@ -147,7 +147,7 @@ strong {
 	--color-danger-light: #f7d6d9;
 
 	/* Background */
-	--theme-background-default: #0e1217;
+	--theme-background-default: rgba(14, 18, 23, 0.9);
 	--theme-background-secondary: #7b7c7f;
 
 	--theme-card-background-default: #3333338a;

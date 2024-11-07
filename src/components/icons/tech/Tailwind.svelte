@@ -1,9 +1,13 @@
+<script>
+	export let size = '24';
+</script>
+
 <svg
-	viewBox="0 0 256 154"
-	width="256"
-	height="154"
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	preserveAspectRatio="xMidYMid"
+	viewBox="0 0 256 154">
 >
 	<defs
 		><linearGradient x1="-2.778%" y1="32%" x2="100%" y2="67.556%" id="gradient">

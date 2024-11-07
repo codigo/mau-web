@@ -1,10 +1,14 @@
+<script>
+	export let size = '24';
+</script>
+
 <svg
-	viewBox="0 0 256 257"
-	width="256"
-	height="257"
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	preserveAspectRatio="xMidYMid"
-	><defs
+	viewBox="0 0 256 257">
+	<defs
 		><linearGradient x1="-.828%" y1="7.652%" x2="57.636%" y2="78.411%" id="a"
 			><stop stop-color="#41D1FF" offset="0%" /><stop
 				stop-color="#BD34FE"

@@ -1,10 +1,14 @@
+<script>
+	export let size = '24';
+</script>
+
 <svg
-	viewBox="0 0 256 256"
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	width="256"
-	height="256"
-	preserveAspectRatio="xMidYMid"
-	><path
+	viewBox="0 0 256 256">
+	<path
 		fill="#FFF"
 		d="M9.46 170.336a8.467 8.467 0 0 1-8.468-8.467V9.459A8.467 8.467 0 0 1 9.46.992h152.41a8.467 8.467 0 0 1 8.467 8.467v76.205h76.205a8.467 8.467 0 0 1 8.467 8.467v152.41a8.467 8.467 0 0 1-8.467 8.467H94.13a8.467 8.467 0 0 1-8.467-8.467v-76.205Z"
 	/><path

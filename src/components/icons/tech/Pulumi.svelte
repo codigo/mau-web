@@ -1,4 +1,14 @@
-<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script>
+	export let size = '24';
+</script>
+
+<svg
+	width={size}
+	height={size}
+	preserveAspectRatio="mid"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 300 300">
 	<circle cx="150" cy="150" r="150" fill="black" />
 	<path
 		d="M97.0239 205.745C103.293 202.125 103.304 190.406 97.0471 179.569C90.7905 168.733 80.6361 162.882 74.3666 166.502C68.0971 170.122 68.0867 181.841 74.3433 192.678C80.5999 203.514 90.7544 209.364 97.0239 205.745Z"

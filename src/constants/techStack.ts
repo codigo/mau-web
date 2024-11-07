@@ -1,4 +1,4 @@
-import type { ComponentType } from 'svelte';
+import type { SvelteComponent } from 'svelte';
 
 // Import all tech icons
 import AWS from '../components/icons/tech/AWS.svelte';
@@ -43,7 +43,7 @@ import Cloudinary from '../components/icons/tech/Cloudinary.svelte';
 
 export interface TechStack {
 	category: string;
-	icon: ComponentType;
+	icon: new (options: { target: HTMLElement, props?: Record<string, any> }) => SvelteComponent;
 	name: string;
 	duplicate?: boolean;
 }
