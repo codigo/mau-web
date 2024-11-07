@@ -21,7 +21,7 @@
 <section class="section-tech-stack b-border">
 	{#if loading}
 		<div class="loading" aria-busy={loading}>
-			<span class="loader" />
+			<span class="loader"></span>
 		</div>
 	{:else}
 		<div class="pico tech-stack-box" data-animated={dataAnimatedScroller}>
@@ -39,7 +39,7 @@
 							class="tech-stack-item"
 							aria-hidden={!!tech.duplicate}
 						>
-							<tech.icon size="48" />
+							<tech.icon size="64" />
 						</li>
 					{/each}
 				</ul>
