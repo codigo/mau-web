@@ -1,24 +1,50 @@
-<script>
+<script lang="ts">
+	type Capability = {
+		icon: string;
+		title: string;
+		items: { text: string; tooltip: string }[];
+	};
 
-	const capabilities = [
+	const capabilities: Capability[] = [
 		{
 			icon: '📐',
 			title: 'Systems Architecture',
 			items: [
-				{ text: 'Scalability', tooltip: 'Ensuring systems can handle increased load without performance degradation.' },
-				{ text: 'Performance', tooltip: 'Optimizing system performance to meet user expectations.' },
-				{ text: 'Reliability', tooltip: 'Ensuring systems remain reliable and available during normal operations.' },
-				{ text: 'Security', tooltip: 'Protecting systems from unauthorized access and attacks.' },
+				{
+					text: 'Scalability',
+					tooltip: 'Ensuring systems can handle increased load without performance degradation.'
+				},
+				{
+					text: 'Performance',
+					tooltip: 'Optimizing system performance to meet user expectations.'
+				},
+				{
+					text: 'Reliability',
+					tooltip: 'Ensuring systems remain reliable and available during normal operations.'
+				},
+				{ text: 'Security', tooltip: 'Protecting systems from unauthorized access and attacks.' }
 			]
 		},
 		{
 			icon: '🤝',
 			title: 'Developer Experience',
 			items: [
-				{ text: 'Optimized Feedback Loops', tooltip: 'Optimizing feedback loops to improve developer productivity.' },
-				{ text: 'Reduced Cognitive Load', tooltip: 'Reducing cognitive load to enhance developer efficiency.' },
-				{ text: 'Enhanced Flow State', tooltip: 'Enhancing flow state to improve developer productivity.' },
-				{ text: 'Improved Tooling and Processes', tooltip: 'Improving tooling and processes to streamline development workflows.' },
+				{
+					text: 'Optimized Feedback Loops',
+					tooltip: 'Optimizing feedback loops to improve developer productivity.'
+				},
+				{
+					text: 'Reduced Cognitive Load',
+					tooltip: 'Reducing cognitive load to enhance developer efficiency.'
+				},
+				{
+					text: 'Enhanced Flow State',
+					tooltip: 'Enhancing flow state to improve developer productivity.'
+				},
+				{
+					text: 'Improved Tooling and Processes',
+					tooltip: 'Improving tooling and processes to streamline development workflows.'
+				}
 			]
 		},
 		{
@@ -27,22 +53,36 @@
 			items: [
 				{ text: 'Frontend', tooltip: 'Building the front-end of web applications.' },
 				{ text: 'Backend', tooltip: 'Building the back-end of web applications.' },
-				{ text: 'Automated Testing', tooltip: 'Automating testing processes to ensure code quality and reliability.' },
-				{ text: 'Mobile Development', tooltip: 'Developing mobile applications for iOS and Android platforms.' },
+				{
+					text: 'Automated Testing',
+					tooltip: 'Automating testing processes to ensure code quality and reliability.'
+				},
+				{
+					text: 'Mobile Development',
+					tooltip: 'Developing mobile applications for iOS and Android platforms.'
+				}
 			]
 		},
 		{
 			icon: '🤖',
 			title: 'AI Integration',
 			items: [
-				{ text: 'LangChain Development', tooltip: 'Creating custom chains and agents for specific use cases.' },
+				{
+					text: 'LangChain Development',
+					tooltip: 'Creating custom chains and agents for specific use cases.'
+				},
 				{ text: 'RAG', tooltip: 'Using AI to extract information from unstructured data.' },
-				{ text: 'AI Consulting & Strategy', tooltip: 'Providing expert advice and guidance on AI strategy and implementation.' },
-				{ text: 'LLM Integration & Deployment', tooltip: 'Integrating and deploying LLMs into existing systems.' },
+				{
+					text: 'AI Consulting & Strategy',
+					tooltip: 'Providing expert advice and guidance on AI strategy and implementation.'
+				},
+				{
+					text: 'LLM Integration & Deployment',
+					tooltip: 'Integrating and deploying LLMs into existing systems.'
+				}
 			]
 		}
-	]
-
+	];
 </script>
 
 <section class="section-capabilities b-border">
@@ -53,7 +93,7 @@
 				<h3 class="capability-text">{capability.title}</h3>
 				<ul class="capability-list">
 					{#each capability.items as item}
-						<li class="capability-item" data-placement={item.location} data-tooltip={item.tooltip}>{item.text}</li>
+						<li class="capability-item" data-tooltip={item.tooltip}>{item.text}</li>
 					{/each}
 				</ul>
 			</div>

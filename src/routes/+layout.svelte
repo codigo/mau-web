@@ -1,16 +1,42 @@
-<script>
+<script lang="ts">
 	import { navigating } from '$app/stores';
+	import type { SEOMetadata } from './+layout';
+	import { page } from '$app/stores';
 
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import { onMount } from 'svelte';
 
-	export let data;
+	export let data: { metadata: SEOMetadata; url: string };
 	let mounted = false;
 	onMount(() => {
 		mounted = true;
 	});
+
+	// Combine current path with base URL for canonical
+	$: canonicalUrl = `${data.metadata.canonicalUrl}${$page.url.pathname}`;
 </script>
+
+<svelte:head>
+	<!-- Basic Meta Tags -->
+	<title>{data.metadata.title}</title>
+	<meta name="description" content={data.metadata.description} />
+	<meta name="keywords" content={data.metadata.keywords} />
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href={canonicalUrl} />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content={data.metadata.title} />
+	<meta property="og:description" content={data.metadata.description} />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content={data.metadata.ogImage} />
+
+	<!-- Twitter -->
+	<meta name="twitter:title" content={data.metadata.title} />
+	<meta name="twitter:description" content={data.metadata.description} />
+	<meta name="twitter:image" content={data.metadata.ogImage} />
+</svelte:head>
 
 <div class="main-layout">
 	<Header />
@@ -21,7 +47,7 @@
 				<div class="loading nav-transition" aria-busy={Boolean($navigating)}>
 					<h3>Hold on! Good things are coming your way.</h3>
 					<h3>Thanks for sticking with me!</h3>
-					<span class="loader-cloud" />
+					<span class="loader-cloud"></span>
 				</div>
 			{:else}
 				<slot />

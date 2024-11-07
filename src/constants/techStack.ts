@@ -43,7 +43,7 @@ import Cloudinary from '../components/icons/tech/Cloudinary.svelte';
 
 export interface TechStack {
 	category: string;
-	icon: new (options: { target: HTMLElement, props?: Record<string, any> }) => SvelteComponent;
+	icon: new (options: { target: HTMLElement; props?: Record<string, any> }) => SvelteComponent;
 	name: string;
 	duplicate?: boolean;
 }

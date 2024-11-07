@@ -7,7 +7,8 @@
 	height={size}
 	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 256 233">
+	viewBox="0 0 256 233"
+>
 	<path d="M186.18182 0h46.54545v46.54545h-46.54545z" /><path
 		fill="#F7D046"
 		d="M209.45454 0h46.54545v46.54545h-46.54545z"

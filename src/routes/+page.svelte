@@ -5,10 +5,6 @@
 	import Testimonials from '../components/Testimonials/Testimonials.svelte';
 </script>
 
-<svelte:head>
-	<title>Mauricio's Introduction</title>
-</svelte:head>
-
 <Hero />
 <Capabilities />
 <Testimonials />

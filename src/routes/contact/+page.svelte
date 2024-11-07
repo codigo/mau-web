@@ -81,15 +81,14 @@
 				rows="6"
 				placeholder="What can I help you with..."
 				{...$constraints.content}
-			/>
+			></textarea>
 			{#if $errors?.content}
 				<label class="error-label" for="content">{$errors.content}</label>
 			{/if}
 		</div>
 		<div class="form-group">
 			<Turnstile
-				name="turnstile"
-				id="turnstile"
+				widgetId="turnstile"
 				on:callback={handleTurnstileCb}
 				siteKey={PUBLIC_CF_TURNSTILE_KEY}
 			/>

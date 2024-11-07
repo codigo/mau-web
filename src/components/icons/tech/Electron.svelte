@@ -7,7 +7,8 @@
 	height={size}
 	preserveAspectRatio="mid"
 	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 128 128">
+	viewBox="0 0 128 128"
+>
 	<circle cx="64" cy="64" r="64" fill="#2F3242" />
 	<path
 		fill="#A2ECFB"
