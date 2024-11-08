@@ -62,7 +62,7 @@ pre[class*='language-'] {
 .pico [data-tooltip]:hover::after,
 .pico [data-tooltip]:hover::before {
 	font-size: 1.2rem;
-	font-family: inherit;
+	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 }
 
