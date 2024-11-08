@@ -32,10 +32,10 @@
 		{/each}
 	</div>
 	<button class="arrow left" on:click={showPrev}>
-		<ChevronBackOutline size={24} />
+		<ChevronBackOutline size="24" />
 	</button>
 	<button class="arrow right" on:click={showNext}>
-		<ChevronForwardOutline size={24} />
+		<ChevronForwardOutline size="24" />
 	</button>
 </div>
 

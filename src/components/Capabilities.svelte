@@ -111,7 +111,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 3.2rem;
 		justify-items: center;
-		align-items: center;
+
 	}
 
 	@media (max-width: 1205px) {
