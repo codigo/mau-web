@@ -6,6 +6,15 @@
 
 <section class="section-hero">
 	<div class="hero-intro">
+		<div class="hero-img-box">
+			<div class="img-container">
+				<div class="img-wrapper">
+					<enhanced:img class="hero-img" src={heroImg} alt="Mauricio Mercado" />
+				</div>
+			</div>
+		</div>
+		<!--  end.hero-img-box -->
+
 		<div class="hero-text-box">
 			<div class="hero-heading-name">
 				<p>Hi there, I'm Mauricio &nbsp;</p>
@@ -45,15 +54,6 @@
 			<!--  end.hero-social-icons -->
 		</div>
 		<!--  end.hero-text-box -->
-
-		<div class="hero-img-box">
-			<div class="img-container">
-				<div class="img-wrapper">
-					<enhanced:img class="hero-img" src={heroImg} alt="Mauricio Mercado" />
-				</div>
-			</div>
-		</div>
-		<!--  end.hero-img-box -->
 	</div>
 	<!--  end.hero -->
 </section>
