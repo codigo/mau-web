@@ -1,16 +1,14 @@
 # [1.4.0](https://github.com/codigo/mau-web/compare/v1.3.0...v1.4.0) (2024-11-07)
 
-
 ### Features
 
-* add stylesheets for syntax highlighting and layout ([#67](https://github.com/codigo/mau-web/issues/67)) ([91b01c1](https://github.com/codigo/mau-web/commit/91b01c1f73eaf87bfc893b5233ec21458d46dabb))
+- add stylesheets for syntax highlighting and layout ([#67](https://github.com/codigo/mau-web/issues/67)) ([91b01c1](https://github.com/codigo/mau-web/commit/91b01c1f73eaf87bfc893b5233ec21458d46dabb))
 
 # [1.3.0](https://github.com/codigo/mau-web/compare/v1.2.1...v1.3.0) (2024-11-07)
 
-
 ### Features
 
-* enable dynamic sizing for icon components ([#65](https://github.com/codigo/mau-web/issues/65)) ([095e319](https://github.com/codigo/mau-web/commit/095e31972110833dd09f0dc2642deb83781d48a1))
+- enable dynamic sizing for icon components ([#65](https://github.com/codigo/mau-web/issues/65)) ([095e319](https://github.com/codigo/mau-web/commit/095e31972110833dd09f0dc2642deb83781d48a1))
 
 ## [1.2.1](https://github.com/codigo/mau-web/compare/v1.2.0...v1.2.1) (2024-10-12)
 
