@@ -89,6 +89,7 @@
 		border-radius: var(--theme-border-radius-default);
 		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 		transition: all 0.4s ease-out;
+		height: 78rem;
 	}
 
 	.article {
@@ -106,6 +107,10 @@
 		background-color: unset;
 		align-content: space-between;
 		justify-content: stretch;
+	}
+
+	.background-blur {
+		height: 180px;
 	}
 
 	.background-blur-radius {
