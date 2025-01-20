@@ -41,12 +41,16 @@ export const sendMessage = async (name: string, email: string, message: string, 
 	}
 };
 
-export const getAllPosts = (log?: Logger): Promise<ListResult<Post>> => {
+export const getAllPaginatedPosts = (page: number = 1, log?: Logger): Promise<ListResult<Post>> => {
 	try {
-		log?.info('Fetching all posts');
-		return pb.collection('posts').getList(1, 50, { sort: '-created', filter: 'publish=true' });
+		const PER_PAGE = 6;
+		log?.info({ page, perPage: PER_PAGE }, 'Fetching paginated posts');
+		return pb.collection('posts').getList(page, PER_PAGE, {
+			sort: '-created',
+			filter: 'publish=true'
+		});
 	} catch (error) {
-		log?.error({ error }, 'Error fetching all posts');
+		log?.error({ error, page }, 'Error fetching paginated posts');
 		throw error;
 	}
 };

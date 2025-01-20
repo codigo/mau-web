@@ -4,8 +4,10 @@
 	export let data: ListResult<Post>;
 
 	import Posts from './Posts.svelte';
+	import Pagination from './Pagination.svelte';
 
 	$: ({ page, perPage, items, totalItems, totalPages } = data);
 </script>
 
 <Posts posts={data.items} />
+<Pagination currentPage={page} {totalPages} />
