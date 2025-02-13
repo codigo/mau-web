@@ -239,6 +239,7 @@ a {
 	font-weight: var(--theme-font-weight-default);
 	letter-spacing: var(--theme-font-leter-spacing-default);
 	line-height: var(--theme-font-line-height-default);
+	color: var(--theme-font-default);
 }
 
 /* Pico CSS */

@@ -132,9 +132,8 @@
 		border: 1px solid var(--theme-background-secondary);
 		padding: 0 1rem;
 		border-radius: var(--theme-border-radius-default);
-		/* box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3); */
+		box-shadow: 6px 6px 8px 3px rgba(0, 0, 0, 0.3);
 		font-size: 1.2rem;
-		color: var(--theme-background-secondary);
 	}
 
 	.post-date {
