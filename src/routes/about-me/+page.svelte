@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Experience } from '$lib/types';
 	import Timeline from './Timeline.svelte';
-	import aboutMeImg from '$lib/assets/imgs/me_smile_beach.webp?enhanced';
 
 	export let data: Object & { experiences: Experience[] };
 </script>
@@ -60,13 +59,9 @@
 		</div>
 		<!--  end.section-about-me-text -->
 
-		<div class="section-about-me-img">
-			<div class="img-container">
-				<div class="img-wrapper">
-					<enhanced:img class="hero-img" src={aboutMeImg} alt="Mauricio Mercado" />
-				</div>
-			</div>
-		</div>
+		<!-- <div class="section-about-me-img">
+
+		</div> -->
 	</section>
 
 	<Timeline experiences={data.experiences} />
@@ -146,7 +141,7 @@
 	.section-about-me {
 		padding: 1.2rem 1.6rem 6.4rem 1.6rem;
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: 1fr;
 		gap: 4.8rem;
 	}
 
@@ -211,7 +206,7 @@
 		row-gap: 2.4rem;
 	}
 
-	.img-container {
+	/* .img-container {
 		position: relative;
 		width: 380px;
 		height: 380px;
@@ -273,7 +268,7 @@
 
 	.img-container:hover .hero-img {
 		transform: scale(1.05);
-	}
+	} */
 
 	@media (max-width: 980px) {
 		.section-about-me {
@@ -283,12 +278,12 @@
 		.section-about-me-text {
 			order: 2;
 		}
-		.section-about-me-img {
+		/* .section-about-me-img {
 			order: 1;
 		}
 		.img-container {
 			width: 300px;
 			height: 300px;
-		}
+		} */
 	}
 </style>
