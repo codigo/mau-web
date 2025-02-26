@@ -205,12 +205,14 @@ h1 {
 	font-size: var(--theme-font-size-xlarge);
 	font-weight: var(--theme-font-weight-xlarge);
 	line-height: var(--theme-font-line-height-xlarge);
+	color: var(--theme-font-default);
 }
 
 h2 {
 	font-size: var(--theme-font-size-large);
 	font-weight: var(--theme-font-weight-large);
 	line-height: var(--theme-font-line-height-large);
+	color: var(--theme-font-default);
 }
 
 h3,
@@ -218,12 +220,14 @@ h3,
 	font-size: var(--theme-font-size-medium);
 	font-weight: var(--theme-font-weight-medium);
 	line-height: var(--theme-font-line-height-medium);
+	color: var(--theme-font-default);
 }
 
 h4 {
 	font-size: var(--theme-font-size-small);
 	font-weight: var(--theme-font-weight-medium);
 	line-height: var(--theme-font-line-height-medium);
+	color: var(--theme-font-default);
 }
 
 li,
