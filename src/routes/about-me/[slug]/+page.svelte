@@ -29,7 +29,7 @@
 	<div class="navigation-links pico">
 		<button
 			on:click={() => handleClick(meta.previous)}
-			disabled={!Boolean(meta.previous)}
+			disabled={!meta.previous}
 			class="goto outline contrast"
 			role="link"
 		>
@@ -37,7 +37,7 @@
 		</button>
 		<button
 			on:click={() => handleClick(meta.next)}
-			disabled={!Boolean(meta.next)}
+			disabled={!meta.next}
 			class="goto next outline contrast"
 			role="link"
 		>
