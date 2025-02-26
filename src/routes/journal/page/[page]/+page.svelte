@@ -6,7 +6,7 @@
 	import Posts from './Posts.svelte';
 	import Pagination from './Pagination.svelte';
 
-	$: ({ page, perPage, items, totalItems, totalPages } = data);
+	$: ({ page, totalPages } = data);
 </script>
 
 <Posts posts={data.items} />

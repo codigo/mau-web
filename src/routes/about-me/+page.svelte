@@ -2,7 +2,7 @@
 	import type { Experience } from '$lib/types';
 	import Timeline from './Timeline.svelte';
 
-	export let data: Object & { experiences: Experience[] };
+	export let data: object & { experiences: Experience[] };
 </script>
 
 <svelte:head>
@@ -105,9 +105,8 @@
 				Outside my work life, I firmly believe in the ethos of lifelong learning. My GitHub
 				portfolio <a href="https://github.com/maumercado">https://github.com/maumercado</a> provides
 				a glimpse of my wide-ranging skills and interests, featuring projects like a React Native
-				app with Expo, my blog
-				<a href="https://codigos.notion.site">https://codigos.notion.site</a>, and two Fastify
-				plugins, one for the Jaeger distributed tracing system​, and the second a plugin to inject
+				app with Expo, my blog <a href="https://codigo.sh">https://codigo.sh</a>, and two Fastify
+				plugins, one for the Jaeger distributed tracing system, and the second a plugin to inject
 				secrets store in hashicorp vault into the service's environment at boot.
 			</p>
 			<p>

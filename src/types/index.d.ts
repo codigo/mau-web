@@ -1,5 +1,5 @@
 declare module '*?enhanced' {
-	const value: any;
+	const value: unknown;
 	export = value;
 }
 

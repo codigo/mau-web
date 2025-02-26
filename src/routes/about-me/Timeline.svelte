@@ -19,7 +19,6 @@
 		{#each experiences as entry, index}
 			<li class="timeline-entry">
 				<p class="timeline-id">{entry.timeframe}</p>
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<button
 					class="timeline-content"
 					class:timeline-content--flipped={index % 2 !== 0}

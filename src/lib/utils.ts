@@ -11,11 +11,10 @@ export function splitArrayIntoChunks<T>(arr: T[], numChunks: number): T[][] {
 	const chunks: T[][] = [];
 	const n = arr.length;
 	const chunkSize = Math.floor(n / numChunks);
-	const remainder = n % numChunks;
 
 	for (let i = 0; i < numChunks; i++) {
-		let start = i * chunkSize;
-		let end = start + chunkSize;
+		const start = i * chunkSize;
+		const end = start + chunkSize;
 		chunks.push(arr.slice(start, end));
 	}
 

@@ -20,7 +20,7 @@ function logRequest(
 
 	// Filter out null or undefined fields
 	const filteredLogData = Object.fromEntries(
-		Object.entries(logData).filter(([_, value]) => value != null)
+		Object.entries(logData).filter(([, value]) => value != null)
 	);
 
 	if (error) {

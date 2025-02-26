@@ -9,6 +9,7 @@ export async function load({ params }) {
 			meta: { ...experience.metadata, slug: params.slug }
 		};
 	} catch (e) {
+		console.error(e);
 		error(404, `Could not find ${params.slug}`);
 	}
 }
