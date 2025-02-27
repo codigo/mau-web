@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/codigo/mau-web/compare/v1.4.0...v1.5.0) (2025-02-27)
+
+
+### Features
+
+* **analytics:** add Ahrefs analytics script to app.html ([#75](https://github.com/codigo/mau-web/issues/75)) ([8da32b8](https://github.com/codigo/mau-web/commit/8da32b8f6287c9a307120f8e827d75688f242e75))
+
 # [1.4.0](https://github.com/codigo/mau-web/compare/v1.3.0...v1.4.0) (2024-11-07)
 
 ### Features
