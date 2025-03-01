@@ -1,4 +1,4 @@
-import { type Post } from '$lib/types';
+import { type Post, type Capability } from '$lib/types';
 import { type Logger } from 'pino';
 import { logger } from '$lib/stores/loggerStore';
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
@@ -70,6 +70,18 @@ export const getPostBySlug = async (slug: string, log?: Logger) => {
 		return post;
 	} catch (error) {
 		log?.error({ slug, error }, 'Error fetching post');
+		throw error;
+	}
+};
+
+export const getCapabilities = async (log?: Logger): Promise<ListResult<Capability>> => {
+	log?.info({}, 'Fetching capabilities');
+	try {
+		const result = await pb.collection('capabilities').getList<Capability>(1, 100);
+		log?.info({ result }, 'Capabilities fetched successfully');
+		return result;
+	} catch (error) {
+		log?.error({ error }, 'Error fetching capabilities');
 		throw error;
 	}
 };

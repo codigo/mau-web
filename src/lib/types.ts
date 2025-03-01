@@ -4,6 +4,12 @@ export interface Testimonial {
 	image: string;
 }
 
+export interface Capability {
+	icon: string;
+	title: string;
+	items: { text: string; tooltip: string }[];
+}
+
 export interface ErrorStatus {
 	status: number;
 	error: Error;
