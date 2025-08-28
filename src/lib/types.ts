@@ -38,6 +38,19 @@ export interface Post {
 	photo_metadata: PhotoMetadata;
 }
 
+export interface EnhancedImage {
+	img: {
+		src: string;
+		width: number;
+		height: number;
+	};
+	sources?: Array<{
+		src: string;
+		width: number;
+		height: number;
+	}>;
+}
+
 interface PhotoMetadata {
 	blur_hash: string;
 	blur_hash_style: string;

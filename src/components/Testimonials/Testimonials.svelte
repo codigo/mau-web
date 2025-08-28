@@ -24,20 +24,20 @@
 			text: `Working with Mauricio for the last year has been the highlight of my career thus far.
       Mauricio's passion for software development is infectious and his natural ability to lead
       a team is a sight to behold.`,
-			image: matt
+			image: matt as string
 		},
 		{
 			author: 'Gilbert Kwan',
 			text: `Mau is an excellent developer. He is very detail oriented and hard-working.
         On many occasions he would drop everything and discuss an issue or find elegant solutions
         to difficult problems. It was always a pleasure working with him.`,
-			image: gil
+			image: gil as string
 		},
 		{
 			author: 'Sayde Deng',
 			text: `Mau is an awesome mentor who provides constructive feedback, shows deep understanding,
       and turns ideas into great products. Working with Mau is a joy!`,
-			image: sayde
+			image: sayde as string
 		},
 		{
 			author: 'Aaron Fagan',
@@ -45,22 +45,21 @@
       for the future. He is able to both understand and execute on technical requirements,
       in addition to being able to communicate those same requirements down to non technical
       customers as needed.`,
-			image: aaron
+			image: aaron as string
 		},
 		{
 			author: 'Stephen Marie-Rhodes',
 			text: `Mau knows all the things (in a good way). He brings momentum and precision to any
       project. He's just as comfortable leading a team of developers as running
       solo on a mission-critical project. Mau is also a fantastic teacher.`,
-			image: stephen
+			image: stephen as string
 		},
 		{
 			author: 'Suprada Urval',
 			text: `It was great working with Mauricio at HumanAPI.\nHis interest in the landscape of web
-      development, thirst to learn and explore new technologies is infectious and inspiring.\n
-      He models the "disagree but commit" approach when as a team, we make a decision.
+      development, thirst to learn and explore new technologies is infectious and inspiring.\n      He models the "disagree but commit" approach when as a team, we make a decision.
       And then champions that decision.`,
-			image: suprada
+			image: suprada as string
 		},
 		{
 			author: 'Steven Santa Maria',
@@ -68,21 +67,21 @@
       important- is responsive. There were times when customers were breathing down our necks and
       that responsiveness was so helpful to the team. Mauricio will be key contributor to any
       engineering team!`,
-			image: stevenStamaria
+			image: stevenStamaria as string
 		},
 		{
 			author: 'Austin Tackaberry',
 			text: `Mauricio was my first software engineering mentor. He was open, encouraging, and easy
       to get along with. He was always able to come up with simple solutions to complex problems. He
       has passion for his work, and that passion spreads to others on his team.`,
-			image: austin
+			image: austin as string
 		},
 		{
 			author: 'Gene Goykhman',
 			text: `In addition to his technical talent, Mau is a thoughtful, considerate and dedicated person.
       He remains consistently engaged and focused on the work at hand while never failing to bring
       levity and a smile when it is needed the most. Mau is a true pleasure to work with.`,
-			image: gene
+			image: gene as string
 		},
 		{
 			author: 'Luis Porras',
@@ -90,7 +89,7 @@
       Node.js experience since I started working with him.\nHe is a curious
       developer that enjoys learning new programming languages, and technologies. He is capable
       of solving problems quickly and is always looking to improve things.`,
-			image: luisporras
+			image: luisporras as string
 		},
 		{
 			author: 'Jake Van Alstyne',
@@ -98,7 +97,7 @@
       work with. He produces timely solutions to difficult problems and works hard to ensure high
       quality results. In addition to being a critical part of our development team, he possesses
       admirable character and dedication.`,
-			image: jake
+			image: jake as string
 		},
 		{
 			author: 'Jared Halpern',
@@ -106,12 +105,12 @@
       skills were critical to the rapid development of Selfie, and his enthusiasm is contagious.
       Mau also has a great ability to see things further down the road than just the immediate or
       next feature.`,
-			image: jared
+			image: jared as string
 		},
 		{
 			author: 'Luis Pallares',
 			text: `He is a developer that you want to have working on your software engineers team.`,
-			image: luispallares
+			image: luispallares as string
 		}
 	];
 
