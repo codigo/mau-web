@@ -1,7 +1,11 @@
-<script>
+<script lang="ts">
 	import X from './icons/social/X.svelte';
 	import { MailUnreadOutline, LogoLinkedin, LogoGithub } from 'svelte-ionicons';
+	import type { EnhancedImage } from '$lib/types';
 	import heroImg from '$lib/assets/imgs/my_profile_with_bg.webp?enhanced';
+
+	// Type assertion for enhanced image
+	const heroImageSrc = (heroImg as EnhancedImage).img.src;
 </script>
 
 <section class="section-hero">
@@ -9,7 +13,7 @@
 		<div class="hero-img-box">
 			<div class="img-container">
 				<div class="img-wrapper">
-					<enhanced:img class="hero-img" src={heroImg} alt="Mauricio Mercado" />
+					<enhanced:img class="hero-img" src={heroImageSrc as string} alt="Mauricio Mercado" />
 				</div>
 			</div>
 		</div>
