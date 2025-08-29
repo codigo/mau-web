@@ -1,6 +1,5 @@
 <script lang="ts">
-	export let currentPage: number;
-	export let totalPages: number;
+	const { currentPage, totalPages } = $props<{ currentPage: number; totalPages: number }>();
 
 	const getPageNumbers = () => {
 		const delta = 2;
