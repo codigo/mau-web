@@ -4,7 +4,10 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig(async () => {
-	const [enhancedImagesPlugin, sveltekitPlugin] = await Promise.all([enhancedImages(), sveltekit()]);
+	const [enhancedImagesPlugin, sveltekitPlugin] = await Promise.all([
+		enhancedImages(),
+		sveltekit()
+	]);
 
 	return {
 		plugins: [enhancedImagesPlugin, sveltekitPlugin],

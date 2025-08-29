@@ -13,7 +13,7 @@
 		goto(link);
 	};
 
-	const onLoadImage = (event: CustomEvent) => {
+	const onLoadImage = (event: Event) => {
 		const target = event.target as HTMLImageElement | null;
 		target?.classList.add('fade-in-image');
 	};
@@ -41,7 +41,7 @@
 								alt={photo_metadata.alt_description}
 								loading="lazy"
 								height={180}
-								on:load={(ev) => onLoadImage(ev)}
+								onload={(ev: Event) => onLoadImage(ev)}
 							/>
 						</div>
 						<ul class="post-tags">

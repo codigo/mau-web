@@ -38,7 +38,7 @@
 			alt={photo_metadata.alt_description}
 			loading="lazy"
 			height={450}
-			on:load={onLoadImage}
+			onload={onLoadImage}
 		/>
 	</div>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
