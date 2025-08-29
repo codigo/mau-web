@@ -5,7 +5,7 @@
 	import { Turnstile } from 'svelte-turnstile';
 	import { ContactSchema } from '$routes/contact/schema';
 
-	export let data;
+	const { data } = $props();
 	const { form, errors, constraints, message, enhance, submitting } = superForm(data.form, {
 		customValidity: true,
 		validators: zodClient(ContactSchema)

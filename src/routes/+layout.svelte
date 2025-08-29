@@ -1,20 +1,18 @@
 <script lang="ts">
-	import { navigating } from '$app/stores';
+	import { navigating, page } from '$app/state';
 	import type { SEOMetadata } from './+layout';
-	import { page } from '$app/stores';
 
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
-	import { onMount } from 'svelte';
 
-	export let data: { metadata: SEOMetadata; url: string };
-	let mounted = false;
-	onMount(() => {
+	const { data } = $props<{ data: { metadata: SEOMetadata; url: string } }>();
+	let mounted = $state(false);
+	$effect.pre(() => {
 		mounted = true;
 	});
 
 	// Combine current path with base URL for canonical
-	$: canonicalUrl = `${data.metadata.canonicalUrl}${$page.url.pathname}`;
+	const canonicalUrl = $derived(`${data.metadata.canonicalUrl}${page.url.pathname}`);
 </script>
 
 <svelte:head>
@@ -43,8 +41,8 @@
 
 	<main class="main">
 		{#key data.url}
-			{#if $navigating || !mounted}
-				<div class="loading nav-transition" aria-busy={Boolean($navigating)}>
+			{#if navigating.type || !mounted}
+				<div class="loading nav-transition" aria-busy={Boolean(navigating.type)}>
 					<h3>Hold on! Good things are coming your way.</h3>
 					<h3>Thanks for sticking with me!</h3>
 					<span class="loader-cloud"></span>

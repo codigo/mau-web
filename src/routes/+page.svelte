@@ -5,16 +5,17 @@
 	import Testimonials from '../components/Testimonials/Testimonials.svelte';
 	import CapabilitiesSkeleton from '../components/CapabilitiesSkeleton.svelte';
 
-	export let data;
+	const { data } = $props();
 
 	// Extract capabilities items or use fallback if not available
-	$: capabilitiesArray =
-		data.capabilities && 'items' in data.capabilities ? data.capabilities.items : [];
+	const capabilitiesArray = $derived(
+		data.capabilities && 'items' in data.capabilities ? data.capabilities.items : []
+	);
 
 	// For lazy loading
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	let CapabilitiesComponent: any = null;
-	let showCapabilities = false;
+	let CapabilitiesComponent = $state<any>(null);
+	let showCapabilities = $state(false);
 
 	onMount(() => {
 		// Load component when the component is mounted
@@ -28,7 +29,7 @@
 <Hero />
 
 {#if showCapabilities && CapabilitiesComponent}
-	<svelte:component this={CapabilitiesComponent} capabilities={capabilitiesArray} />
+	<CapabilitiesComponent capabilities={capabilitiesArray} />
 {:else}
 	<CapabilitiesSkeleton count={4} />
 {/if}

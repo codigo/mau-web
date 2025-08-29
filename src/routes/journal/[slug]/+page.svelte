@@ -13,11 +13,11 @@
 	import 'prismjs/components/prism-markdown';
 	import 'prismjs/components/prism-yaml';
 	import { onMount } from 'svelte';
-	export let data: Post;
+	const { data } = $props<{ data: Post }>();
 
-	$: ({ title, photo_metadata, content } = data);
+	const { title, photo_metadata, content } = $derived(data);
 
-	const placeholder = blurhashToCssGradientString(data.photo_metadata.blur_hash);
+	const placeholder = $derived(blurhashToCssGradientString(data.photo_metadata.blur_hash));
 
 	onMount(() => {
 		Prism.highlightAll();
