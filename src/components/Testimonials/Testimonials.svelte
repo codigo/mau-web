@@ -131,6 +131,10 @@
 </script>
 
 <section class="section-testimonials b-border">
+	<div class="testimonials-title">
+		<h2>What People Say</h2>
+		<p>Testimonials from colleagues and clients</p>
+	</div>
 	<Carousel {testimonials} {itemsToShow} />
 </section>
 
@@ -158,6 +162,35 @@
 		.section-testimonials {
 			margin: 0 auto;
 			padding: 4.8rem 0.8em;
+		}
+	}
+
+	.testimonials-title {
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.testimonials-title h2 {
+		font-size: 3.6rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.testimonials-title p {
+		font-size: 1.8rem;
+		color: var(--theme-font-default);
+		font-weight: 300;
+		letter-spacing: 0.5px;
+	}
+
+	@media (max-width: 768px) {
+		.testimonials-title h2 {
+			font-size: 2.8rem;
+		}
+
+		.testimonials-title p {
+			font-size: 1.6rem;
 		}
 	}
 </style>

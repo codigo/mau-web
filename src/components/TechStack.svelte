@@ -19,6 +19,11 @@
 </script>
 
 <section class="section-tech-stack b-border">
+	<div class="tech-stack-title">
+		<h2>Building Blocks</h2>
+		<p>The technologies I use to bring ideas to life</p>
+	</div>
+
 	{#if loading}
 		<div class="loading" aria-busy={loading}>
 			<span class="loader"></span>
@@ -44,7 +49,7 @@
 					{/each}
 				</ul>
 			{/each}
-		</div>
+				</div>
 		<!--  end.tech-stack-box -->
 	{/if}
 </section>
@@ -119,8 +124,21 @@
 	.tech-stack-item {
 		display: flex;
 		padding: 1.8rem;
-		background-color: var(--theme-card-background-default);
-		border-radius: 5px;
+		background: rgba(255, 255, 255, 0.08);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 12px;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.tech-stack-item:hover {
+		transform: translateY(-2px);
+		background: rgba(255, 255, 255, 0.12);
+		border-color: rgba(255, 255, 255, 0.25);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 	}
 
 	.pico [data-tooltip] {
@@ -130,6 +148,39 @@
 	@keyframes scroll {
 		to {
 			transform: translate(calc(-50%));
+		}
+	}
+
+	.tech-stack-title {
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.tech-stack-title h2 {
+		font-size: 3.6rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.tech-stack-title p {
+		font-size: 1.8rem;
+		color: var(--theme-font-default);
+		font-weight: 300;
+		letter-spacing: 0.5px;
+	}
+
+	@media (max-width: 768px) {
+		.tech-stack-title h2 {
+			font-size: 2.8rem;
+		}
+
+		.tech-stack-title p {
+			font-size: 1.6rem;
 		}
 	}
 </style>

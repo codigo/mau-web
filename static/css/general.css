@@ -62,7 +62,7 @@ body {
 	font-weight: 400;
 	line-height: 1;
 
-	background-color: var(--theme-background-default);
+	background: linear-gradient(135deg, #0a0e14 0%, #0a080c 50%, #050709 100%);
 	color: var(--theme-font-default);
 }
 
@@ -205,14 +205,21 @@ h1 {
 	font-size: var(--theme-font-size-xlarge);
 	font-weight: var(--theme-font-weight-xlarge);
 	line-height: var(--theme-font-line-height-xlarge);
-	color: var(--theme-font-default);
+	background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
 h2 {
 	font-size: var(--theme-font-size-large);
 	font-weight: var(--theme-font-weight-large);
 	line-height: var(--theme-font-line-height-large);
-	color: var(--theme-font-default);
+	background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	opacity: 0.9;
 }
 
 h3,
@@ -435,3 +442,5 @@ a:active {
 .sveltekit-body-wrapper {
 	display: contents;
 }
+
+
