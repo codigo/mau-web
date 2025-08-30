@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { ChevronBack, ChevronForward } from 'svelte-ionicons';
-	import type { ComponentType, SvelteComponent } from 'svelte';
+	import type { SvelteComponent } from 'svelte';
 	import type { Experience } from '$lib/types';
 	import { goto } from '$app/navigation';
 
-	export let data: { meta: Experience; content: ComponentType<SvelteComponent> };
+	const { data } = $props<{ data: { meta: Experience; content: typeof SvelteComponent } }>();
 
-	$: ({ content, meta } = data);
+	const { content, meta } = $derived(data);
 
 	const LINK_PREFIX = '/about-me/';
 
@@ -25,10 +25,10 @@
 
 <div class="markdown-wrapper">
 	<h1>{meta.company}</h1>
-	<svelte:component this={content} />
+	{@render content()}
 	<div class="navigation-links pico">
 		<button
-			on:click={() => handleClick(meta.previous)}
+			onclick={() => handleClick(meta.previous)}
 			disabled={!meta.previous}
 			class="goto outline contrast"
 			role="link"
@@ -36,7 +36,7 @@
 			<ChevronBack />
 		</button>
 		<button
-			on:click={() => handleClick(meta.next)}
+			onclick={() => handleClick(meta.next)}
 			disabled={!meta.next}
 			class="goto next outline contrast"
 			role="link"
