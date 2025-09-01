@@ -56,14 +56,14 @@
 
 <style lang="postcss">
 	.section-tech-stack {
-		padding: 8rem 0 12rem 0;
+		padding: 4.8rem 0 8rem 0;
 		margin-bottom: 2.4rem;
 		overflow: hidden;
 	}
 
 	@media (max-width: 980px) {
 		.section-tech-stack {
-			padding: 4.8rem 0 4.8rem 0;
+			padding-bottom: 4.8rem;
 		}
 	}
 
@@ -153,25 +153,14 @@
 
 	.tech-stack-title {
 		text-align: center;
-		margin-bottom: 4rem;
 		padding: 0 2rem;
 	}
 
 	.tech-stack-title h2 {
-		font-size: 3.6rem;
-		font-weight: 600;
 		margin-bottom: 1rem;
-		background: linear-gradient(135deg, #41d1ff 0%, #bd34fe 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
-	}
-
-	.tech-stack-title p {
-		font-size: 1.8rem;
-		color: var(--theme-font-default);
-		font-weight: 300;
-		letter-spacing: 0.5px;
 	}
 
 	@media (max-width: 768px) {
