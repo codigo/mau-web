@@ -35,6 +35,10 @@
 		<p class="go-back">Go back <a href="/">Home</a></p>
 	</div>
 {:else}
+	<div class="contact-title">
+		<h2>Get In Touch</h2>
+		<p>Let's discuss your next project</p>
+	</div>
 	<form class="pico contact-form" method="POST" action="?/email" use:enhance>
 		<div class="form-group">
 			<label for="name">Name</label>
@@ -194,6 +198,35 @@
 
 	.error-label {
 		color: var(--theme-font-danger);
+	}
+
+	.contact-title {
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.contact-title h2 {
+		font-size: 3.6rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.contact-title p {
+		font-size: 1.8rem;
+		color: var(--theme-font-default);
+		font-weight: 300;
+		letter-spacing: 0.5px;
+	}
+
+	@media (max-width: 768px) {
+		.contact-title h2 {
+			font-size: 2.8rem;
+		}
+
+		.contact-title p {
+			font-size: 1.6rem;
+		}
 	}
 
 	@media (width <= 1200px) {

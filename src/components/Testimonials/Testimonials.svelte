@@ -131,6 +131,10 @@
 </script>
 
 <section class="section-testimonials b-border">
+	<div class="testimonials-title">
+		<h2>What People Say</h2>
+		<p>Testimonials from colleagues and clients</p>
+	</div>
 	<Carousel {testimonials} {itemsToShow} />
 </section>
 
@@ -143,21 +147,50 @@
 	@media (max-width: 1040px) {
 		.section-testimonials {
 			margin: 0 auto;
-			padding: 4.8rem 4.8rem;
+			padding-left: 4.8rem;
+			padding-right: 4.8rem;
 		}
 	}
 
 	@media (max-width: 950px) {
 		.section-testimonials {
 			margin: 0 auto;
-			padding: 4.8rem 3.2rem;
+			padding-left: 3.2rem;
+			padding-right: 3.2rem;
 		}
 	}
 
 	@media (max-width: 700px) {
 		.section-testimonials {
 			margin: 0 auto;
-			padding: 4.8rem 0.8em;
+			padding-left: 0.8rem;
+			padding-right: 0.8rem;
+		}
+	}
+
+	.testimonials-title {
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.testimonials-title h2 {
+		margin-bottom: 1rem;
+	}
+
+	.testimonials-title p {
+		font-size: 1.8rem;
+		color: var(--theme-font-default);
+		font-weight: 300;
+	}
+
+	@media (max-width: 768px) {
+		.testimonials-title h2 {
+			font-size: 2.8rem;
+		}
+
+		.testimonials-title p {
+			font-size: 1.6rem;
 		}
 	}
 </style>
