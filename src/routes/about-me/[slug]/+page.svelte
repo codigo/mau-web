@@ -30,7 +30,7 @@
 		<button
 			onclick={() => handleClick(meta.previous)}
 			disabled={!meta.previous}
-			class="goto outline contrast"
+			class="goto contrast outline"
 			role="link"
 		>
 			<ChevronBack />
@@ -38,7 +38,7 @@
 		<button
 			onclick={() => handleClick(meta.next)}
 			disabled={!meta.next}
-			class="goto next outline contrast"
+			class="goto next contrast outline"
 			role="link"
 		>
 			<ChevronForward />

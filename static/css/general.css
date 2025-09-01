@@ -227,7 +227,7 @@ h3,
 	font-size: var(--theme-font-size-medium);
 	font-weight: var(--theme-font-weight-medium);
 	line-height: var(--theme-font-line-height-medium);
-	background: linear-gradient(160deg, #41D1FF 30%, #bd34fe 120%);
+	background: linear-gradient(160deg, #41d1ff 30%, #bd34fe 120%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;

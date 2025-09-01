@@ -1,12 +1,16 @@
 <script lang="ts">
+	import '../app.css';
 	import { navigating, page } from '$app/state';
 	import type { SEOMetadata } from './+layout';
-
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 
-	const { data } = $props<{ data: { metadata: SEOMetadata; url: string } }>();
+	const { data } = $props<{
+		data: { metadata: SEOMetadata; url: string };
+	}>();
+
 	let mounted = $state(false);
+
 	$effect.pre(() => {
 		mounted = true;
 	});

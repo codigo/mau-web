@@ -127,7 +127,7 @@
 		};
 	});
 
-	$: itemsToShow = screenWidth < 1040 ? 1 : 2;
+	$: itemsToShow = screenWidth < 1060 ? 1 : 2;
 </script>
 
 <section class="section-testimonials b-border">

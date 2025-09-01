@@ -1,59 +1,75 @@
 <script lang="ts">
 	import type { Testimonial } from '$lib/types';
-	import { ChevronBackOutline, ChevronForwardOutline } from 'svelte-ionicons';
-	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
+	import * as Carousel from '$lib/components/ui/carousel/index.js';
 
 	export let testimonials: Testimonial[] = [];
 	export let itemsToShow: number = 1;
 
-	let currentIndex = 0;
-	let x = tweened(0, { duration: 300, easing: cubicOut });
-
-	const showNext = () => {
-		currentIndex = (currentIndex + itemsToShow) % testimonials.length;
-		x.set(-currentIndex * (100 / itemsToShow));
-	};
-
-	const showPrev = () => {
-		currentIndex = (currentIndex - itemsToShow + testimonials.length) % testimonials.length;
-		x.set(-currentIndex * (100 / itemsToShow));
-	};
+	// Calculate responsive basis classes
+	$: basisClass = itemsToShow === 1 ? 'basis-full' : 'basis-1/2';
 </script>
 
-<div class="carousel-container">
-	<div class="carousel" style="transform: translateX({$x}%); --itemsToShow: {itemsToShow}">
-		{#each testimonials as testimonial}
-			<figure class="testimonial">
-				<enhanced:img class="testimonial-img" src={testimonial.image} alt={testimonial.author} />
-				<blockquote><p class="testimonial-text">{testimonial.text}</p></blockquote>
-				<cite class="testimonial-author">&mdash; {testimonial.author}</cite>
-			</figure>
-		{/each}
-	</div>
-	<button class="arrow left" on:click={showPrev}>
-		<ChevronBackOutline size="24" />
-	</button>
-	<button class="arrow right" on:click={showNext}>
-		<ChevronForwardOutline size="24" />
-	</button>
+<div class="carousel-wrapper">
+	<Carousel.Root
+		opts={{
+			align: 'start',
+			loop: true
+		}}
+		class="w-full"
+	>
+		<Carousel.Content class="-ml-2">
+			{#each testimonials as testimonial}
+				<Carousel.Item class="pl-2 {basisClass}">
+					<figure class="testimonial">
+						<enhanced:img
+							class="testimonial-img"
+							src={testimonial.image}
+							alt={testimonial.author}
+						/>
+						<blockquote>
+							<p class="testimonial-text">{testimonial.text}</p>
+						</blockquote>
+						<cite class="testimonial-author">&mdash; {testimonial.author}</cite>
+					</figure>
+				</Carousel.Item>
+			{/each}
+		</Carousel.Content>
+		<Carousel.Previous class="!-left-20 !size-16" />
+		<Carousel.Next class="!-right-20 !size-16" />
+	</Carousel.Root>
 </div>
 
 <style>
-	.carousel-container {
+	.carousel-wrapper {
 		position: relative;
 		width: 100%;
-		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		padding: 0 6rem;
 	}
 
-	.carousel {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(calc(100% / var(--itemsToShow)), 1fr));
-		grid-template-rows: 1fr;
-		grid-auto-flow: column;
-		grid-auto-columns: minmax(calc(100% / var(--itemsToShow)), 1fr);
+	/* Ensure ShadCN carousel navigation buttons work properly */
+	:global(.carousel-wrapper [data-slot='carousel-previous']),
+	:global(.carousel-wrapper [data-slot='carousel-next']) {
+		/* Override Pico CSS button styles */
+		background-color: hsl(var(--background)) !important;
+		border: 1px solid hsl(var(--border)) !important;
+		color: hsl(var(--foreground)) !important;
+		transition: all 0.2s ease-in-out !important;
+	}
 
-		transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	:global(.carousel-wrapper [data-slot='carousel-previous']:hover),
+	:global(.carousel-wrapper [data-slot='carousel-next']:hover) {
+		background-color: hsl(var(--accent)) !important;
+		color: hsl(var(--accent-foreground)) !important;
+		transform: scale(1.05) !important;
+	}
+
+	/* Make arrow icons bigger */
+	:global(.carousel-wrapper [data-slot='carousel-previous'] svg),
+	:global(.carousel-wrapper [data-slot='carousel-next'] svg) {
+		width: 2rem !important;
+		height: 2rem !important;
 	}
 
 	.testimonial {
@@ -92,50 +108,9 @@
 		padding: 1.4rem 0;
 	}
 
-	.arrow {
-		position: absolute;
-		top: 50%;
-		width: 6rem;
-		height: 6rem;
-		cursor: pointer;
-		color: var(--theme-font-default);
-		opacity: 1;
-		transition: all 0.3s ease;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: unset;
-		background-color: unset;
-	}
-
-	.arrow.left {
-		left: 0;
-		z-index: 1;
-	}
-
-	.arrow.right {
-		right: 0;
-	}
-
-	.carousel-container:hover .arrow {
-		opacity: 1;
-	}
-
-	.arrow:hover {
-		transform: scale(1.5);
-	}
-
 	@media (max-width: 900px) {
 		.testimonial {
 			padding: 1.2rem 2.4rem;
-		}
-
-		.arrow.left {
-			left: 1rem;
-		}
-
-		.arrow.right {
-			right: 1rem;
 		}
 	}
 </style>
