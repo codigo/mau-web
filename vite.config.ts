@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 /// <reference types="vitest" />
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
@@ -10,7 +11,7 @@ export default defineConfig(async () => {
 	]);
 
 	return {
-		plugins: [enhancedImagesPlugin, sveltekitPlugin],
+		plugins: [tailwindcss(), enhancedImagesPlugin, sveltekitPlugin],
 		test: {
 			include: ['src/**/*.{test,spec}.{js,ts}'],
 			environment: 'node',
