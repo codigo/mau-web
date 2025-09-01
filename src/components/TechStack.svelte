@@ -49,7 +49,7 @@
 					{/each}
 				</ul>
 			{/each}
-				</div>
+		</div>
 		<!--  end.tech-stack-box -->
 	{/if}
 </section>
@@ -161,7 +161,7 @@
 		font-size: 3.6rem;
 		font-weight: 600;
 		margin-bottom: 1rem;
-		background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+		background: linear-gradient(135deg, #41d1ff 0%, #bd34fe 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;

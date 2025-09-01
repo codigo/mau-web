@@ -205,7 +205,7 @@ h1 {
 	font-size: var(--theme-font-size-xlarge);
 	font-weight: var(--theme-font-weight-xlarge);
 	line-height: var(--theme-font-line-height-xlarge);
-	background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+	background: linear-gradient(135deg, #41d1ff 0%, #bd34fe 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -215,7 +215,7 @@ h2 {
 	font-size: var(--theme-font-size-large);
 	font-weight: var(--theme-font-weight-large);
 	line-height: var(--theme-font-line-height-large);
-	background: linear-gradient(135deg, #41D1FF 0%, #BD34FE 100%);
+	background: linear-gradient(135deg, #41d1ff 0%, #bd34fe 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -442,5 +442,3 @@ a:active {
 .sveltekit-body-wrapper {
 	display: contents;
 }
-
-

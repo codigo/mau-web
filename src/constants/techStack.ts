@@ -29,7 +29,6 @@ import Hono from '../components/icons/tech/Hono.svelte';
 import Vitest from '../components/icons/tech/Vitest.svelte';
 import Pulumi from '../components/icons/tech/Pulumi.svelte';
 
-
 export interface TechStack {
 	category: string;
 	icon: new (options: { target: HTMLElement; props?: Record<string, unknown> }) => SvelteComponent;
@@ -59,7 +58,6 @@ export const TECH_STACK: TechStack[] = [
 	{ category: 'Database', icon: MongoDB, name: 'MongoDB' },
 	{ category: 'Database', icon: Redis, name: 'Redis' },
 	{ category: 'Database', icon: SQLite, name: 'SQLite' },
-
 
 	// Cloud & Infrastructure
 	{ category: 'Cloud', icon: AWS, name: 'AWS' },
